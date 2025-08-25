@@ -15,15 +15,17 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-[80vh] items-center justify-center">
-        {/* Subtle Background */}
-        <div className="from-background via-background/90 to-primary/5 absolute inset-0 bg-gradient-to-br" />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-20"
-          style={{
-            background:
-              "radial-gradient(400px 400px at 50% 40%, hsl(var(--accent)/.12), transparent 70%)",
-          }}
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/promo_video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
           <div className="mx-auto max-w-5xl text-center">
@@ -31,17 +33,18 @@ export default function Home() {
               <Brain className="text-accent h-20 w-20" />
             </div>
 
-            <h1 className="from-foreground via-accent to-primary mb-6 bg-gradient-to-r bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-7xl lg:text-8xl">
-              Móló
+            <h1 className="mb-6 text-6xl font-black tracking-tight text-white md:text-7xl lg:text-8xl">
+              HAIO
             </h1>
 
             <div className="text-accent mb-4 text-lg font-semibold tracking-wider md:text-xl">
-              Magyar Mesterséges Intelligencia Olimpia Oktatás
+              Hungarian Artificial Intelligence Olympiad
             </div>
 
             <p className="text-muted-foreground mx-auto mb-10 max-w-3xl text-base leading-relaxed md:text-lg">
-              Képviseld Magyarországot a Nemzetközi Mesterséges Intelligencia
-              Olimpián.
+              Versenyezz a legjobbakkal, és
+              képviseld Magyarországot a 
+              <br/>Nemzetközi Mesterséges Intelligencia Olimpián.
             </p>
 
             <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
@@ -59,32 +62,6 @@ export default function Home() {
               >
                 Tudj meg többet az HAIO-ról
               </Button>
-            </div>
-
-            {/* Compact Stats */}
-            <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
-              <div className="text-center">
-                <div className="text-accent mb-2 text-3xl font-bold md:text-4xl">
-                  2026
-                </div>
-                <div className="text-muted-foreground text-sm">Versenyév</div>
-              </div>
-              <div className="text-center">
-                <div className="text-primary mb-2 text-3xl font-bold md:text-4xl">
-                  Globális
-                </div>
-                <div className="text-muted-foreground text-sm">
-                  Nemzetközi megmérettetés
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-accent mb-2 text-3xl font-bold md:text-4xl">
-                  Elit
-                </div>
-                <div className="text-muted-foreground text-sm">
-                  Válogatási folyamat
-                </div>
-              </div>
             </div>
           </div>
         </div>

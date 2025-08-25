@@ -3,7 +3,7 @@ export default function SiteFooter() {
     <footer className="mt-16 border-t">
       <div className="container mx-auto grid gap-6 py-10 text-sm md:grid-cols-3">
         <div>
-          <p className="font-semibold">Móló</p>
+          <p className="font-semibold">HAIO</p>
           <p className="text-muted-foreground mt-2">
             Learning by the water: courses, stories, events, and competitions.
           </p>
@@ -36,7 +36,7 @@ export default function SiteFooter() {
         <div>
           <p className="font-semibold">About</p>
           <p className="text-muted-foreground mt-2">
-            © {new Date().getFullYear()} Móló. All rights reserved.
+            © {new Date().getFullYear()} HAIO. All rights reserved.
           </p>
         </div>
       </div>

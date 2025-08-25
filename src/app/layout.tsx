@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Móló - MI oktatás",
-  description: "Móló - MI oktatás",
+  title: "Hungarian AI Olympiad",
+  description: "Hungarian AI Olympiad",
 };
 
 export default function RootLayout({

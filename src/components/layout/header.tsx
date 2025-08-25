@@ -7,7 +7,7 @@ export default function SiteHeader() {
       <div className="container mx-auto flex h-16 items-center justify-between">
         <Link href="/" className="text-xl font-bold">
           <span className="from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent">
-            Móló
+            Hungarian AI Olympiad
           </span>
         </Link>
 
