@@ -229,6 +229,282 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+          <h2 className="mb-12 text-center text-4xl font-bold md:text-5xl text-gray-900">
+            Korábbi Sikerek
+          </h2>
+          <div className="text-center text-gray-700 mb-16 text-2xl font-semibold flex items-center justify-center gap-2">
+            3 olimpia, 18 magyar érem
+          </div>
+          <div className="space-y-16">
+            {/* 2025 Edition */}
+            <div>
+              <h3 className="mb-8 text-2xl font-semibold text-gray-800 text-center">
+                IOAI 2025 - Peking, Kína
+              </h3>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Ungár Vince"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Ungár Vince</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Lehotai Gergely"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Lehotai Gergely</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Bronze */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-amber-600 via-amber-500 to-amber-400 border-2 border-amber-400">
+                  <img
+                    src="/contestants/eszter_nagy.jpg"
+                    alt="Nagy Dávid Leonárd"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-amber-400"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Nagy Dávid Leonárd</div>
+                    <div className="mt-1 text-sm font-medium text-amber-800">Bronzérem</div>
+                  </div>
+                </div>
+                {/* Bronze */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-amber-600 via-amber-500 to-amber-400 border-2 border-amber-400">
+                  <img
+                    src="/contestants/eszter_nagy.jpg"
+                    alt="Reicher Martin"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-amber-400"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Reicher Martin</div>
+                    <div className="mt-1 text-sm font-medium text-amber-800">Bronzérem</div>
+                  </div>
+                </div>
+                {/* Bronze */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-amber-600 via-amber-500 to-amber-400 border-2 border-amber-400">
+                  <img
+                    src="/contestants/eszter_nagy.jpg"
+                    alt="Magó Máté"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-amber-400"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Magó Máté</div>
+                    <div className="mt-1 text-sm font-medium text-amber-800">Bronzérem</div>
+                  </div>
+                </div>
+                {/* Bronze */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-amber-600 via-amber-500 to-amber-400 border-2 border-amber-400">
+                  <img
+                    src="/contestants/eszter_nagy.jpg"
+                    alt="Labancz Benedek"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-amber-400"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Labancz Benedek</div>
+                    <div className="mt-1 text-sm font-medium text-amber-800">Bronzérem</div>
+                  </div>
+                </div>
+                {/* Honorable Mention */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 border-2 border-blue-100">
+                  <img
+                    src="/contestants/marton_toth.jpg"
+                    alt="Fleischman Illés"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-blue-100"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Fleischman Illés</div>
+                    <div className="mt-1 text-sm font-medium text-blue-700">Dicséret</div>
+                  </div>
+                </div>
+                {/* */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 border-2 border-blue-100">
+                  <img
+                    src="/contestants/marton_toth.jpg"
+                    alt="Demjén Eszter"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-blue-100"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Demjén Eszter</div>
+                    <div className="mt-1 text-sm font-medium text-blue-700"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Riyadh Edition */}
+            <div>
+              <h3 className="mb-8 text-2xl font-semibold text-gray-800 text-center">
+                IAIO 2025 - Rijád, Szaúd-Arábia
+              </h3>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {/* Gold */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-300 border-2 border-yellow-300">
+                  <img
+                    src="/contestants/adam_varga.jpg"
+                    alt="Labancz Benedek"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Labancz Benedek</div>
+                    <div className="mt-1 text-sm font-medium text-yellow-800">Aranyérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/krisztina_szilagyi.jpg"
+                    alt="Christ Miranda Anna"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Christ Miranda Anna</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/krisztina_szilagyi.jpg"
+                    alt="Szilágyi Balázs"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Szilágyi Balázs</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Bronze */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-amber-200 via-amber-400 to-amber-300 border-2 border-amber-400">
+                  <img
+                    src="/contestants/gergo_kiss.jpg"
+                    alt="Ungár Vince"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-amber-400"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Ungár Vince</div>
+                    <div className="mt-1 text-sm font-medium text-amber-800">Bronzérem</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* 2025 Edition */}
+            <div>
+              <h3 className="mb-8 text-2xl font-semibold text-gray-800 text-center">
+                IOAI 2024 - Burgas, Bulgária
+              </h3>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Ungár Vince"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Ungár Vince</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Szilágyi Balázs"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Szilágyi Balázs</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Kovács-Bánhalmi Hédi Zita"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Kovács-Bánhalmi Hédi Zita</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Vajda Ádám"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Vajda Ádám</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Christ Miranda Anna"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Christ Miranda Anna</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Lehotai Gergely"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Lehotai Gergely</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Nagy Dávid Leonárd"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Nagy Dávid Leonárd</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+                {/* Silver */}
+                <div className="rounded-2xl shadow-md p-6 flex flex-col items-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-100 border-2 border-gray-300">
+                  <img
+                    src="/contestants/balazs_szabo.jpg"
+                    alt="Molnár István Ádám"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-gray-300"
+                  />
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-900">Molnár István Ádám</div>
+                    <div className="mt-1 text-sm font-medium text-gray-700">Ezüstérem</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="from-accent/10 via-primary/5 to-accent/10 bg-gradient-to-r py-24">
         <div className="mx-auto max-w-7xl px-6 text-center md:px-12 lg:px-24">
           <h2 className="mb-6 text-4xl font-bold md:text-5xl">
