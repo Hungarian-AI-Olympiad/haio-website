@@ -8,6 +8,9 @@ import {
   Trophy,
   Users,
   Zap,
+  Calendar,
+  Clock,
+  MonitorIcon,
 } from "lucide-react";
 import FeatureCard from "@/components/landing/feature-card";
 
@@ -66,15 +69,77 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Schedule Section */}
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+          <div className="mb-14 text-center">
+            <h2 className="mb-4 text-4xl font-bold md:text-5xl">Időpontok</h2>
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
+              A legfontosabb események időpontjai.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-rows-3">
+            {/* Event 1 */}
+            <div className="bg-card/90 border-accent/20 relative rounded-3xl border p-6 backdrop-blur-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <Calendar className="text-accent h-8 w-8" />
+                <h3 className="text-xl font-semibold">Jelentkezési határidő</h3>
+              </div>
+              <div className="text-muted-foreground flex items-center gap-3">
+                <Calendar className="h-5 w-5" />
+                <span><i>TBA</i></span>
+              </div>
+              <div className="text-muted-foreground mt-2 flex items-center gap-3">
+                <Clock className="h-5 w-5" />
+                <span><i>TBA</i></span>
+              </div>
+            </div>
+
+            {/* Event 2 */}
+            <div className="bg-card/90 border-accent/20 relative rounded-3xl border p-6 backdrop-blur-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <MonitorIcon className="text-accent h-8 w-8" />
+                <h3 className="text-xl font-semibold">Online kvalifikáció</h3>
+              </div>
+              <div className="text-muted-foreground flex items-center gap-3">
+                <Calendar className="h-5 w-5" />
+                <span><i>TBA</i></span>
+              </div>
+              <div className="text-muted-foreground mt-2 flex items-center gap-3">
+                <Clock className="h-5 w-5" />
+                <span><i>TBA</i></span>
+              </div>
+            </div>
+
+            {/* Event 3 */}
+            <div className="bg-card/90 border-accent/20 relative rounded-3xl border p-6 backdrop-blur-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <Trophy className="text-accent h-8 w-8" />
+                <h3 className="text-xl font-semibold">Országos Döntő</h3>
+              </div>
+              <div className="text-muted-foreground flex items-center gap-3">
+                <Calendar className="h-5 w-5" />
+                <span><i>TBA</i></span>
+              </div>
+              <div className="text-muted-foreground mt-2 flex items-center gap-3">
+                <Clock className="h-5 w-5" />
+                <span><i>TBA</i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
           <div className="mb-14 text-center">
             <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-              A végső MI kihívás
+              Nemzetközi MI Diákolimpiák
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
-              A HAIO Magyarország vezető mesterséges intelligencia versenye,
-              kapuként a Nemzetközi Mesterséges Intelligencia Olimpiára (IOAI).
+              A HAIO célja, hogy felfedezze és összegyűjtse a legtehetségesebb
+              magyar diákokat, akik képviselhetik Magyarországot a Nemzetközi
+              Mesterséges Intelligencia Olimpiákon.
             </p>
           </div>
 
