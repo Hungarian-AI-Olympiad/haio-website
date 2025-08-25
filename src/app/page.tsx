@@ -33,7 +33,12 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
           <div className="mx-auto max-w-5xl text-center">
             <div className="mb-8 flex justify-center">
-              <Brain className="text-accent h-20 w-20" />
+              <img
+                src="/HAIO_ONLY_WHITE.png"
+                alt="HAIO logó"
+                className="h-20 w-20 rounded-full"
+                style={{ display: "block" }}
+              />
             </div>
 
             <h1 className="mb-6 text-6xl font-black tracking-tight text-white md:text-7xl lg:text-8xl">
