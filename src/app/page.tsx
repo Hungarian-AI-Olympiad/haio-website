@@ -73,7 +73,7 @@ export default function Home() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
           <div className="mb-14 text-center">
-            <h2 className="mb-4 text-4xl font-bold md:text-5xl">Időpontok</h2>
+            <h2 className="mb-4 text-4xl font-bold md:text-5xl">Időpontok 2025/26</h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
               A legfontosabb események időpontjai.
             </p>
@@ -130,68 +130,105 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-background py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
           <div className="mb-14 text-center">
-            <h2 className="mb-6 text-4xl font-bold md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold md:text-5xl text-gray-900">
               Nemzetközi MI Diákolimpiák
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
+            <p className="mx-auto max-w-3xl text-lg leading-relaxed md:text-xl text-gray-600">
               A HAIO célja, hogy felfedezze és összegyűjtse a legtehetségesebb
               magyar diákokat, akik képviselhetik Magyarországot a Nemzetközi
               Mesterséges Intelligencia Olimpiákon.
             </p>
           </div>
 
-          <div className="grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <h3 className="text-accent mb-6 text-2xl font-bold md:text-3xl">
-                Mi az IOAI?
-              </h3>
-              <p className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg">
-                A Nemzetközi Mesterséges Intelligencia Olimpia a világ első MI
-                olimpiája középiskolás diákok számára, ahol a legfényesebb elmék
-                versenyeznek élvonalbeli kihívásokban.
+          <div className="flex flex-col items-center">
+            {/* Start node: HAIO */}
+            <div className="bg-white/90 border-gray-200 relative flex flex-col items-center rounded-3xl border p-8 w-full max-w-xs shadow-md">
+              <img
+                src="/HAIO_TEXT_SVG.svg"
+                alt="HAIO Logo"
+                className="mb-4 h-32 w-32 object-contain"
+              />
+              <p className="text-gray-600 text-center mb-2">
+                Magyarországi Mesterséges Intelligencia Olimpia – a magyar válogatóverseny a nemzetközi diákolimpiákra.
               </p>
-              <div className="text-primary flex items-center gap-4">
-                <Globe className="h-6 w-6" />
-                <span className="font-semibold">Globális verseny</span>
+              <button className="bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-4 py-2 font-semibold transition">
+                Jelentkezz most!
+              </button>
+            </div>
+            {/* Dotted line down */}
+            <div className="flex flex-col items-center">
+              <div className="h-12 border-l-2 border-dotted border-blue-300" />
+              {/* Split lines */}
+              <div className="flex w-full justify-center items-center relative mb-[-1.5rem]">
+                <div className="w-1/2 flex justify-end">
+                  <div className="h-8 border-l-2 border-dotted border-blue-300" />
+                  <div className="h-8 border-r-2 border-dotted border-blue-300" style={{ borderTop: "2px dotted #93c5fd", width: "40px", borderRight: "none", borderLeft: "none", borderBottom: "none", borderRadius: "0 0 0 16px" }} />
+                </div>
+                <div className="w-1/2 flex justify-start">
+                  <div className="h-8 border-l-2 border-dotted border-blue-300" style={{ borderTop: "2px dotted #93c5fd", width: "40px", borderRight: "none", borderLeft: "none", borderBottom: "none", borderRadius: "0 0 16px 0" }} />
+                  <div className="h-8 border-l-2 border-dotted border-blue-300" />
+                </div>
               </div>
             </div>
-
-            <div className="relative">
-              <div className="bg-accent/10 absolute inset-0 rounded-3xl blur-2xl" />
-              <div className="bg-card/90 border-accent/20 relative rounded-3xl border p-8 backdrop-blur-sm">
-                <Target className="text-accent mb-4 h-12 w-12" />
-                <h4 className="mb-3 text-xl font-semibold">A te küldetésed</h4>
-                <p className="text-muted-foreground text-base leading-relaxed">
-                  Jeleskedj a HAIO-ban, hogy helyet szerezz Magyarország nemzeti
-                  csapatában, és versenyezz a világ legjobb fiatal MI tehetségei
-                  ellen.
+            {/* Two branches: IOAI and IAIO */}
+            
+            <div className="flex flex-col md:flex-row gap-16 mt-2 w-full justify-center">
+              {/* IOAI Card */}
+              <div className="bg-white/90 border-gray-200 relative flex flex-col items-center rounded-3xl border p-8 w-full max-w-md md:max-w-lg shadow-md">
+                <img
+                  src="/IOAI.png"
+                  alt="IOAI Logo"
+                  className="mb-4 h-24 w-48 object-contain"
+                />
+                <p className="text-gray-600 text-center mb-4">
+                  A világ első nemzetközi MI diákolimpiája, a legújabb Nemzetközi Tudományos Diákolimpia.
+                  A legnagyobb fiatal koponyák mérik össze tudásukat a modern MI módszerekben. 
+                  Deep learning, gépi látás, természetes nyelv feldolgozás.
+                  Vesd be a kreativitásod, alkoss AI rendszereket, és oldj meg valós problémákat!
                 </p>
+                <a
+                  href="https://ioai-official.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <button className="bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-4 py-2 font-semibold transition">
+                    Fedezd fel az IOAI-t
+                  </button>
+                </a>
+              </div>
+              {/* IAIO Card */}
+              <div className="bg-white/90 border-gray-200 relative flex flex-col items-center rounded-3xl border p-8 w-full max-w-md md:max-w-lg shadow-md">
+                <img
+                  src="/IAIO.png"
+                  alt="IAIO Logo"
+                  className="mb-4 h-24 w-48 object-contain"
+                />
+                <p className="text-gray-600 text-center mb-4">
+                  MI Diákolimpia más köntösben. 
+                  Az IAIO fókuszában a hagyományos gépi tanulási problémák állnak.
+                  Adattudomány, intelligens keresés, ajánlóalgoritmusok és sok más.
+                  Ha érdekelnek a szigorúbb, algoritmikus megoldások, de mindezt
+                  az AI területén alkalmaznád, akkor ezt az olimpiát neked találták ki!
+                </p>
+                <a
+                  href="https://iaio-official.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <button className="bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-4 py-2 font-semibold transition">
+                    Fedezd fel az IAIO-t
+                  </button>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
-          <div className="grid gap-8 md:grid-cols-3">
-            <FeatureCard icon={Trophy} title="Elit verseny">
-              Versenyezz Magyarország legtehetségesebb diákjaival fejlett MI
-              kihívásokban.
-            </FeatureCard>
-            <FeatureCard icon={Users} title="Szakértői mentorálás">
-              Tanulj vezető MI kutatóktól és iparági szakemberektől az utad
-              során.
-            </FeatureCard>
-            <FeatureCard icon={Zap} title="Élvonalbeli készségek">
-              Fejleszd tudásod gépi tanulásban, neurális hálózatokban és modern
-              algoritmusokban.
-            </FeatureCard>
-          </div>
-        </div>
-      </section>{" "}
       <section className="from-accent/10 via-primary/5 to-accent/10 bg-gradient-to-r py-24">
         <div className="mx-auto max-w-7xl px-6 text-center md:px-12 lg:px-24">
           <h2 className="mb-6 text-4xl font-bold md:text-5xl">
