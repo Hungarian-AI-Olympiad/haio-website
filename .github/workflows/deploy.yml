@@ -19,6 +19,14 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
+      - name: Check hostname resolution
+        run: |
+          echo "Resolving host:" ${{ secrets.SCP_HOSTNAME }}
+          nslookup ${{ secrets.SCP_HOSTNAME }}
+
+      - name: Ping server (IPv4)
+        run: ping -c 4 -4 ${{ secrets.SCP_HOSTNAME }}
+
       - name: Copy files via SCP
         run: |
           sshpass -p "${{ secrets.SCP_PASSWORD }}" \
