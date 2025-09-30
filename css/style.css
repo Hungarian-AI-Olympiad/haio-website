@@ -1,0 +1,246 @@
+:root {
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    --bg-color: #111827;
+    --navbar-color: #232a3d;
+    --text-color: #D1D5DB;
+    --accent-color: #4f9cff;
+    --section-bg-color: #1F2937;
+}
+
+.light-mode {
+    --bg-color: #f4f8ff;
+    --text-color: #D1D5DB;
+    --section-bg-color: #eaf2fb;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: justify;
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--navbar-color);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    height: 15vh;
+}
+
+#navbar-logo {
+    height: 50%;
+    width: auto;
+    object-fit: contain;
+}
+
+#subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    margin-top: 0.2rem;
+    letter-spacing: 0.5px;
+}
+
+#nav-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.centered-highlight {
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0.5rem auto;
+    color: var(--text-color);
+}
+
+.light-mode .navbar {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.5rem;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: inherit;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    background-color: var(--bg-color);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.btn-register {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+.content-section {
+    padding: 3rem 10%;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.content-section:nth-of-type(even) {
+    background-color: var(--section-bg-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    background-color: #0a0a0a;
+}
+
+.light-mode footer {
+    background-color: #e9e9e9;
+}
+
+#szponzordiv {
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-title {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 1rem 2%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
