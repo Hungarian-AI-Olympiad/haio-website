@@ -5,27 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adatkezelési tájékoztató | HAIO</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-title"> <img id="navbar-logo" src="img/HAIO_img.png"> <span>HAIO</span></div>
-            <div class="nav-links">
-                <a href="index.html">Főoldal</a>
-                <a href="adatkezelesi.html" class="active">Adatkezelési tájékoztató</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="content-section adatkezelesi">
+
+    <!-- HEADER -->
+    <?php include 'header.php'; ?>
+
+    <!-- CONTENT SECTION -->
+    <section class="content-section">
+        <div class="container">
             <h1>Adatkezelési tájékoztató</h1>
 
             <p>Az információs önrendelkezésről és az információszabadságról szóló <b>2011. évi CXII. törvény
@@ -124,12 +137,12 @@
 
             <p>Fordulhat továbbá az illetékes bírósághoz is vita esetén.</p>
 
+        </div>
+    </section>
 
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Hungarian AI Olympiad. All Rights Reserved.</p>
-    </footer>
+    <!-- FOOTER -->
+    <?php include 'footer.php'; ?>
+
 </body>
 
 </html>
