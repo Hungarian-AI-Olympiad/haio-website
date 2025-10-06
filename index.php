@@ -75,7 +75,7 @@
                     <i class="fab fa-discord discord-icon"></i>
                     <h3 class="selection-title">Discord közösség</h3>
                     <p class="selection-description">Csatlakozz hozzánk, beszélgess társaiddal, tedd fel kérdéseidet és találkozz más MI rajongókkal!</p>
-                    <a href="https://discord.gg/pwpqHTcsZQ" class="btn selection-btn" id="discord-btn" target="_blank">
+                    <a href="https://discord.gg/KKTzNebjGW" class="btn selection-btn" id="discord-btn" target="_blank">
                         <i class="fab fa-discord"></i> Csatlakozás
                     </a>
                 </div>
