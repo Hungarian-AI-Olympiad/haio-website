@@ -49,7 +49,7 @@
             <div class="molo-hero">
                 <h1 id="urlap">Magyar MI Olimpia - MÓLÓ Program</h1>
                 <p class="lead">Csatlakozz te is Magyarország legújabb MI versenyéhez!</p>
-                <a href="https://forms.office.com/e/QfStcYj84Y" class="btn btn-light btn-lg mt-3" target="_blank">
+                <a href="https://forms.office.com/e/DhJwPyEW4C" class="btn btn-light btn-lg mt-3" target="_blank">
                     <i class="fas fa-edit"></i> Regisztrálás a felkészítőre
                 </a>
             </div>
@@ -57,10 +57,9 @@
             <!-- Mi a MÓLÓ? -->
             <div class="molo-content-block">
                 <h2>Mi a MÓLÓ Program?</h2>
-                <p>
-                    A <b>MÓLÓ</b> célja, hogy a középiskolás
-                    diákokat felkészítse a Magyar MI Olimpiára (HAIO) és a nemzetközi MI versenyekre.
-                </p>
+                    <p>
+                        A <b>MÓLÓ</b> célja, hogy a középiskolás diákokat megismertesse az MI programozásával. A legjobbak egyúttal felkészülhetnek a Magyar MI Olimpián (HAIO) és a nemzetközi MI versenyeken való részvételre is.
+                    </p>
                 <p>
                     A felkészítő <b>ingyenes</b>, és minden 9-12. évfolyamos diák számára elérhető, függetlenül az
                     előzetes
@@ -110,7 +109,7 @@
                                 <i class="fas fa-chalkboard-teacher"></i>
                             </div>
                             <h5>Online előadások</h5>
-                            <p>Heti rendszerességgel tartunk online előadásokat az MI alapjairól.</p>
+                            <p>Rengeteg online anyag lesz elérhető, és havonta tartunk konzultációkat az MI programozásáról.</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
@@ -119,7 +118,7 @@
                                 <i class="fas fa-code"></i>
                             </div>
                             <h5>Gyakorlati feladatok</h5>
-                            <p>Minden előadás után gyakorlati feladatokat kapsz, amiket otthon megoldhatsz.</p>
+                            <p>Gyakorlati feladatok is elérhetők lesznek, amelyeket otthon megoldhatsz.</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">

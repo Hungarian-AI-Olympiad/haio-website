@@ -44,6 +44,14 @@
     <!-- CONTENT SECTION -->
     <section class="content-section">
         <div class="container">
+            <!-- Hero Section: HAIO Regisztráció -->
+            <div class="haio-hero mb-4">
+                <h1 id="urlap-haio">Magyar MI Olimpia - HAIO Program</h1>
+                <p class="lead">Csatlakozz te is Magyarország mesterséges intelligencia olimpiájához!</p>
+                <a href="https://forms.office.com/e/QfStcYj84Y" class="btn btn-light btn-lg mt-3" target="_blank">
+                    <i class="fas fa-edit"></i> Regisztrálás a HAIO-ra
+                </a>
+            </div>
             <!-- Mi a HAIO? -->
             <div class="haio-content-block">
                 <h2>Mi a HAIO?</h2>
