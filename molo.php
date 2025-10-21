@@ -54,6 +54,39 @@
                 </a>
             </div>
 
+            <!-- Előadások Táblázat -->
+            <div class="molo-content-block">
+                <h2>Előadások</h2>
+                <div class="table-responsive">
+                    <table class="molo-fancy-table">
+                        <thead>
+                            <tr>
+                                <th>Időpont</th>
+                                <th>Előadó</th>
+                                <th>Téma</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025.11.05 - 17:00</td>
+                                <td>Gulyás László</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2025.12.03 - 17:00</td>
+                                <td>Gulyás László</td>
+                                <td>Adatvezérelt programozás (Program vs Tanuló modell) + MI és Nagy nyelvi modell különbsége</td>
+                            </tr>
+                            <tr>
+                                <td>2026.01.07 - 17:00</td>
+                                <td>Gulyás László</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- Mi a MÓLÓ? -->
             <div class="molo-content-block">
                 <h2>Mi a MÓLÓ Program?</h2>

@@ -519,6 +519,39 @@ footer {
     color: var(--molo-red);
 }
 
+/* MÓLÓ Fancy Table */
+.molo-fancy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.molo-fancy-table thead {
+    background-color: rgba(205, 42, 62, 0.1);
+}
+
+.molo-fancy-table th {
+    color: var(--molo-red);
+    font-weight: 700;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--molo-red);
+}
+
+.molo-fancy-table td {
+    color: #D1D5DB;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(205, 42, 62, 0.2);
+}
+
+.molo-fancy-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.molo-fancy-table tbody tr:hover {
+    background-color: rgba(205, 42, 62, 0.05);
+}
+
 /* MÓLÓ Accordion */
 .molo-accordion .accordion-item {
     background-color: var(--bg-card);
