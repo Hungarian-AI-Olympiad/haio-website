@@ -48,31 +48,30 @@
 
 <!-- COOKIE CONSENT BANNER -->
 {#if showCookieBanner}
-<div class="fixed bottom-2 left-2 right-2 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs z-50 animate-fadeInUp">
-    <div class="bg-desert-800/95 backdrop-blur-lg rounded-lg sm:rounded-xl shadow-2xl border border-desert-600/50 overflow-hidden">
-        <div class="p-2 sm:p-5">
-            <div class="flex items-start gap-1.5 sm:gap-2 mb-1.5 sm:mb-4">
-                <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5 text-warm-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<div class="fixed bottom-1 left-1 right-1 max-w-[260px] sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs z-50 animate-fadeInUp">
+    <div class="bg-desert-800/95 backdrop-blur-lg rounded sm:rounded-xl shadow-2xl border border-desert-600/50 overflow-hidden">
+        <div class="p-1 sm:p-5">
+            <div class="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-4">
+                <svg class="w-2.5 h-2.5 sm:w-5 sm:h-5 text-warm-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div class="flex-1 min-w-0">
-                    <h4 class="text-off-white font-semibold text-[11px] sm:text-base mb-0.5 sm:mb-1">Sütik</h4>
-                    <p class="text-desert-200 text-[9px] sm:text-xs leading-tight sm:leading-relaxed">
-                        Sütiket használunk a jobb élményért.
+                    <p class="text-off-white text-[7px] sm:text-xs leading-[1.1] sm:leading-relaxed">
+                        Sütiket használunk
                     </p>
                 </div>
             </div>
             
-            <div class="flex gap-1 sm:gap-2">
+            <div class="flex gap-0.5 sm:gap-2 mb-0.5 sm:mb-0">
                 <button
                     on:click={acceptAllCookies}
-                    class="flex-1 px-2 py-1 sm:px-3 sm:py-2 bg-warm-blue text-white text-[9px] sm:text-sm font-medium rounded sm:rounded-lg hover:bg-warm-blue/80 transition-all duration-300 focus:outline-none"
+                    class="flex-1 px-1 py-0.5 sm:px-3 sm:py-2 bg-warm-blue text-white text-[7px] sm:text-sm font-medium rounded-sm sm:rounded-lg hover:bg-warm-blue/80 transition-all duration-300 focus:outline-none leading-none"
                 >
                     Elfogad
                 </button>
                 <button
                     on:click={declineAllCookies}
-                    class="flex-1 px-2 py-1 sm:px-3 sm:py-2 bg-desert-700 text-desert-100 text-[9px] sm:text-sm font-medium rounded sm:rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none"
+                    class="flex-1 px-1 py-0.5 sm:px-3 sm:py-2 bg-desert-700 text-desert-100 text-[7px] sm:text-sm font-medium rounded-sm sm:rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none leading-none"
                 >
                     Elutasít
                 </button>
@@ -80,7 +79,7 @@
             
             <button
                 on:click={openCookieSettings}
-                class="w-full mt-1 sm:mt-2 text-desert-300 text-[8px] sm:text-xs hover:text-warm-blue transition-colors duration-200 underline"
+                class="w-full text-desert-300 text-[6px] sm:text-xs hover:text-warm-blue transition-colors duration-200 underline leading-none py-0.5 sm:py-0"
             >
                 Beállítások
             </button>
@@ -91,96 +90,94 @@
 
 <!-- COOKIE PREFERENCES MODAL -->
 {#if showCookieSettings}
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div class="bg-desert-900/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-desert-600/50 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-6 md:p-8">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-2xl font-bold text-off-white">Cookie preferenciák</h3>
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4">
+    <div class="bg-desert-900/95 backdrop-blur-lg rounded-lg sm:rounded-2xl shadow-2xl border border-desert-600/50 w-full max-w-lg sm:max-w-2xl max-h-[85vh] overflow-y-auto">
+        <div class="p-3 sm:p-6 md:p-8">
+            <div class="flex items-center justify-between mb-3 sm:mb-6">
+                <h3 class="text-base sm:text-2xl font-bold text-off-white">Cookie preferenciák</h3>
                 <button
                     on:click={() => showCookieSettings = false}
-                    class="text-desert-300 hover:text-off-white transition-colors p-2"
+                    class="text-desert-300 hover:text-off-white transition-colors p-1 sm:p-2"
                 >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
             
-            <p class="text-desert-200 mb-6 leading-relaxed">
+            <p class="text-desert-200 text-xs sm:text-base mb-3 sm:mb-6 leading-relaxed">
                 A sütik segítenek nekünk a webhely működésének biztosításában, tartalmak és hirdetések személyre szabásában, valamint forgalmi adataink elemzésében.
             </p>
             
-            <div class="space-y-4">
+            <div class="space-y-2 sm:space-y-4">
                 <!-- Necessary Cookies -->
-                <div class="bg-desert-800/50 rounded-lg p-4 border border-desert-700">
-                    <div class="flex items-center justify-between mb-2">
-                        <h4 class="text-off-white font-semibold">Szükséges sütik</h4>
-                        <div class="bg-desert-600 text-desert-300 text-xs px-3 py-1 rounded-full">
+                <div class="bg-desert-800/50 rounded-lg p-2 sm:p-4 border border-desert-700">
+                    <div class="flex items-center justify-between mb-1 sm:mb-2">
+                        <h4 class="text-off-white font-semibold text-xs sm:text-base">Szükséges sütik</h4>
+                        <div class="bg-desert-600 text-desert-300 text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
                             Mindig aktív
                         </div>
                     </div>
-                    <p class="text-desert-300 text-sm">
+                    <p class="text-desert-300 text-[10px] sm:text-sm">
                         Ezek a sütik elengedhetetlenek a webhely megfelelő működéséhez és nem kapcsolhatók ki.
                     </p>
                 </div>
                 
                 <!-- Analytics Cookies -->
-                <div class="bg-desert-800/50 rounded-lg p-4 border border-desert-700">
-                    <div class="flex items-center justify-between mb-2">
-                        <h4 class="text-off-white font-semibold">Analitikai sütik</h4>
+                <div class="bg-desert-800/50 rounded-lg p-2 sm:p-4 border border-desert-700">
+                    <div class="flex items-center justify-between mb-1 sm:mb-2">
+                        <h4 class="text-off-white font-semibold text-xs sm:text-base">Analitikai sütik</h4>
                         <label class="relative inline-flex items-center cursor-pointer">
                             <input
                                 type="checkbox"
                                 bind:checked={cookiePreferences.analytics}
                                 class="sr-only peer"
                             />
-                            <div class="w-11 h-6 bg-desert-700 peer-focus:ring-2 peer-focus:ring-warm-blue rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-warm-blue"></div>
+                            <div class="w-9 h-5 sm:w-11 sm:h-6 bg-desert-700 peer-focus:ring-2 peer-focus:ring-warm-blue rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-warm-blue"></div>
                         </label>
                     </div>
-                    <p class="text-desert-300 text-sm">
+                    <p class="text-desert-300 text-[10px] sm:text-sm">
                         Ezek a sütik lehetővé teszik számunkra a látogatások és forgalmi források mérését.
                     </p>
                 </div>
                 
                 <!-- Marketing Cookies -->
-                <div class="bg-desert-800/50 rounded-lg p-4 border border-desert-700">
-                    <div class="flex items-center justify-between mb-2">
-                        <h4 class="text-off-white font-semibold">Marketing sütik</h4>
+                <div class="bg-desert-800/50 rounded-lg p-2 sm:p-4 border border-desert-700">
+                    <div class="flex items-center justify-between mb-1 sm:mb-2">
+                        <h4 class="text-off-white font-semibold text-xs sm:text-base">Marketing sütik</h4>
                         <label class="relative inline-flex items-center cursor-pointer">
                             <input
                                 type="checkbox"
-                                bind:checked={cookiePreferences.marketing}
-                                class="sr-only peer"
-                            />
-                            <div class="w-11 h-6 bg-desert-700 peer-focus:ring-2 peer-focus:ring-warm-blue rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-warm-blue"></div>
-                        </label>
-                    </div>
-                    <p class="text-desert-300 text-sm">
-                        Ezek a sütik releváns hirdetések megjelenítésére használhatók.
-                    </p>
+                            bind:checked={cookiePreferences.marketing}
+                            class="sr-only peer"
+                        />
+                        <div class="w-9 h-5 sm:w-11 sm:h-6 bg-desert-700 peer-focus:ring-2 peer-focus:ring-warm-blue rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-warm-blue"></div>
+                    </label>
                 </div>
+                <p class="text-desert-300 text-[10px] sm:text-sm">
+                    Ezek a sütik releváns hirdetések megjelenítésére használhatók.
+                </p>
             </div>
-            
-            <div class="flex flex-col sm:flex-row gap-3 mt-6">
-                <button
-                    on:click={savePreferences}
-                    class="flex-1 px-6 py-3 bg-warm-blue text-white font-semibold rounded-lg hover:bg-warm-blue/80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"
-                >
-                    Beállítások mentése
-                </button>
-                <button
-                    on:click={() => showCookieSettings = false}
-                    class="flex-1 px-6 py-3 bg-desert-700 text-desert-100 font-semibold rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-500/50"
-                >
-                    Mégse
-                </button>
-            </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-6">
+            <button
+                on:click={savePreferences}
+                class="flex-1 px-3 py-2 sm:px-6 sm:py-3 bg-warm-blue text-white text-xs sm:text-base font-semibold rounded-lg hover:bg-warm-blue/80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"
+            >
+                Beállítások mentése
+            </button>
+            <button
+                on:click={() => showCookieSettings = false}
+                class="flex-1 px-3 py-2 sm:px-6 sm:py-3 bg-desert-700 text-desert-100 text-xs sm:text-base font-semibold rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-500/50"
+            >
+                Mégse
+            </button>
         </div>
     </div>
 </div>
-{/if}
-
-<!-- COOKIE PREFERENCES BUTTON (Persistent after consent) -->
+</div>
+{/if}<!-- COOKIE PREFERENCES BUTTON (Persistent after consent) -->
 {#if !showCookieBanner && !showCookieSettings}
 <button
     on:click={openCookieSettings}

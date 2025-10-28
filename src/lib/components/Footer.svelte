@@ -18,18 +18,18 @@
     <div class="container mx-auto px-6">
         <!-- Main Content: 4 columns on desktop, stack on mobile -->
         <div class="grid md:grid-cols-4 gap-6 mb-6">
-            <!-- Logo and Description -->
-            <div class="md:col-span-1">
-                <div class="flex items-center space-x-2 mb-3">
+        <!-- Logo and Description -->
+        <div class="md:col-span-1">
+            <div class="flex items-center space-x-2 mb-3">
+                <div class="bg-white rounded-md p-1.5">
                     <img src={`${base}/img/HAIO_img.png`} alt="HAIO Logo" class="h-8 w-8 object-contain" />
-                    <span class="text-lg font-bold text-off-white">HAIO</span>
                 </div>
-                <p class="text-off-white text-xs leading-relaxed">
-                    Hungarian AI Olympiad - A magyar mesterséges intelligencia olimpiák hivatalos oldala.
-                </p>
+                <span class="text-lg font-bold text-off-white">HAIO</span>
             </div>
-
-            <!-- Quick Links -->
+            <p class="text-off-white text-xs leading-relaxed">
+                Hungarian AI Olympiad - A magyar mesterséges intelligencia olimpiák hivatalos oldala.
+            </p>
+        </div>            <!-- Quick Links -->
             <div class="md:col-span-1">
                 <h3 class="text-off-white font-semibold mb-3 text-sm">Gyors Linkek</h3>
                 <ul class="space-y-1.5">
@@ -91,7 +91,7 @@
 
         <div class="border-t border-desert-700 pt-3 pb-2 flex items-center justify-center">
             <p class="text-desert-300 text-sm">
-                &copy; {new Date().getFullYear()} Hungarian AI Olympiad. Minden jog fenntartva.
+                &copy; {new Date().getFullYear()} <span class="hidden sm:inline">Hungarian AI Olympiad</span><span class="sm:hidden">HAIO</span>. Minden jog fenntartva.
             </p>
         </div>
     </div>

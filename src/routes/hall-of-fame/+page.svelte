@@ -214,7 +214,7 @@
 		},
 		{
 			name: 'Szalay Gergő',
-			affiliation: 'ELTE Informatikai Kar, MI Tanszék',
+			affiliation: 'ELTE Informatikai Kar, ProgElm Tanszék',
 			image: `${base}/img/team/SZG.jpg`,
 			linkedin: 'https://linkedin.com'
 		},

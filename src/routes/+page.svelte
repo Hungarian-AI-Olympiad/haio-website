@@ -740,15 +740,13 @@
 					data-timeline-event={index}
 					style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) {index * 80}ms;"
 				>
-					<!-- Vertical Line Segment - changes color based on past/future -->
-					<div class="absolute left-8 top-0 h-full w-0.5 {isPast ? 'bg-slate-300' : 'bg-gradient-to-b from-dark-blue to-warm-blue'}"></div>
-					
-					<!-- Connecting line to next event -->
-					{#if index < timelineEvents.length - 1}
-						<div class="absolute left-8 bottom-0 translate-y-6 h-6 w-0.5 {nextIsPast ? 'bg-slate-300' : 'bg-warm-blue'}"></div>
-					{/if}
-
-					<!-- Event Card -->
+			<!-- Vertical Line Segment - changes color based on past/future -->
+			<div class="absolute left-8 top-0 h-full w-0.5 {isPast ? 'bg-slate-300' : 'bg-warm-blue'}"></div>
+			
+			<!-- Connecting line to next event -->
+			{#if index < timelineEvents.length - 1}
+				<div class="absolute left-8 bottom-0 translate-y-6 h-6 w-0.5 {nextIsPast ? 'bg-slate-300' : 'bg-warm-blue'}"></div>
+			{/if}					<!-- Event Card -->
 					<div class="group relative">						
 						<!-- Main Card -->
 						<div class="relative ml-20 bg-white rounded-2xl shadow-lg border transition-all duration-500 {isPast ? 'border-slate-200 opacity-60' : 'border-slate-200 hover:border-warm-blue hover:shadow-2xl hover:-translate-y-1'}">
@@ -765,26 +763,24 @@
 								{/if}
 							</div>
 
-							<!-- Card Content -->
-							<div class="p-6 md:p-8">
-								<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-									<!-- Left: Date & Project -->
-									<div class="flex items-center gap-4">
-										<!-- Date Badge -->
-										<div class="flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300 {isPast ? 'bg-slate-100 text-slate-500' : 'bg-gradient-to-r from-dark-blue/10 to-warm-blue/10 text-dark-blue'}">
-											<svg class="w-5 h-5 {isPast ? 'text-slate-400' : 'text-warm-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-											</svg>
-											<span class="font-semibold text-sm tracking-wide">{event.date}</span>
-										</div>
-
-										<!-- Project Badge -->
-										<div class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 {isPast ? 'bg-slate-200 text-slate-500' : event.project === 'MÓLÓ' ? 'bg-dark-blue text-white' : 'bg-warm-blue text-white'}">
-											{event.project}
-										</div>
+						<!-- Card Content -->
+						<div class="p-6 md:p-8">
+							<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+								<!-- Left: Date & Project -->
+								<div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+									<!-- Date Badge -->
+									<div class="flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300 {isPast ? 'bg-slate-100 text-slate-500' : 'bg-gradient-to-r from-dark-blue/10 to-warm-blue/10 text-dark-blue'}">
+										<svg class="w-5 h-5 {isPast ? 'text-slate-400' : 'text-warm-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+										</svg>
+										<span class="font-semibold text-sm tracking-wide">{event.date}</span>
 									</div>
 
-									<!-- Right: Status Label -->
+									<!-- Project Badge -->
+									<div class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 {isPast ? 'bg-slate-200 text-slate-500' : event.project === 'MÓLÓ' ? 'bg-dark-blue text-white' : 'bg-warm-blue text-white'}">
+										{event.project}
+									</div>
+								</div>									<!-- Right: Status Label -->
 									{#if !isPast}
 										<div class="flex items-center gap-2 text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full text-xs font-semibold">
 											<div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
@@ -1416,16 +1412,26 @@
 	.badge-pulse-1 {
 		animation: badgePulse 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 		animation-delay: 0s;
+		animation-play-state: paused;
 	}
 
 	.badge-pulse-2 {
 		animation: badgePulse 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 		animation-delay: 2.33s;
+		animation-play-state: paused;
 	}
 
 	.badge-pulse-3 {
 		animation: badgePulse 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 		animation-delay: 4.66s;
+		animation-play-state: paused;
+	}
+
+	/* Play animation on hover */
+	.group:hover .badge-pulse-1,
+	.group:hover .badge-pulse-2,
+	.group:hover .badge-pulse-3 {
+		animation-play-state: running;
 	}
 
 	.video-control-btn {

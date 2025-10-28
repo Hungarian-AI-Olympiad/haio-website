@@ -82,43 +82,41 @@
 				</svg>
 			</button>
 
-		<!-- Desktop Navigation -->
-		<div class="hidden lg:flex items-center space-x-1">
-			<!-- Main navigation links -->
-			<a href="{base}/#programs" class="relative px-3 py-2 text-sm font-medium transition-all duration-200 scroll-smooth rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
-				<span class="relative z-10">Programok</span>
-				{#if effectiveScrolled}
-					<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-				{:else}
-					<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-				{/if}
-			</a>
-			<a href="{base}/#dates" class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
-				<span class="relative z-10">Fontos Időpontok</span>
-				{#if effectiveScrolled}
-					<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-				{:else}
-					<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-				{/if}
-			</a>
-			<a href="{base}/#international" class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
-				<span class="relative z-10">Nemzetközi Versenyek</span>
-				{#if effectiveScrolled}
-					<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-				{:else}
-					<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-				{/if}
-			</a>
-		
-		<!-- Year Dropdown -->
+	<!-- Desktop Navigation -->
+	<div class="hidden lg:flex items-center space-x-0.5 xl:space-x-1">
+		<!-- Main navigation links -->
+		<a href="{base}/#programs" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 scroll-smooth rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+			<span class="relative z-10">Programok</span>
+			{#if effectiveScrolled}
+				<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			{:else}
+				<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			{/if}
+		</a>
+		<a href="{base}/#dates" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+			<span class="relative z-10">Fontos Időpontok</span>
+			{#if effectiveScrolled}
+				<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			{:else}
+				<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			{/if}
+		</a>
+		<a href="{base}/#international" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+			<span class="relative z-10">Nemzetközi Versenyek</span>
+			{#if effectiveScrolled}
+				<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			{:else}
+				<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			{/if}
+		</a>		<!-- Year Dropdown -->
 		<div class="relative year-dropdown">
 			<button
 				on:click|stopPropagation|preventDefault={toggleYearDropdown}
 				type="button"
-				class="relative px-3 py-2 text-sm font-medium transition-all duration-200 flex items-center space-x-1 rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+				class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 flex items-center space-x-1 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
 				<span class="relative z-10 flex items-center space-x-1">
 					<span>Korábbi Évek</span>
-					<svg class="w-4 h-4 transition-transform duration-200" class:rotate-180={yearDropdownOpen} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<svg class="w-3 xl:w-4 h-3 xl:h-4 transition-transform duration-200" class:rotate-180={yearDropdownOpen} fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 					</svg>
 				</span>
@@ -141,7 +139,7 @@
 	</div>
 
 	<!-- Hall of Fame Link -->
-	<a href="{base}/hall-of-fame" class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+	<a href="{base}/hall-of-fame" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
 					<span class="relative z-10">Hall of Fame</span>
 					{#if effectiveScrolled}
 						<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
@@ -151,7 +149,7 @@
 				</a>
 
 				<!-- GY.I.K. Link -->
-				<a href="{base}/gyik" class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+				<a href="{base}/gyik" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
 					<span class="relative z-10">GY.I.K.</span>
 					{#if effectiveScrolled}
 						<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
@@ -161,42 +159,42 @@
 				</a>
 
 				<!-- Vertical divider -->
-				<div class="h-6 w-0.5 mx-2 transition-colors duration-500" class:bg-desert-300={effectiveScrolled} style={!effectiveScrolled ? 'background-color: rgba(255, 255, 255, 0.3);' : ''}></div>
+				<div class="h-6 w-0.5 mx-1 xl:mx-2 transition-colors duration-500" class:bg-desert-300={effectiveScrolled} style={!effectiveScrolled ? 'background-color: rgba(255, 255, 255, 0.3);' : ''}></div>
 
 				<!-- Social icons -->
 				<a 
 					href="{base}/contact"
-					class="px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
+					class="px-2 xl:px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
 					aria-label="Contact"
 				>
-					<i class="fas fa-envelope text-xl"></i>
+					<i class="fas fa-envelope text-lg xl:text-xl"></i>
 				</a>
 				<a 
 					href="https://discord.gg/KKTzNebjGW" 
 					target="_blank" 
 					rel="noopener noreferrer"
-					class="px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
+					class="px-2 xl:px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
 					aria-label="Discord"
 				>
-					<i class="fab fa-discord text-xl"></i>
+					<i class="fab fa-discord text-lg xl:text-xl"></i>
 				</a>
 				<a 
 					href="https://www.linkedin.com/company/hungarian-ai-olympiad-haio/" 
 					target="_blank" 
 					rel="noopener noreferrer"
-					class="px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
+					class="px-2 xl:px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
 					aria-label="LinkedIn"
 				>
-					<i class="fab fa-linkedin text-xl"></i>
+					<i class="fab fa-linkedin text-lg xl:text-xl"></i>
 				</a>
 
 				<!-- Vertical divider -->
-				<div class="h-6 w-0.5 mx-2 transition-colors duration-500" class:bg-desert-300={effectiveScrolled} style={!effectiveScrolled ? 'background-color: rgba(255, 255, 255, 0.3);' : ''}></div>
+				<div class="h-6 w-0.5 mx-1 xl:mx-2 transition-colors duration-500" class:bg-desert-300={effectiveScrolled} style={!effectiveScrolled ? 'background-color: rgba(255, 255, 255, 0.3);' : ''}></div>
 
 				<!-- Language switcher -->
 				<button
 					on:click={toggleLanguage}
-					class="px-4 py-2 text-sm font-semibold transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
+					class="px-3 xl:px-4 py-2 text-xs xl:text-sm font-semibold transition-all duration-300 whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
 				>
 					{currentLanguage}
 				</button>
