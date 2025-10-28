@@ -130,10 +130,10 @@
 			</button>
 			{#if yearDropdownOpen}
 				<div class="absolute top-full left-0 mt-2 w-32 bg-off-white rounded-lg shadow-lg border border-desert-200 py-1 animate-fadeIn">
-					<a href="{base}/2025" class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">
+					<a href="{base}/2025" on:click={() => yearDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">
 						2025
 					</a>
-					<a href="{base}/2024" class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">
+					<a href="{base}/2024" on:click={() => yearDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">
 						2024
 					</a>
 				</div>

@@ -48,15 +48,15 @@
 
 <!-- COOKIE CONSENT BANNER -->
 {#if showCookieBanner}
-<div class="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md z-50 animate-fadeInUp">
+<div class="fixed bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md z-50 animate-fadeInUp">
     <div class="bg-desert-800/95 backdrop-blur-lg rounded-xl shadow-2xl border border-desert-600/50 overflow-hidden">
-        <div class="p-4 sm:p-6">
-            <div class="flex items-start gap-3 mb-4">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-warm-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="p-3 sm:p-6">
+            <div class="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <svg class="w-4 h-4 sm:w-6 sm:h-6 text-warm-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                    <h4 class="text-off-white font-semibold text-base sm:text-lg mb-2">Cookie beállítások</h4>
+                    <h4 class="text-off-white font-semibold text-sm sm:text-lg mb-1 sm:mb-2">Cookie beállítások</h4>
                     <p class="text-desert-200 text-xs sm:text-sm leading-relaxed">
                         A weboldalunk sütiket használ a legjobb felhasználói élmény biztosítása érdekében. Kérjük, válassza ki a preferenciáit.
                     </p>
@@ -66,13 +66,13 @@
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <button
                     on:click={acceptAllCookies}
-                    class="flex-1 px-4 py-2.5 bg-warm-blue text-white font-medium rounded-lg hover:bg-warm-blue/80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"
+                    class="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 bg-warm-blue text-white text-sm font-medium rounded-lg hover:bg-warm-blue/80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"
                 >
                     Összes elfogadása
                 </button>
                 <button
                     on:click={declineAllCookies}
-                    class="flex-1 px-4 py-2.5 bg-desert-700 text-desert-100 font-medium rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-500/50"
+                    class="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 bg-desert-700 text-desert-100 text-sm font-medium rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-500/50"
                 >
                     Csak szükségesek
                 </button>
@@ -80,7 +80,7 @@
             
             <button
                 on:click={openCookieSettings}
-                class="w-full mt-3 text-desert-300 text-sm hover:text-warm-blue transition-colors duration-200 underline"
+                class="w-full mt-2 sm:mt-3 text-desert-300 text-xs sm:text-sm hover:text-warm-blue transition-colors duration-200 underline"
             >
                 Részletes beállítások
             </button>
