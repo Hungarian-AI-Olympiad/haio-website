@@ -357,7 +357,7 @@
 </section>
 
 <!-- PROGRAMS SECTION WITH DIVIDER - SEAMLESS BACKGROUND -->
-<section id="programs" class="min-h-screen bg-desert-100 relative overflow-hidden" data-animate="divider">
+<section id="programs" class="bg-desert-100 relative overflow-hidden py-16 md:py-24" data-animate="divider">
     <!-- Neural Network Background -->
     <div class="absolute inset-0 opacity-20">
         <NeuralNetwork nodeCount={25} position="full" />
@@ -399,7 +399,7 @@
         </div>
 
         <!-- PROGRESSION PATH -->
-        <div class="grid lg:grid-cols-3 gap-6 lg:gap-6 max-w-7xl mx-auto relative mt-4">
+	<div class="grid lg:grid-cols-3 gap-6 max-w-screen-lg w-full mx-auto px-4 sm:px-6 relative mt-4">
             
             <!-- Animated Roadmap Path (Desktop Only) -->
             <div class="hidden lg:block absolute -top-12 left-0 right-0 pointer-events-none z-0">
@@ -691,7 +691,7 @@
 </section>
 
 <!-- FONTOS IDŐPONTOK (TIMELINE) SECTION - PROFESSIONAL VERSION -->
-<section class="min-h-screen bg-desert-100 relative overflow-hidden py-24">
+<section class="bg-desert-100 relative overflow-hidden py-16 md:py-24">
 	<!-- Neural Network Background -->
 	<div class="absolute inset-0 opacity-20">
 		<NeuralNetwork nodeCount={25} position="full" />
@@ -844,14 +844,45 @@
 
 <!-- NEMZETKÖZI VERSENYEK (INTERNATIONAL COMPETITIONS) SECTION -->
 <section 
-	class="relative overflow-hidden transition-all duration-1000"
-	class:opacity-0={!internationalSectionVisible}
-	class:opacity-100={internationalSectionVisible}
-	data-animate="international-section"
+	class="relative overflow-hidden transition-all duration-1000 pt-0 pb-32 md:pb-40"
+	   class:opacity-0={!internationalSectionVisible}
+	   class:opacity-100={internationalSectionVisible}
+	   data-animate="international-section"
 >
+	<!-- Split background: IOAI left, IAIO right -->
+	<div class="absolute inset-0 w-full h-full flex">
+		<!-- Left: IOAI -->
+		<div class="w-1/2 h-full relative">
+			{#each ioaiImages as image, index}
+				<div 
+					class="absolute inset-0 transition-all duration-[2000ms] ease-in-out"
+					class:opacity-100={currentIoaiIndex === index}
+					class:opacity-0={currentIoaiIndex !== index}
+					class:scale-100={currentIoaiIndex === index}
+					class:scale-110={currentIoaiIndex !== index}
+					style="background-image: url('{image}'); background-size: cover; background-position: center;"
+				></div>
+			{/each}
+			<div class="absolute inset-0 bg-gradient-to-br from-dark-blue/70 via-dark-blue/50 to-dark-blue/30"></div>
+		</div>
+		<!-- Right: IAIO -->
+		<div class="w-1/2 h-full relative">
+			{#each iaioImages as image, index}
+				<div 
+					class="absolute inset-0 transition-all duration-[2000ms] ease-in-out"
+					class:opacity-100={currentIaioIndex === index}
+					class:opacity-0={currentIaioIndex !== index}
+					class:scale-100={currentIaioIndex === index}
+					class:scale-110={currentIaioIndex !== index}
+					style="background-image: url('{image}'); background-size: cover; background-position: center;"
+				></div>
+			{/each}
+			<div class="absolute inset-0 bg-gradient-to-bl from-warm-blue/70 via-warm-blue/50 to-warm-blue/30"></div>
+		</div>
+	</div>
 	<!-- Section Header - Floating Above -->
-	<div class="absolute top-12 sm:top-16 md:top-8 left-0 right-0 z-30 text-center px-6">
-		<div class="inline-block mb-2 md:mb-3">
+	<div class="relative z-30 text-center px-6 pt-24 md:pt-32">
+	<div class="inline-block mb-2 md:mb-3">
 			<span class="px-3 py-1.5 md:px-4 md:py-2 bg-dark-blue/80 backdrop-blur-md text-white text-xs md:text-sm font-semibold rounded-full shadow-lg">
 				Világverseny
 			</span>
@@ -864,29 +895,15 @@
 		</p>
 	</div>
 
-	<!-- Full Viewport Split Screen -->
-	<div class="flex flex-col lg:flex-row min-h-screen">
+	<!-- Content Row -->
+	<div class="relative z-30 flex flex-col lg:flex-row">
 		
 		<!-- IOAI - Left Half (Full Viewport Height) -->
-		<div class="relative group flex-1 min-h-[50vh] lg:min-h-screen pt-40 sm:pt-44 md:pt-32 lg:pt-0">
-			<!-- Background Image with Zoom Animation -->
-			<div class="absolute inset-0 overflow-hidden">
-				{#each ioaiImages as image, index}
-					<div 
-						class="absolute inset-0 transition-all duration-[2000ms] ease-in-out"
-						class:opacity-100={currentIoaiIndex === index}
-						class:opacity-0={currentIoaiIndex !== index}
-						class:scale-100={currentIoaiIndex === index}
-						class:scale-110={currentIoaiIndex !== index}
-						style="background-image: url('{image}'); background-size: cover; background-position: center;"
-					></div>
-				{/each}
-				<!-- Dark Overlay -->
-				<div class="absolute inset-0 bg-gradient-to-br from-dark-blue/70 via-dark-blue/50 to-dark-blue/30"></div>
-			</div>
+			   <div class="relative group flex-1 flex items-stretch pt-40 sm:pt-44 md:pt-32 lg:pt-0">
+			   <!-- No per-column background image -->
 
 			<!-- Frosted Glass Card - Centered -->
-			<div class="relative h-full flex items-center justify-center p-6 md:p-12">
+			   <div class="relative flex-1 flex items-center justify-center p-6 md:p-12">
 				<div class="backdrop-blur-2xl bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl max-w-md w-full transform transition-all duration-500 group-hover:scale-[1.02] group-hover:bg-white/15">
 					<!-- Competition Badge -->
 					<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full mb-4 border border-white/30">
@@ -935,25 +952,11 @@
 		</div>
 
 		<!-- IAIO - Right Half (Full Viewport Height) -->
-		<div class="relative group flex-1 min-h-[50vh] lg:min-h-screen">
-			<!-- Background Image with Zoom Animation -->
-			<div class="absolute inset-0 overflow-hidden">
-				{#each iaioImages as image, index}
-					<div 
-						class="absolute inset-0 transition-all duration-[2000ms] ease-in-out"
-						class:opacity-100={currentIaioIndex === index}
-						class:opacity-0={currentIaioIndex !== index}
-						class:scale-100={currentIaioIndex === index}
-						class:scale-110={currentIaioIndex !== index}
-						style="background-image: url('{image}'); background-size: cover; background-position: center;"
-					></div>
-				{/each}
-				<!-- Dark Overlay -->
-				<div class="absolute inset-0 bg-gradient-to-bl from-warm-blue/70 via-warm-blue/50 to-warm-blue/30"></div>
-			</div>
+			   <div class="relative group flex-1 flex items-stretch">
+			   <!-- No per-column background image -->
 
 			<!-- Frosted Glass Card - Centered -->
-			<div class="relative h-full flex items-center justify-center p-6 md:p-12">
+			   <div class="relative flex-1 flex items-center justify-center p-6 md:p-12">
 				<div class="backdrop-blur-2xl bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl max-w-md w-full transform transition-all duration-500 group-hover:scale-[1.02] group-hover:bg-white/15">
 					<!-- Competition Badge -->
 					<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full mb-4 border border-white/30">

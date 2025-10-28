@@ -377,14 +377,16 @@
 						<label for="email" class="block text-sm font-semibold text-dark-blue mb-1.5">
 							Email cím <span class="text-red-500">*</span>
 						</label>
-						<input
-							type="email"
-							id="email"
-							bind:value={formData.email}
-							required
-							class="w-full px-4 py-2.5 border border-desert-300 rounded-lg focus:ring-2 focus:ring-warm-blue focus:border-transparent transition-all duration-200 outline-none"
-							placeholder="email@example.com"
-						/>
+						   <input
+							   type="email"
+							   id="email"
+							   bind:value={formData.email}
+							   required
+							   inputmode="email"
+							   pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+							   class="w-full px-4 py-2.5 border border-desert-300 rounded-lg focus:ring-2 focus:ring-warm-blue focus:border-transparent transition-all duration-200 outline-none"
+							   placeholder="email@example.com"
+						   />
 					</div>
 
 					<!-- Subject -->
@@ -475,7 +477,6 @@
 							</svg>
 							<div>
 								<h4 class="text-red-900 font-semibold mb-1">Hiba történt</h4>
-								<p class="text-red-700 text-sm">{errorMessage || 'Kérjük, próbálja újra később.'}</p>
 							</div>
 						</div>
 					{/if}

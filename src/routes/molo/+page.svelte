@@ -184,7 +184,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="min-h-screen bg-desert-100 relative overflow-hidden pt-32 pb-20">
+<section class="bg-desert-100 relative overflow-hidden pt-32 pb-8 py-16">
 	<!-- Neural Network Background -->
 	<div class="absolute inset-0 opacity-20 pointer-events-none">
 		<NeuralNetwork nodeCount={25} position="full" />
@@ -214,7 +214,7 @@
 		</div>
 
 		<!-- Three Main Components -->
-		<div class="grid md:grid-cols-3 gap-8 mb-20 fade-in-section">
+		<div class="grid md:grid-cols-3 gap-8 mb-0 fade-in-section">
 			<!-- Card 1: Aszinkron Online Roadmap -->
 			<div class="relative bg-gradient-to-br from-white via-white to-desert-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-2 border-transparent hover:border-warm-blue group overflow-hidden flex flex-col">
 				<!-- Animated background gradient on hover -->
@@ -313,7 +313,7 @@
 </section>
 
 <!-- Ütemterv/Roadmap Section -->
-<section id="roadmap" class="min-h-screen bg-desert-100 relative overflow-hidden py-20">
+<section id="roadmap" class="bg-desert-100 relative overflow-hidden py-16">
 	<!-- Neural Network Background -->
 	<div class="absolute inset-0 opacity-20 pointer-events-none">
 		<NeuralNetwork nodeCount={25} position="full" />
@@ -420,7 +420,7 @@
 </section>
 
 <!-- Interaktív Gyakorló Feladatsorok Section -->
-<section id="notebooks" class="min-h-screen bg-desert-100 relative overflow-hidden py-20">
+<section id="notebooks" class="bg-desert-100 relative overflow-hidden py-16">
 	<!-- Neural Network Background -->
 	<div class="absolute inset-0 opacity-20 pointer-events-none">
 		<NeuralNetwork nodeCount={25} position="full" />
@@ -434,7 +434,7 @@
 
 		<!-- Notebook Categories -->
 		{#each Object.entries(groupedNotebooks) as [category, categoryNotebooks], categoryIndex}
-			<div class="mb-16 fade-in-section">
+			   <div class="mb-8 fade-in-section">
 				<h3 class="text-3xl font-bold text-dark-blue mb-8 text-center">{category}</h3>
 				
 				<!-- Notebooks Grid - 5 per row -->

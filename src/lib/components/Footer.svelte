@@ -34,10 +34,10 @@
                 <h3 class="text-off-white font-semibold mb-3 text-sm">Gyors Linkek</h3>
                 <ul class="space-y-1.5">
                     <li><a href="{base}/" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">Főoldal</a></li>
-                    <li><a href="{base}/molo.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">MÓLÓ</a></li>
-                    <li><a href="{base}/haio.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">HAIO</a></li>
-                    <li><a href="{base}/gyik.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">GY.I.K.</a></li>
-                    <li><a href="{base}/adatkezelesi.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">Adatkezelési tájékoztató</a></li>
+                    <li><a href="{base}/molo" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">MÓLÓ</a></li>
+                    <li><a href="{base}/haio" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">HAIO</a></li>
+                    <li><a href="{base}/gyik" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">GY.I.K.</a></li>
+                    <li><a href="{base}/adatkezelesi" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">Adatkezelési tájékoztató</a></li>
                 </ul>
             </div>
 
