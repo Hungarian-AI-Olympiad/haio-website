@@ -207,13 +207,13 @@
 	{#if menuOpen}
 		<div class="lg:hidden mt-4 pb-4 animate-fadeIn mobile-menu-container">
 			<div class="flex flex-col space-y-2">
-				<a href="{base}/#programs" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+				<a href="{base}/#programs" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 						Programok
 					</a>
-					<a href="{base}/#dates" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+					<a href="{base}/#dates" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 						Fontos Időpontok
 					</a>
-					<a href="{base}/#international" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+					<a href="{base}/#international" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 						Nemzetközi Versenyek
 					</a>
 					
@@ -222,23 +222,21 @@
 					<div class="pl-4 space-y-1">
 						<a href="{base}/2025" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">2025</a>
 						<a href="{base}/2024" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">2024</a>
-				</div>
-			</div>				<a href="{base}/hall-of-fame" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+			</div>
+		</div>				<a href="{base}/hall-of-fame" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 					Hall of Fame
 				</a>
 
-				<a href="{base}/gyik" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+				<a href="{base}/gyik" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 					GY.I.K.
-				</a>					<div class="border-t border-desert-200 my-2"></div>
-
-					<div class="flex items-center justify-around px-4 py-2">
-						<a href="{base}/contact" class="text-dark-blue hover:text-warm-blue" aria-label="Contact">
+				</a>					<div class="border-t border-desert-200 my-2"></div>					<div class="flex items-center justify-around px-4 py-2">
+						<a href="{base}/contact" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Contact">
 							<i class="fas fa-envelope text-2xl"></i>
 						</a>
-						<a href="https://discord.gg/KKTzNebjGW" target="_blank" rel="noopener noreferrer" class="text-dark-blue hover:text-warm-blue" aria-label="Discord">
+						<a href="https://discord.gg/KKTzNebjGW" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Discord">
 							<i class="fab fa-discord text-2xl"></i>
 						</a>
-						<a href="https://www.linkedin.com/company/hungarian-ai-olympiad-haio/" target="_blank" rel="noopener noreferrer" class="text-dark-blue hover:text-warm-blue" aria-label="LinkedIn">
+						<a href="https://www.linkedin.com/company/hungarian-ai-olympiad-haio/" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="LinkedIn">
 							<i class="fab fa-linkedin text-2xl"></i>
 						</a>
 						<button on:click={toggleLanguage} class="text-sm font-semibold text-dark-blue hover:text-warm-blue px-4 py-1 border border-desert-300 rounded-lg">
