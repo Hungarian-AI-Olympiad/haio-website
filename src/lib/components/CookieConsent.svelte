@@ -48,22 +48,22 @@
 
 <!-- COOKIE CONSENT BANNER -->
 {#if showCookieBanner}
-<div class="fixed bottom-6 left-6 max-w-md z-50 animate-fadeInUp">
+<div class="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md z-50 animate-fadeInUp">
     <div class="bg-desert-800/95 backdrop-blur-lg rounded-xl shadow-2xl border border-desert-600/50 overflow-hidden">
-        <div class="p-6">
+        <div class="p-4 sm:p-6">
             <div class="flex items-start gap-3 mb-4">
-                <svg class="w-6 h-6 text-warm-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-warm-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                    <h4 class="text-off-white font-semibold text-lg mb-2">Cookie beállítások</h4>
-                    <p class="text-desert-200 text-sm leading-relaxed">
+                    <h4 class="text-off-white font-semibold text-base sm:text-lg mb-2">Cookie beállítások</h4>
+                    <p class="text-desert-200 text-xs sm:text-sm leading-relaxed">
                         A weboldalunk sütiket használ a legjobb felhasználói élmény biztosítása érdekében. Kérjük, válassza ki a preferenciáit.
                     </p>
                 </div>
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-3">
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <button
                     on:click={acceptAllCookies}
                     class="flex-1 px-4 py-2.5 bg-warm-blue text-white font-medium rounded-lg hover:bg-warm-blue/80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"

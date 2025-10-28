@@ -39,4 +39,4 @@ jobs:
           server-dir: /
           protocol: ftp
           timeout: 600000
-          log-level: verbose
+          log-level: standard

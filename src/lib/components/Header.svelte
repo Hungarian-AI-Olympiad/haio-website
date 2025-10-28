@@ -41,8 +41,9 @@
 <svelte:window on:click={handleClickOutside} on:scroll={handleScroll} />
 
 <nav 
-	class="fixed w-full z-50 top-0 transition-all duration-300 bg-off-white md:bg-transparent"
-	class:md:bg-off-white={effectiveScrolled}
+	class="fixed w-full z-50 top-0 transition-all duration-300 bg-off-white"
+	class:lg:bg-transparent={!effectiveScrolled}
+	class:lg:bg-off-white={effectiveScrolled}
 	class:shadow-lg={effectiveScrolled}
 	class:border-b={effectiveScrolled}
 	class:border-desert-200={effectiveScrolled}
@@ -55,22 +56,22 @@
 				href="{base}/" 
 				class="flex items-center space-x-3 group"
 			>
-				<img src={`${base}/img/HAIO_img.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
-				<div class="flex flex-col leading-tight">
-					<span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue md:text-dark-blue md:drop-shadow-none" class:md:text-white={!effectiveScrolled} class:md:drop-shadow-lg={!effectiveScrolled}>
-						HAIO
-					</span>
-					<span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80 text-dark-blue md:text-dark-blue md:drop-shadow-none" class:md:text-white={!effectiveScrolled} class:md:drop-shadow-lg={!effectiveScrolled}>
-						Hungarian AI Olympiad
-					</span>
-				</div>
+			<img src={`${base}/img/HAIO_img.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+			<div class="flex flex-col leading-tight">
+				<span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
+					HAIO
+				</span>
+				<span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
+					Hungarian AI Olympiad
+				</span>
+			</div>
 			</a>
 
 			<!-- Mobile menu button -->
 			<button 
 				on:click={() => (menuOpen = !menuOpen)} 
 				type="button" 
-				class="md:hidden focus:outline-none transition-all duration-300 mobile-menu-button text-dark-blue hover:text-warm-blue"
+				class="lg:hidden focus:outline-none transition-all duration-300 mobile-menu-button text-dark-blue hover:text-warm-blue"
 			>
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					{#if menuOpen}
@@ -82,7 +83,7 @@
 			</button>
 
 		<!-- Desktop Navigation -->
-		<div class="hidden md:flex items-center space-x-1">
+		<div class="hidden lg:flex items-center space-x-1">
 			<!-- Main navigation links -->
 			<a href="{base}/#programs" class="relative px-3 py-2 text-sm font-medium transition-all duration-200 scroll-smooth rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
 				<span class="relative z-10">Programok</span>
@@ -112,7 +113,8 @@
 		<!-- Year Dropdown -->
 		<div class="relative year-dropdown">
 			<button
-				on:click|stopPropagation={toggleYearDropdown}
+				on:click|stopPropagation|preventDefault={toggleYearDropdown}
+				type="button"
 				class="relative px-3 py-2 text-sm font-medium transition-all duration-200 flex items-center space-x-1 rounded-md group overflow-hidden" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
 				<span class="relative z-10 flex items-center space-x-1">
 					<span>Korábbi Évek</span>
@@ -201,11 +203,11 @@
 			</div>
 		</div>
 
-		<!-- Mobile Navigation -->
-		{#if menuOpen}
-			<div class="md:hidden mt-4 pb-4 animate-fadeIn mobile-menu-container">
-				<div class="flex flex-col space-y-2">
-					<a href="{base}/#programs" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+	<!-- Mobile Navigation -->
+	{#if menuOpen}
+		<div class="lg:hidden mt-4 pb-4 animate-fadeIn mobile-menu-container">
+			<div class="flex flex-col space-y-2">
+				<a href="{base}/#programs" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 						Programok
 					</a>
 					<a href="{base}/#dates" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">

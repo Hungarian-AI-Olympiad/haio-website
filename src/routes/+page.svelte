@@ -864,7 +864,7 @@
 	<div class="flex flex-col lg:flex-row min-h-screen">
 		
 		<!-- IOAI - Left Half (Full Viewport Height) -->
-		<div class="relative group flex-1 min-h-[50vh] lg:min-h-screen pt-32 sm:pt-36 md:pt-24 lg:pt-0">
+		<div class="relative group flex-1 min-h-[50vh] lg:min-h-screen pt-40 sm:pt-44 md:pt-32 lg:pt-0">
 			<!-- Background Image with Zoom Animation -->
 			<div class="absolute inset-0 overflow-hidden">
 				{#each ioaiImages as image, index}
