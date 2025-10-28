@@ -22,7 +22,7 @@
         <div class="md:col-span-1">
             <div class="flex items-center space-x-2 mb-3">
                 <div class="bg-white rounded-md p-1.5">
-                    <img src={`${base}/img/HAIO_img.png`} alt="HAIO Logo" class="h-8 w-8 object-contain" />
+                    <img src={`${base}/img/footer/haio_footer.png`} alt="HAIO Logo" class="h-8 w-8 object-contain" />
                 </div>
                 <span class="text-lg font-bold text-off-white">HAIO</span>
             </div>
@@ -34,10 +34,10 @@
                 <h3 class="text-off-white font-semibold mb-3 text-sm">Gyors Linkek</h3>
                 <ul class="space-y-1.5">
                     <li><a href="{base}/" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">Főoldal</a></li>
-                    <li><a href="{base}/molo" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">MÓLÓ</a></li>
-                    <li><a href="{base}/haio" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">HAIO</a></li>
-                    <li><a href="{base}/gyik" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">GY.I.K.</a></li>
-                    <li><a href="{base}/adatkezelesi" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">Adatkezelési tájékoztató</a></li>
+                    <li><a href="{base}/molo.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">MÓLÓ</a></li>
+                    <li><a href="{base}/haio.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">HAIO</a></li>
+                    <li><a href="{base}/gyik.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">GY.I.K.</a></li>
+                    <li><a href="{base}/adatkezelesi.html" class="text-desert-300 hover:text-off-white transition-colors duration-200 text-xs">Adatkezelési tájékoztató</a></li>
                 </ul>
             </div>
 

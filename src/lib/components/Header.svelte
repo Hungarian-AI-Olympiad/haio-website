@@ -57,7 +57,7 @@ let programDropdownOpen = false;
 				href="{base}/" 
 				class="flex items-center space-x-3 group"
 			>
-			<img src={`${base}/img/HAIO_img.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+			<img src={`${base}/img/header/haio_header.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
 			<div class="flex flex-col leading-tight">
 				<span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
 					HAIO
@@ -108,9 +108,9 @@ let programDropdownOpen = false;
 			   </button>
 			   {#if programDropdownOpen}
 				   <div class="absolute top-full left-0 mt-2 w-48 bg-off-white rounded-lg shadow-lg border border-desert-200 py-1 animate-fadeIn z-50">
-					   <a href="{base}/#programs-desc" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">Programok Bemutatása</a>
-					   <a href="{base}/molo" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">MÓLÓ</a>
-					   <a href="{base}/haio" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">HAIO</a>
+				   <a href="{base}/#programs-desc" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">Programok Bemutatása</a>
+				   <a href="{base}/molo.html" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">MÓLÓ</a>
+				   <a href="{base}/haio.html" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">HAIO</a>
 				   </div>
 			   {/if}
 		   </div>
@@ -184,7 +184,7 @@ let programDropdownOpen = false;
 
 				<!-- Social icons -->
 				<a 
-					href="{base}/contact"
+					   href="{base}/contact.html"
 					class="px-2 xl:px-3 py-2 transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
 					aria-label="Contact"
 				>
@@ -231,8 +231,8 @@ let programDropdownOpen = false;
 					   <div class="text-sm font-medium text-desert-700 mb-2">Programok</div>
 					   <div class="pl-4 space-y-1">
 						   <a href="{base}/#programs-desc" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">Programok Bemutatása</a>
-						   <a href="{base}/molo" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">MÓLÓ</a>
-						   <a href="{base}/haio" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">HAIO</a>
+						<a href="{base}/molo.html" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">MÓLÓ</a>
+						<a href="{base}/haio.html" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">HAIO</a>
 					   </div>
 				   </div>
 					<a href="{base}/#dates" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
@@ -255,7 +255,7 @@ let programDropdownOpen = false;
 				<a href="{base}/gyik" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 					GY.I.K.
 				</a>					<div class="border-t border-desert-200 my-2"></div>					<div class="flex items-center justify-around px-4 py-2">
-						<a href="{base}/contact" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Contact">
+						<a href="{base}/contact.html" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Contact">
 							<i class="fas fa-envelope text-2xl"></i>
 						</a>
 						<a href="https://discord.gg/KKTzNebjGW" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Discord">
