@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { PUBLIC_WEB3FORMS_ACCESS_KEY } from '$env/static/public';
 	import NeuralNetwork from '$lib/components/NeuralNetwork.svelte';
 
 	let formData = {
@@ -126,21 +127,44 @@
 			errorMessage = 'Kérjük, töltse ki a captcha-t a folytatáshoz.';
 			return;
 		}
+
+		// Validate required fields
+		if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+			submitStatus = 'error';
+			errorMessage = 'Minden mező kitöltése kötelező.';
+			return;
+		}
+
+		// Validate email format
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(formData.email)) {
+			submitStatus = 'error';
+			errorMessage = 'Érvénytelen email formátum.';
+			return;
+		}
 		
 		isSubmitting = true;
 		submitStatus = 'idle';
 		errorMessage = '';
 
 		try {
-			const response = await fetch('/api/contact', {
+			// Submit directly to Web3Forms API
+			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
 				headers: {
-					'Content-Type': 'application/json'
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
 				},
 				body: JSON.stringify({
-					...formData,
+					access_key: PUBLIC_WEB3FORMS_ACCESS_KEY,
+					name: formData.name,
+					email: formData.email,
+					subject: formData.subject,
+					message: formData.message,
+					from_name: 'HAIO Kapcsolat Űrlap',
+					replyto: formData.email,
 					'h-captcha-response': captchaToken,
-					honeypot: honeypot
+					botcheck: honeypot // Web3Forms honeypot field
 				})
 			});
 
@@ -162,11 +186,11 @@
 				}, 5000);
 			} else {
 				submitStatus = 'error';
-				errorMessage = result.error || 'Failed to send message';
+				errorMessage = result.message || 'Nem sikerült elküldeni az üzenetet';
 			}
 		} catch (error) {
 			submitStatus = 'error';
-			errorMessage = 'Network error. Please try again later.';
+			errorMessage = 'Hálózati hiba. Kérjük, próbálja újra később.';
 		} finally {
 			isSubmitting = false;
 		}

@@ -26,7 +26,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_BASE_PATH: /mi_olimpia
-          WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+          PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
 
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
