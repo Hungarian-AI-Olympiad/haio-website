@@ -363,8 +363,10 @@
         <NeuralNetwork nodeCount={25} position="full" />
     </div>
     
-    <!-- Divider at top -->
-    <Divider showCopyright={true} animated={true} visible={dividerVisible}/>
+	<!-- Divider at top -->
+	<Divider showCopyright={true} animated={true} visible={dividerVisible}/>
+	<!-- Anchor for Programok bemutatása scroll target: just below divider -->
+	<div id="programs-desc" tabindex="-1" class="h-0"></div>
     
     <!-- Programs content -->
     <div class="container mx-auto px-6 relative z-10 pb-16">
@@ -376,19 +378,21 @@
             class:translate-y-0={programsSectionVisible}
             data-animate="programs-section"
         >
-            <div 
-                class="inline-block mb-6 transition-all duration-700"
-                class:opacity-0={!programsPillVisible}
-                class:scale-90={!programsPillVisible}
-                class:opacity-100={programsPillVisible}
-                class:scale-100={programsPillVisible}
-                data-animate="programs-pill"
-            >
-                <span class="px-4 py-2 bg-gradient-to-r from-dark-blue to-warm-blue text-white text-sm font-semibold rounded-full shadow-lg">
-                    Versenyútvonal
-                </span>
-            </div>
-            <h2 class="text-4xl md:text-6xl font-bold text-dark-blue mb-4">Programjaink</h2>
+			<div 
+				class="inline-block mb-6 transition-all duration-700"
+				class:opacity-0={!programsPillVisible}
+				class:scale-90={!programsPillVisible}
+				class:opacity-100={programsPillVisible}
+				class:scale-100={programsPillVisible}
+				data-animate="programs-pill"
+			>
+				<span class="px-4 py-2 bg-gradient-to-r from-dark-blue to-warm-blue text-white text-sm font-semibold rounded-full shadow-lg">
+					Versenyútvonal
+				</span>
+			</div>
+			<!-- Anchor for Programok bemutatása scroll target: just below divider and Versenyútvonal -->
+			<div id="programs-desc" tabindex="-1" class="h-0"></div>
+			<h2 class="text-4xl md:text-6xl font-bold text-dark-blue mb-4">Programjaink</h2>
             <p class="text-desert-700 text-lg md:text-xl max-w-2xl mx-auto">
                 Fedezd fel az Mesterséges Intelligencia Diákolimpia útját az első lépésektől a nemzetközi szintig
             </p>
@@ -680,8 +684,10 @@
 </section>
 
 <!-- DIVIDER BEFORE TIMELINE -->
-<section id="dates" class="relative bg-desert-100" data-animate="divider-2">
+<section class="relative bg-desert-100" data-animate="divider-2">
 	<Divider showCopyright={true} animated={true} visible={divider2Visible} />
+	<!-- Anchor for Fontos Időpontok scroll target: just below divider -->
+	<div id="dates" tabindex="-1" class="h-0"></div>
 </section>
 
 <!-- FONTOS IDŐPONTOK (TIMELINE) SECTION - PROFESSIONAL VERSION -->
@@ -830,8 +836,10 @@
 </section>
 
 <!-- DIVIDER BEFORE INTERNATIONAL SECTION -->
-<section id="international" class="relative bg-desert-100" data-animate="divider-3">
+<section class="relative bg-desert-100" data-animate="divider-3">
 	<Divider showCopyright={true} animated={true} visible={divider3Visible} />
+	<!-- Anchor for Nemzetközi Versenyek scroll target: just below divider -->
+	<div id="international" tabindex="-1" class="h-0"></div>
 </section>
 
 <!-- NEMZETKÖZI VERSENYEK (INTERNATIONAL COMPETITIONS) SECTION -->

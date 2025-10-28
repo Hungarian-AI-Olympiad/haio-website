@@ -16,7 +16,8 @@
             // Check if user has already set cookie preferences
             const cookieConsent = localStorage.getItem('cookieConsent');
             if (!cookieConsent) {
-                showCookieBanner = true;
+                // Show settings popup directly instead of banner
+                showCookieSettings = true;
             } else {
                 cookiePreferences = JSON.parse(cookieConsent);
             }
@@ -28,65 +29,26 @@
         cookiePreferences = { necessary: true, analytics: true, marketing: true };
         localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
         showCookieBanner = false;
+        showCookieSettings = false;
     }
     
     function declineAllCookies() {
         cookiePreferences = { necessary: true, analytics: false, marketing: false };
         localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
         showCookieBanner = false;
+        showCookieSettings = false;
     }
     
     function savePreferences() {
         localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
         showCookieSettings = false;
+        showCookieBanner = false;
     }
     
     function openCookieSettings() {
         showCookieSettings = true;
     }
 </script>
-
-<!-- COOKIE CONSENT BANNER -->
-{#if showCookieBanner}
-<div class="fixed bottom-1 left-1 right-1 max-w-[260px] sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs z-50 animate-fadeInUp">
-    <div class="bg-desert-800/95 backdrop-blur-lg rounded sm:rounded-xl shadow-2xl border border-desert-600/50 overflow-hidden">
-        <div class="p-1 sm:p-5">
-            <div class="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-4">
-                <svg class="w-2.5 h-2.5 sm:w-5 sm:h-5 text-warm-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div class="flex-1 min-w-0">
-                    <p class="text-off-white text-[7px] sm:text-xs leading-[1.1] sm:leading-relaxed">
-                        Sütiket használunk
-                    </p>
-                </div>
-            </div>
-            
-            <div class="flex gap-0.5 sm:gap-2 mb-0.5 sm:mb-0">
-                <button
-                    on:click={acceptAllCookies}
-                    class="flex-1 px-1 py-0.5 sm:px-3 sm:py-2 bg-warm-blue text-white text-[7px] sm:text-sm font-medium rounded-sm sm:rounded-lg hover:bg-warm-blue/80 transition-all duration-300 focus:outline-none leading-none"
-                >
-                    Elfogad
-                </button>
-                <button
-                    on:click={declineAllCookies}
-                    class="flex-1 px-1 py-0.5 sm:px-3 sm:py-2 bg-desert-700 text-desert-100 text-[7px] sm:text-sm font-medium rounded-sm sm:rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none leading-none"
-                >
-                    Elutasít
-                </button>
-            </div>
-            
-            <button
-                on:click={openCookieSettings}
-                class="w-full text-desert-300 text-[6px] sm:text-xs hover:text-warm-blue transition-colors duration-200 underline leading-none py-0.5 sm:py-0"
-            >
-                Beállítások
-            </button>
-        </div>
-    </div>
-</div>
-{/if}
 
 <!-- COOKIE PREFERENCES MODAL -->
 {#if showCookieSettings}
@@ -95,18 +57,30 @@
         <div class="p-3 sm:p-6 md:p-8">
             <div class="flex items-center justify-between mb-3 sm:mb-6">
                 <h3 class="text-base sm:text-2xl font-bold text-off-white">Cookie preferenciák</h3>
+            </div>
+            
+            <p class="text-desert-200 text-xs sm:text-base mb-3 sm:mb-4 leading-relaxed">
+                A sütik segítenek nekünk a webhely működésének biztosításában, tartalmak és hirdetések személyre szabásában, valamint forgalmi adataink elemzésében.
+            </p>
+
+            <!-- Quick action buttons -->
+            <div class="flex gap-2 mb-4 sm:mb-6">
                 <button
-                    on:click={() => showCookieSettings = false}
-                    class="text-desert-300 hover:text-off-white transition-colors p-1 sm:p-2"
+                    on:click={acceptAllCookies}
+                    class="flex-1 px-4 py-2.5 bg-warm-blue text-white text-sm sm:text-base font-medium rounded-lg hover:bg-warm-blue/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-warm-blue focus:ring-offset-2 focus:ring-offset-desert-900"
                 >
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    Összes elfogadása
+                </button>
+                <button
+                    on:click={declineAllCookies}
+                    class="flex-1 px-4 py-2.5 bg-desert-700 text-desert-100 text-sm sm:text-base font-medium rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-600 focus:ring-offset-2 focus:ring-offset-desert-900"
+                >
+                    Összes elutasítása
                 </button>
             </div>
             
-            <p class="text-desert-200 text-xs sm:text-base mb-3 sm:mb-6 leading-relaxed">
-                A sütik segítenek nekünk a webhely működésének biztosításában, tartalmak és hirdetések személyre szabásában, valamint forgalmi adataink elemzésében.
+            <p class="text-desert-300 text-xs sm:text-sm mb-3 sm:mb-4 italic">
+                Vagy állítsa be egyénileg:
             </p>
             
             <div class="space-y-2 sm:space-y-4">

@@ -252,7 +252,7 @@
 		const message = `Kedves Szervezők,\n\nEgy hibát találtam a(z) "${notebook.title}" című notebook-ban.\n\nA hiba leírása:\n`;
 		const encodedSubject = encodeURIComponent(subject);
 		const encodedMessage = encodeURIComponent(message);
-		window.location.href = `/contact?subject=${encodedSubject}&message=${encodedMessage}`;
+		window.location.href = `${base}/contact?subject=${encodedSubject}&message=${encodedMessage}`;
 	}
 
 	onMount(() => {

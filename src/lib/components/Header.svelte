@@ -1,4 +1,5 @@
 <script lang="ts">
+let programDropdownOpen = false;
 	import { base } from '$app/paths';
 	
 	export let alwaysScrolled = false;
@@ -85,14 +86,34 @@
 	<!-- Desktop Navigation -->
 	<div class="hidden lg:flex items-center space-x-0.5 xl:space-x-1">
 		<!-- Main navigation links -->
-		<a href="{base}/#programs" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 scroll-smooth rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
-			<span class="relative z-10">Programok</span>
-			{#if effectiveScrolled}
-				<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-			{:else}
-				<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-			{/if}
-		</a>
+		   <!-- Programok Dropdown -->
+		   <div class="relative program-dropdown">
+			   <button
+				   on:click|stopPropagation|preventDefault={() => programDropdownOpen = !programDropdownOpen}
+				   type="button"
+				   class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 flex items-center space-x-1 rounded-md group overflow-hidden whitespace-nowrap"
+				   class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
+			   >
+				   <span class="relative z-10 flex items-center space-x-1">
+					   <span>Programok</span>
+					   <svg class="w-3 xl:w-4 h-3 xl:h-4 transition-transform duration-200" class:rotate-180={programDropdownOpen} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					   </svg>
+				   </span>
+				   {#if effectiveScrolled}
+					   <span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+				   {:else}
+					   <span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+				   {/if}
+			   </button>
+			   {#if programDropdownOpen}
+				   <div class="absolute top-full left-0 mt-2 w-48 bg-off-white rounded-lg shadow-lg border border-desert-200 py-1 animate-fadeIn z-50">
+					   <a href="{base}/#programs-desc" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">Programok bemutatása</a>
+					   <a href="{base}/molo" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">MÓLÓ</a>
+					   <a href="{base}/haio" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">HAIO</a>
+				   </div>
+			   {/if}
+		   </div>
 		<a href="{base}/#dates" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
 			<span class="relative z-10">Fontos Időpontok</span>
 			{#if effectiveScrolled}
@@ -101,14 +122,14 @@
 				<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
 			{/if}
 		</a>
-		<a href="{base}/#international" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
-			<span class="relative z-10">Nemzetközi Versenyek</span>
-			{#if effectiveScrolled}
-				<span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-			{:else}
-				<span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-			{/if}
-		</a>		<!-- Year Dropdown -->
+		   <a href="{base}/#international" class="relative px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-md group overflow-hidden whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+			   <span class="relative z-10">Nemzetközi Versenyek</span>
+			   {#if effectiveScrolled}
+				   <span class="absolute inset-0 bg-desert-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			   {:else}
+				   <span class="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+			   {/if}
+		   </a>
 		<div class="relative year-dropdown">
 			<button
 				on:click|stopPropagation|preventDefault={toggleYearDropdown}
@@ -205,9 +226,15 @@
 	{#if menuOpen}
 		<div class="lg:hidden mt-4 pb-4 animate-fadeIn mobile-menu-container">
 			<div class="flex flex-col space-y-2">
-				<a href="{base}/#programs" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
-						Programok
-					</a>
+				   <!-- Programok Dropdown (Mobile) -->
+				   <div class="px-4 py-2">
+					   <div class="text-sm font-medium text-desert-700 mb-2">Programok</div>
+					   <div class="pl-4 space-y-1">
+						   <a href="{base}/#programs-desc" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">Programok bemutatása</a>
+						   <a href="{base}/molo" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">MÓLÓ</a>
+						   <a href="{base}/haio" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">HAIO</a>
+					   </div>
+				   </div>
 					<a href="{base}/#dates" on:click={() => menuOpen = false} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 						Fontos Időpontok
 					</a>

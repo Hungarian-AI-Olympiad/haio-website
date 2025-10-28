@@ -4,6 +4,7 @@ import { base } from '$app/paths';
 import Header from '$lib/components/Header.svelte';
 import Footer from '$lib/components/Footer.svelte';
 import CookieConsent from '$lib/components/CookieConsent.svelte';
+import { afterNavigate } from '$app/navigation';
 import '../app.css';
 
 $: isHomePage = $page.url.pathname === `${base}/` || $page.url.pathname === base;
@@ -17,6 +18,18 @@ $: isHaioPage = $page.url.pathname === `${base}/haio`;
 $: isHallOfFamePage = $page.url.pathname === `${base}/hall-of-fame`;
 // alwaysScrolled should be true for all pages EXCEPT the home page
 $: alwaysScrolled = !isHomePage;
+
+afterNavigate(() => {
+	const hash = window.location.hash;
+	if (hash && hash.length > 1) {
+		setTimeout(() => {
+			const el = document.getElementById(hash.slice(1));
+			if (el) {
+				el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		}, 50);
+	}
+});
 </script>
 
 <div class="min-h-screen bg-desert-50">

@@ -141,7 +141,7 @@
 		const message = `Kedves Szervezők,\n\nEgy hibát találtam a(z) "${notebook.title}" című ${notebook.type === 'colab' ? 'notebook-ban' : 'videóban'}.\n\nA hiba leírása:\n`;
 		const encodedSubject = encodeURIComponent(subject);
 		const encodedMessage = encodeURIComponent(message);
-		window.location.href = `/contact?subject=${encodedSubject}&message=${encodedMessage}`;
+		window.location.href = `${base}/contact?subject=${encodedSubject}&message=${encodedMessage}`;
 	}
 
 	function getPreviewUrl(notebook: Notebook) {
