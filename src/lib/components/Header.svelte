@@ -108,7 +108,7 @@ let programDropdownOpen = false;
 			   </button>
 			   {#if programDropdownOpen}
 				   <div class="absolute top-full left-0 mt-2 w-48 bg-off-white rounded-lg shadow-lg border border-desert-200 py-1 animate-fadeIn z-50">
-					   <a href="{base}/#programs-desc" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">Programok bemutatása</a>
+					   <a href="{base}/#programs-desc" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">Programok Bemutatása</a>
 					   <a href="{base}/molo" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">MÓLÓ</a>
 					   <a href="{base}/haio" on:click={() => programDropdownOpen = false} class="block px-4 py-2 text-sm text-dark-blue hover:bg-desert-100 transition-colors duration-150">HAIO</a>
 				   </div>
@@ -230,7 +230,7 @@ let programDropdownOpen = false;
 				   <div class="px-4 py-2">
 					   <div class="text-sm font-medium text-desert-700 mb-2">Programok</div>
 					   <div class="pl-4 space-y-1">
-						   <a href="{base}/#programs-desc" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">Programok bemutatása</a>
+						   <a href="{base}/#programs-desc" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">Programok Bemutatása</a>
 						   <a href="{base}/molo" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">MÓLÓ</a>
 						   <a href="{base}/haio" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">HAIO</a>
 					   </div>
