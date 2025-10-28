@@ -217,15 +217,13 @@
 						Nemzetközi Versenyek
 					</a>
 					
-					<div class="px-4 py-2">
-						<div class="text-sm font-medium text-desert-700 mb-2">Korábbi Évek</div>
-						<div class="pl-4 space-y-1">
-							<a href="{base}/2025" class="block py-1 text-sm text-dark-blue hover:text-warm-blue">2025</a>
-							<a href="{base}/2024" class="block py-1 text-sm text-dark-blue hover:text-warm-blue">2024</a>
-					</div>
+				<div class="px-4 py-2">
+					<div class="text-sm font-medium text-desert-700 mb-2">Korábbi Évek</div>
+					<div class="pl-4 space-y-1">
+						<a href="{base}/2025" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">2025</a>
+						<a href="{base}/2024" on:click={() => menuOpen = false} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">2024</a>
 				</div>
-
-				<a href="{base}/hall-of-fame" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+			</div>				<a href="{base}/hall-of-fame" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 					Hall of Fame
 				</a>
 
