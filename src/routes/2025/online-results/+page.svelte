@@ -22,7 +22,7 @@
 
 	async function loadCSVData() {
 		try {
-			const onlineResponse = await fetch('/data/online-results-2025.csv');
+			const onlineResponse = await fetch(`${base}/data/online-results-2025.csv`);
 			const onlineText = await onlineResponse.text();
 			onlineResults = parseCSV(onlineText);
 		} catch (error) {
@@ -85,7 +85,7 @@
 	<div class="container mx-auto px-6 relative z-10">
 		<!-- Back Button -->
 		<div class="mb-6">
-			<a href="{base}/2025" class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold">
+			<a href="{base}/2025#online-results" class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold">
 				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 				</svg>

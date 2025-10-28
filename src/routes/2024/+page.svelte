@@ -162,7 +162,7 @@
 
 	async function loadCSVData() {
 		try {
-			const orszagosResponse = await fetch('/data/orszagos-results-2024.csv');
+			const orszagosResponse = await fetch(`${base}/data/orszagos-results-2024.csv`);
 			const orszagosText = await orszagosResponse.text();
 			orszagosResults = parseCSV(orszagosText);
 		} catch (error) {
@@ -305,7 +305,7 @@
 		</div>
 
 		<!-- ORSZÁGOS DÖNTŐ -->
-		<div class="mb-24">
+		<div class="mb-24" id="results">
 			<div
 				class="text-center mb-16 transition-all duration-700"
 				class:opacity-0={!orszagosSectionVisible}
@@ -391,7 +391,74 @@
 					data-animate="orszagos-results"
 				>
 					<h3 class="text-2xl font-bold text-dark-blue mb-8 text-center">Dobogósok</h3>
-					<div class="flex items-end justify-center gap-4 md:gap-8 max-w-4xl mx-auto">
+					
+					<!-- Mobile: Stacked layout -->
+					<div class="flex flex-col items-center gap-6 md:hidden max-w-xs mx-auto">
+						<!-- 1st Place (Mobile) -->
+						{#if orszagosResults.length > 0}
+							<div class="w-full">
+								<div class="bg-gradient-to-br from-yellow-50 to-amber-100 rounded-xl p-4 border-4 border-yellow-400 shadow-2xl">
+									<div class="flex justify-center mb-3">
+										<div class="relative w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 flex items-center justify-center text-2xl font-bold text-white shadow-xl ring-4 ring-yellow-300">
+											1
+											<div class="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+												<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+													<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="text-center">
+										<p class="text-xs font-semibold text-amber-600 mb-2">Első helyezett</p>
+										<div class="inline-block px-3 py-1.5 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-lg shadow-lg">
+											<p class="text-xl font-bold text-white">{orszagosResults[0]['Összpontszám']} <span class="text-xs">pont</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						{/if}
+
+						<!-- 2nd Place (Mobile) -->
+						{#if orszagosResults.length > 1}
+							<div class="w-full">
+								<div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-4 border-4 border-gray-400 shadow-xl">
+									<div class="flex justify-center mb-3">
+										<div class="w-14 h-14 rounded-full bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 flex items-center justify-center text-xl font-bold text-white shadow-lg ring-4 ring-gray-300">
+											2
+										</div>
+									</div>
+									<div class="text-center">
+										<p class="text-xs font-semibold text-gray-600 mb-2">Második helyezett</p>
+										<div class="inline-block px-3 py-1.5 bg-gray-300 rounded-lg">
+											<p class="text-xl font-bold text-gray-700">{orszagosResults[1]['Összpontszám']} <span class="text-xs">pont</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						{/if}
+
+						<!-- 3rd Place (Mobile) -->
+						{#if orszagosResults.length > 2}
+							<div class="w-full">
+								<div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 border-4 border-orange-400 shadow-xl">
+									<div class="flex justify-center mb-3">
+										<div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 flex items-center justify-center text-xl font-bold text-white shadow-lg ring-4 ring-orange-300">
+											3
+										</div>
+									</div>
+									<div class="text-center">
+										<p class="text-xs font-semibold text-orange-600 mb-2">Harmadik helyezett</p>
+										<div class="inline-block px-3 py-1.5 bg-orange-300 rounded-lg">
+											<p class="text-xl font-bold text-orange-700">{orszagosResults[2]['Összpontszám']} <span class="text-xs">pont</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						{/if}
+					</div>
+
+					<!-- Desktop: Podium layout -->
+					<div class="hidden md:flex items-end justify-center gap-4 md:gap-8 max-w-4xl mx-auto">
 						<!-- 2nd Place -->
 						{#if orszagosResults.length > 1}
 							<div class="flex-1 max-w-xs">

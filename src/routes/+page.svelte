@@ -249,11 +249,11 @@
 		
 		<!-- Partner Logos - Top Left -->
 		<div class="absolute top-20 left-6 flex items-center gap-4 z-20">
-			<div class="rounded-lg p-4 hover:bg-white/20 hover:backdrop-blur-sm transition-all duration-300">
-				<img src={`${base}/img/logo1.png`} alt="Partner Logo 1" class="h-20 object-contain" />
+			<div class="rounded-lg p-2 sm:p-4 bg-white/90 backdrop-blur-sm transition-all duration-300 hover:bg-white/95">
+				<img src={`${base}/img/logo1.png`} alt="Partner Logo 1" class="h-16 sm:h-20 object-contain" />
 			</div>
-			<div class="rounded-lg p-4 hover:bg-white/20 hover:backdrop-blur-sm transition-all duration-300">
-				<img src={`${base}/img/logo2.png`} alt="Partner Logo 2" class="h-20 object-contain" />
+			<div class="rounded-lg p-2 sm:p-4 bg-white/90 backdrop-blur-sm transition-all duration-300 hover:bg-white/95">
+				<img src={`${base}/img/logo2.png`} alt="Partner Logo 2" class="h-16 sm:h-20 object-contain" />
 			</div>
 		</div>
 		
@@ -296,17 +296,17 @@
 
 	<!-- Centered Content -->
 	<div class="absolute inset-0 flex items-center justify-center z-10">
-		<div class="text-center px-6 max-w-5xl">
-			<p class="text-3xl md:text-5xl text-white font-light mb-8 animate-fadeInUp leading-relaxed drop-shadow-2xl">
+		<div class="text-center px-4 sm:px-6 max-w-5xl w-full">
+			<p class="text-2xl sm:text-3xl md:text-5xl text-white font-light mb-6 sm:mb-8 animate-fadeInUp leading-relaxed drop-shadow-2xl">
 				Üdvözlünk a Mesterséges Intelligencia Diákolimpia Hivatalos Weboldalán
 			</p>
 			
 			<!-- Call-to-action Buttons -->
-			<div class="flex flex-row items-center gap-6 justify-center animate-fadeInUp animation-delay-200">
+			<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 justify-center animate-fadeInUp animation-delay-200 mx-auto">
 				<a 
 					href="#programs" 
 					on:click={(e) => smoothScroll(e, '#programs')}
-					class="w-72 group px-10 py-3.5 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-dark-blue transition-all duration-300 text-base whitespace-nowrap"
+					class="group px-4 sm:px-10 py-3.5 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-dark-blue transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
 				>
 					<span class="flex items-center justify-center gap-2.5">
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,7 +319,7 @@
 					href="https://discord.gg/KKTzNebjGW" 
 					target="_blank" 
 					rel="noopener noreferrer"
-					class="w-72 group px-10 py-3.5 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-[#5865F2] transition-all duration-300 text-base whitespace-nowrap"
+					class="group px-4 sm:px-10 py-3.5 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-[#5865F2] transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
 				>
 					<span class="flex items-center justify-center gap-2.5">
 						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -332,11 +332,25 @@
 		</div>
 	</div>
 
-	<!-- Mouse scroll indicator -->
+	<!-- Scroll indicator - Mouse on desktop, Finger swipe on mobile -->
 	<div class="absolute left-1/2 transform -translate-x-1/2 animate-scrollFade z-10" style="bottom: 2rem;">
 		<a href="#programs" on:click={(e) => smoothScroll(e, '#programs')} class="block" aria-label="Scroll to programs">
-			<div class="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2">
+			<!-- Desktop: Mouse scroll indicator -->
+			<div class="hidden sm:flex w-6 h-10 border-2 border-white rounded-full justify-center pt-2">
 				<div class="w-1 h-3 bg-white rounded-full animate-scrollWheel"></div>
+			</div>
+			<!-- Mobile: Finger swipe up indicator -->
+			<div class="sm:hidden flex flex-col items-center">
+				<div class="relative h-16 w-12 flex items-end justify-center">
+					<!-- Animated circle (representing finger touch) -->
+					<div class="w-8 h-8 bg-white rounded-full absolute bottom-0 animate-swipeUp opacity-80"></div>
+					<!-- Swipe direction indicator (arrow) -->
+					<div class="absolute -top-2 animate-swipeUpArrow">
+						<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+						</svg>
+					</div>
+				</div>
 			</div>
 		</a>
 	</div>
@@ -832,16 +846,16 @@
 	data-animate="international-section"
 >
 	<!-- Section Header - Floating Above -->
-	<div class="absolute top-8 left-0 right-0 z-30 text-center px-6">
-		<div class="inline-block mb-3">
-			<span class="px-4 py-2 bg-dark-blue/80 backdrop-blur-md text-white text-sm font-semibold rounded-full shadow-lg">
+	<div class="absolute top-12 sm:top-16 md:top-8 left-0 right-0 z-30 text-center px-6">
+		<div class="inline-block mb-2 md:mb-3">
+			<span class="px-3 py-1.5 md:px-4 md:py-2 bg-dark-blue/80 backdrop-blur-md text-white text-xs md:text-sm font-semibold rounded-full shadow-lg">
 				Világverseny
 			</span>
 		</div>
-		<h2 class="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-2xl">
+		<h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-1 md:mb-2 drop-shadow-2xl">
 			Nemzetközi Versenyek
 		</h2>
-		<p class="text-white/90 text-base md:text-lg max-w-2xl mx-auto drop-shadow-lg">
+		<p class="text-white/90 text-sm md:text-base lg:text-lg max-w-2xl mx-auto drop-shadow-lg">
 			Képviseld Magyarországot a világ legnagyobb MI diákolimpiáin!
 		</p>
 	</div>
@@ -850,7 +864,7 @@
 	<div class="flex flex-col lg:flex-row min-h-screen">
 		
 		<!-- IOAI - Left Half (Full Viewport Height) -->
-		<div class="relative group flex-1 min-h-[50vh] lg:min-h-screen">
+		<div class="relative group flex-1 min-h-[50vh] lg:min-h-screen pt-32 sm:pt-36 md:pt-24 lg:pt-0">
 			<!-- Background Image with Zoom Animation -->
 			<div class="absolute inset-0 overflow-hidden">
 				{#each ioaiImages as image, index}
@@ -1192,12 +1206,42 @@
 		}
 	}
 
+	@keyframes swipeUp {
+		0%, 100% {
+			transform: translateY(0);
+			opacity: 0.6;
+		}
+		50% {
+			transform: translateY(-20px);
+			opacity: 1;
+		}
+	}
+
+	@keyframes swipeUpArrow {
+		0%, 100% {
+			transform: translateY(0);
+			opacity: 0.4;
+		}
+		50% {
+			transform: translateY(-10px);
+			opacity: 1;
+		}
+	}
+
 	.animate-scrollFade {
 		animation: scrollFade 2s ease-in-out infinite;
 	}
 
 	.animate-scrollWheel {
 		animation: scrollWheel 1.5s ease-in-out infinite;
+	}
+
+	.animate-swipeUp {
+		animation: swipeUp 2s ease-in-out infinite;
+	}
+
+	.animate-swipeUpArrow {
+		animation: swipeUpArrow 2s ease-in-out infinite;
 	}
 
 	@keyframes shimmer {

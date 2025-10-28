@@ -22,8 +22,13 @@
 	// Close dropdown when clicking outside
 	function handleClickOutside(event: MouseEvent) {
 		const target = event.target as HTMLElement;
+		// Close year dropdown if clicking outside of it
 		if (!target.closest('.year-dropdown')) {
 			yearDropdownOpen = false;
+		}
+		// Close mobile menu if clicking outside of it
+		if (!target.closest('.mobile-menu-container') && !target.closest('.mobile-menu-button')) {
+			menuOpen = false;
 		}
 	}
 
@@ -36,8 +41,8 @@
 <svelte:window on:click={handleClickOutside} on:scroll={handleScroll} />
 
 <nav 
-	class="fixed w-full z-50 top-0 transition-all duration-300"
-	class:bg-off-white={effectiveScrolled}
+	class="fixed w-full z-50 top-0 transition-all duration-300 bg-off-white md:bg-transparent"
+	class:md:bg-off-white={effectiveScrolled}
 	class:shadow-lg={effectiveScrolled}
 	class:border-b={effectiveScrolled}
 	class:border-desert-200={effectiveScrolled}
@@ -52,10 +57,10 @@
 			>
 				<img src={`${base}/img/HAIO_img.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
 				<div class="flex flex-col leading-tight">
-					<span class="text-xl font-bold tracking-wide transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+					<span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue md:text-dark-blue md:drop-shadow-none" class:md:text-white={!effectiveScrolled} class:md:drop-shadow-lg={!effectiveScrolled}>
 						HAIO
 					</span>
-					<span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80" class:text-dark-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}>
+					<span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80 text-dark-blue md:text-dark-blue md:drop-shadow-none" class:md:text-white={!effectiveScrolled} class:md:drop-shadow-lg={!effectiveScrolled}>
 						Hungarian AI Olympiad
 					</span>
 				</div>
@@ -65,7 +70,7 @@
 			<button 
 				on:click={() => (menuOpen = !menuOpen)} 
 				type="button" 
-				class="md:hidden focus:outline-none transition-all duration-300" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
+				class="md:hidden focus:outline-none transition-all duration-300 mobile-menu-button text-dark-blue hover:text-warm-blue"
 			>
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					{#if menuOpen}
@@ -198,7 +203,7 @@
 
 		<!-- Mobile Navigation -->
 		{#if menuOpen}
-			<div class="md:hidden mt-4 pb-4 animate-fadeIn">
+			<div class="md:hidden mt-4 pb-4 animate-fadeIn mobile-menu-container">
 				<div class="flex flex-col space-y-2">
 					<a href="{base}/#programs" class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
 						Programok

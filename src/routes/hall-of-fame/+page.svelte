@@ -469,46 +469,46 @@
 			</div>
 			<h1 class="text-5xl md:text-6xl font-bold text-dark-blue mb-6">Legsikeresebb Versenyzőink</h1>
 
-			<!-- Medal Statistics -->
-			<div class="flex justify-center gap-6 mt-12">
-				<div class="bg-white rounded-xl shadow-lg p-6 border border-desert-200 min-w-[140px]">
-					<div class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+			<!-- Medal Statistics - Responsive Grid -->
+			<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-12 max-w-4xl mx-auto">
+				<div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-desert-200">
+					<div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg">
+						<svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
 							{@html getMedalIcon()}
 						</svg>
 					</div>
-					<div class="text-3xl font-bold text-dark-blue mb-1">{totalMedals.gold}</div>
-					<div class="text-sm text-desert-600 font-medium">Arany</div>
+					<div class="text-2xl sm:text-3xl font-bold text-dark-blue mb-1">{totalMedals.gold}</div>
+					<div class="text-xs sm:text-sm text-desert-600 font-medium">Arany</div>
 				</div>
 
-				<div class="bg-white rounded-xl shadow-lg p-6 border border-desert-200 min-w-[140px]">
-					<div class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+				<div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-desert-200">
+					<div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center shadow-lg">
+						<svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
 							{@html getMedalIcon()}
 						</svg>
 					</div>
-					<div class="text-3xl font-bold text-dark-blue mb-1">{totalMedals.silver}</div>
-					<div class="text-sm text-desert-600 font-medium">Ezüst</div>
+					<div class="text-2xl sm:text-3xl font-bold text-dark-blue mb-1">{totalMedals.silver}</div>
+					<div class="text-xs sm:text-sm text-desert-600 font-medium">Ezüst</div>
 				</div>
 
-				<div class="bg-white rounded-xl shadow-lg p-6 border border-desert-200 min-w-[140px]">
-					<div class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+				<div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-desert-200">
+					<div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-lg">
+						<svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
 							{@html getMedalIcon()}
 						</svg>
 					</div>
-					<div class="text-3xl font-bold text-dark-blue mb-1">{totalMedals.bronze}</div>
-					<div class="text-sm text-desert-600 font-medium">Bronze</div>
+					<div class="text-2xl sm:text-3xl font-bold text-dark-blue mb-1">{totalMedals.bronze}</div>
+					<div class="text-xs sm:text-sm text-desert-600 font-medium">Bronze</div>
 				</div>
 
-				<div class="bg-white rounded-xl shadow-lg p-6 border border-desert-200 min-w-[140px]">
-					<div class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+				<div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-desert-200">
+					<div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-lg">
+						<svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
 							<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
 						</svg>
 					</div>
-					<div class="text-3xl font-bold text-dark-blue mb-1">{totalMedals.honor}</div>
-					<div class="text-sm text-desert-600 font-medium">Dicséret</div>
+					<div class="text-2xl sm:text-3xl font-bold text-dark-blue mb-1">{totalMedals.honor}</div>
+					<div class="text-xs sm:text-sm text-desert-600 font-medium">Dicséret</div>
 				</div>
 			</div>
 		</div>

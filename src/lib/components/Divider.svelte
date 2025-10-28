@@ -15,9 +15,14 @@
 		<div class="flex-1 max-w-lg">
 			<div class="h-px bg-gradient-to-r from-transparent via-desert-300 to-desert-400"></div>
 		</div>
-		<div class="px-6">
+		<div class="px-4 sm:px-6">
 			{#if showCopyright}
-				<p class="text-desert-600 font-medium whitespace-nowrap text-xs">
+				<!-- Mobile: Short version -->
+				<p class="block sm:hidden text-desert-600 font-medium text-xs text-center">
+					© 2025 HAIO
+				</p>
+				<!-- Desktop: Full version -->
+				<p class="hidden sm:block text-desert-600 font-medium whitespace-nowrap text-xs">
 					© 2025 Hungarian Artificial Intelligence Olympiad (HAIO). Minden jog fenntartva.
 				</p>
 			{:else}

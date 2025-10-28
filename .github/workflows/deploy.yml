@@ -1,4 +1,4 @@
-name: Deploy via SCP
+name: Deploy via FTP
 
 on:
   push:
@@ -28,39 +28,15 @@ jobs:
           PUBLIC_BASE_PATH: /mi_olimpia
           PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
 
-      - name: Install sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass rsync
-
-      - name: Check hostname resolution
-        run: |
-          echo "Resolving host:" ${{ secrets.SCP_HOSTNAME }}
-          nslookup ${{ secrets.SCP_HOSTNAME }} || true
-          echo "Testing connectivity..."
-          ping -c 3 ${{ secrets.SCP_HOSTNAME }} || true
-          echo "Testing SSH port..."
-          timeout 10 bash -c "</dev/tcp/${{ secrets.SCP_HOSTNAME }}/22" && echo "Port 22 is open" || echo "Port 22 is closed or filtered"
-
-      - name: Copy files via SCP (with rsync fallback)
-        timeout-minutes: 10
-        run: |
-          # Set SSH port (default 22, override with secret if needed)
-          SSH_PORT="${{ secrets.SCP_PORT || '22' }}"
-          
-          # Try rsync first (more reliable)
-          if sshpass -p "${{ secrets.SCP_PASSWORD }}" \
-             rsync -avz --timeout=30 \
-                   -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=no -o ConnectTimeout=30" \
-                   ./build/ \
-                   ${{ secrets.SCP_USER }}@${{ secrets.SCP_HOSTNAME }}:${{ secrets.SCP_TARGET_DIR }}/; then
-            echo "Rsync deployment successful"
-          else
-            echo "Rsync failed, trying SCP..."
-            sshpass -p "${{ secrets.SCP_PASSWORD }}" \
-            scp -P $SSH_PORT \
-                -o StrictHostKeyChecking=no \
-                -o ConnectTimeout=30 \
-                -o ServerAliveInterval=10 \
-                -o ServerAliveCountMax=3 \
-                -v -r ./build/* \
-            ${{ secrets.SCP_USER }}@${{ secrets.SCP_HOSTNAME }}:${{ secrets.SCP_TARGET_DIR }}
-          fi
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          local-dir: ./build/
+          server-dir: /
+          protocol: ftp
+          timeout: 600000
+          log-level: verbose

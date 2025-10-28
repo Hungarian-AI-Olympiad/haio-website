@@ -229,9 +229,9 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold text-dark-blue mb-4 group-hover:text-warm-blue transition-colors duration-300">Aszinkron Online Roadmap</h3>
+					<h3 class="text-2xl font-bold text-dark-blue mb-4 group-hover:text-warm-blue transition-colors duration-300">Aszinkron Online Roadmap (Angol)</h3>
 					<p class="text-gray-600 leading-relaxed mb-6 flex-1">
-						Gondosan összeállított videó tananyagok, amelyek lépésről lépésre vezetnek végig a mesterséges intelligencia világán. Saját tempódban tanulhatsz, bármikor, bárhonnan. A bevezető anyagoktól a haladó NLP technikákig minden megtalálható.
+						Gondosan összeállított videó tananyagok, amelyek lépésről lépésre vezetnek végig a mesterséges intelligencia világán. Saját tempódban tanulhatsz, bármikor, bárhonnan. A bevezető anyagoktól a haladó NLP technikákig minden megtalálható. A tananyagok elsajátításához angol nyelvtudás szükséges.
 					</p>
 					<a 
 						href="#roadmap"
@@ -617,7 +617,7 @@
 {/if}
 
 <!-- Szinkron Felkészítők Section -->
-<section id="szinkron" class="min-h-[60vh] bg-desert-100 relative overflow-hidden py-20">
+<section id="szinkron" class="bg-desert-100 relative overflow-hidden py-20">
 	<!-- Neural Network Background -->
 	<div class="absolute inset-0 opacity-20 pointer-events-none">
 		<NeuralNetwork nodeCount={25} position="full" />
