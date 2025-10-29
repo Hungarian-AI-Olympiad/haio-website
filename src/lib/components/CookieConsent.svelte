@@ -1,54 +1,108 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { browser } from '$app/environment';
+    import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
 
-    // Cookie consent state
-    let showCookieBanner = false;
+    // Replace with your actual Google Analytics ID
+    const GOOGLE_ANALYTICS_ID = PUBLIC_GOOGLE_ANALYTICS_ID;
+
     let showCookieSettings = false;
     let cookiePreferences = {
-        necessary: true, // Always true
-        analytics: false,
-        marketing: false
+        necessary: true,
+        analytics: false
     };
 
     onMount(() => {
         if (browser) {
-            // Check if user has already set cookie preferences
             const cookieConsent = localStorage.getItem('cookieConsent');
             if (!cookieConsent) {
-                // Show settings popup directly instead of banner
                 showCookieSettings = true;
             } else {
                 cookiePreferences = JSON.parse(cookieConsent);
+                loadScriptsBasedOnConsent();
             }
         }
     });
 
-    // Cookie consent functions
     function acceptAllCookies() {
-        cookiePreferences = { necessary: true, analytics: true, marketing: true };
-        localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
-        showCookieBanner = false;
-        showCookieSettings = false;
+        cookiePreferences = { necessary: true, analytics: true };
+        saveAndLoadScripts();
     }
     
     function declineAllCookies() {
-        cookiePreferences = { necessary: true, analytics: false, marketing: false };
-        localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
-        showCookieBanner = false;
-        showCookieSettings = false;
+        cookiePreferences = { necessary: true, analytics: false };
+        saveAndLoadScripts();
     }
     
     function savePreferences() {
+        saveAndLoadScripts();
+    }
+
+    function saveAndLoadScripts() {
         localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
         showCookieSettings = false;
-        showCookieBanner = false;
+        loadScriptsBasedOnConsent();
     }
-    
+
+    function loadScriptsBasedOnConsent() {
+        if (!browser) return;
+
+        // Load Google Analytics if analytics consent given
+        if (cookiePreferences.analytics && !window.gaLoaded) {
+            loadGoogleAnalytics();
+            window.gaLoaded = true;
+        }
+    }
+
+    function loadGoogleAnalytics() {
+        // Create and inject Google Analytics script
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+        document.head.appendChild(script1);
+
+        // Initialize gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(...args) {
+            window.dataLayer.push(args);
+        }
+        window.gtag = gtag;
+        
+        gtag('js', new Date());
+        gtag('config', GOOGLE_ANALYTICS_ID, {
+            anonymize_ip: true, // Anonymize IPs for better privacy
+            cookie_flags: 'SameSite=None;Secure'
+        });
+
+        // Update consent mode
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+
+        console.log('Google Analytics loaded');
+    }
+
     function openCookieSettings() {
         showCookieSettings = true;
     }
 </script>
+
+<!-- Google Consent Mode -->
+<svelte:head>
+    <script>
+        // Set default consent state BEFORE any tracking loads
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+</svelte:head>
 
 <!-- COOKIE PREFERENCES MODAL -->
 {#if showCookieSettings}
@@ -60,22 +114,22 @@
             </div>
             
             <p class="text-desert-200 text-xs sm:text-base mb-3 sm:mb-4 leading-relaxed">
-                A sütik segítenek nekünk a webhely működésének biztosításában, tartalmak és hirdetések személyre szabásában, valamint forgalmi adataink elemzésében.
+                A sütik segítenek nekünk a webhely működésének biztosításában és forgalmi adataink elemzésében. Az adatkezelésről további információt az <a href="/privacy" class="text-warm-blue hover:underline">Adatvédelmi Nyilatkozatunkban</a> talál.
             </p>
 
             <!-- Quick action buttons -->
             <div class="flex gap-2 mb-4 sm:mb-6">
                 <button
                     on:click={acceptAllCookies}
-                    class="flex-1 px-4 py-2.5 bg-warm-blue text-white text-sm sm:text-base font-medium rounded-lg hover:bg-warm-blue/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-warm-blue focus:ring-offset-2 focus:ring-offset-desert-900"
+                    class="flex-1 px-4 py-2.5 bg-warm-blue text-white text-sm sm:text-base font-medium rounded-lg hover:bg-warm-blue/80 transition-all duration-300"
                 >
-                    Összes elfogadása
+                    Elfogadom
                 </button>
                 <button
                     on:click={declineAllCookies}
-                    class="flex-1 px-4 py-2.5 bg-desert-700 text-desert-100 text-sm sm:text-base font-medium rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-600 focus:ring-offset-2 focus:ring-offset-desert-900"
+                    class="flex-1 px-4 py-2.5 bg-desert-700 text-desert-100 text-sm sm:text-base font-medium rounded-lg hover:bg-desert-600 transition-all duration-300"
                 >
-                    Összes elutasítása
+                    Csak szükségesek
                 </button>
             </div>
             
@@ -111,51 +165,29 @@
                         </label>
                     </div>
                     <p class="text-desert-300 text-[10px] sm:text-sm">
-                        Ezek a sütik lehetővé teszik számunkra a látogatások és forgalmi források mérését.
-                    </p>
+    Lehetővé teszik a weboldal használatának mérését és elemzését anonimizált adatok alapján. Ezeket az információkat kizárólag szolgáltatásaink fejlesztésére és a felhasználói élmény optimalizálására használjuk.
+</p>
                 </div>
-                
-                <!-- Marketing Cookies -->
-                <div class="bg-desert-800/50 rounded-lg p-2 sm:p-4 border border-desert-700">
-                    <div class="flex items-center justify-between mb-1 sm:mb-2">
-                        <h4 class="text-off-white font-semibold text-xs sm:text-base">Marketing sütik</h4>
-                        <label class="relative inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                            bind:checked={cookiePreferences.marketing}
-                            class="sr-only peer"
-                        />
-                        <div class="w-9 h-5 sm:w-11 sm:h-6 bg-desert-700 peer-focus:ring-2 peer-focus:ring-warm-blue rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-warm-blue"></div>
-                    </label>
-                </div>
-                <p class="text-desert-300 text-[10px] sm:text-sm">
-                    Ezek a sütik releváns hirdetések megjelenítésére használhatók.
-                </p>
             </div>
-        </div>
-        
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-6">
-            <button
-                on:click={savePreferences}
-                class="flex-1 px-3 py-2 sm:px-6 sm:py-3 bg-warm-blue text-white text-xs sm:text-base font-semibold rounded-lg hover:bg-warm-blue/80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"
-            >
-                Beállítások mentése
-            </button>
-            <button
-                on:click={() => showCookieSettings = false}
-                class="flex-1 px-3 py-2 sm:px-6 sm:py-3 bg-desert-700 text-desert-100 text-xs sm:text-base font-semibold rounded-lg hover:bg-desert-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-desert-500/50"
-            >
-                Mégse
-            </button>
+            
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-6">
+                <button
+                    on:click={savePreferences}
+                    class="flex-1 px-3 py-2 sm:px-6 sm:py-3 bg-warm-blue text-white text-xs sm:text-base font-semibold rounded-lg hover:bg-warm-blue/80 transition-all duration-300"
+                >
+                    Beállítások mentése
+                </button>
+            </div>
         </div>
     </div>
 </div>
-</div>
-{/if}<!-- COOKIE PREFERENCES BUTTON (Persistent after consent) -->
-{#if !showCookieBanner && !showCookieSettings}
+{/if}
+
+<!-- COOKIE PREFERENCES BUTTON -->
+{#if !showCookieSettings}
 <button
     on:click={openCookieSettings}
-    class="fixed bottom-6 left-6 z-40 bg-desert-800/90 hover:backdrop-blur-lg text-desert-200 p-3 rounded-lg shadow-lg border border-desert-600/50 hover:bg-desert-700/90 hover:text-off-white transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-blue/50"
+    class="fixed bottom-6 left-6 z-40 bg-desert-800/90 backdrop-blur-lg text-desert-200 p-3 rounded-lg shadow-lg border border-desert-600/50 hover:bg-desert-700/90 hover:text-off-white transition-all duration-300"
     title="Cookie Beállítások"
 >
     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -167,21 +199,3 @@
     </svg>
 </button>
 {/if}
-
-<style>
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fadeInUp {
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0;
-    }
-</style>
