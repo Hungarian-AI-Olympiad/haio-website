@@ -5,13 +5,15 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build && npm run generate:sitemap",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"deploy": "node deploy.js",
-		"build-and-deploy": "npm run build && npm run deploy"
+		"build-and-deploy": "npm run build && npm run deploy",
+		"generate:sitemap": "npx svelte-sitemap --domain http://tehetseg.inf.elte.hu --out-dir build"
+
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.0",
@@ -24,6 +26,7 @@
 		"ftp-deploy": "^2.4.7",
 		"svelte": "^5.39.5",
 		"svelte-check": "^4.3.2",
+		"svelte-sitemap": "^2.7.1",
 		"tailwindcss": "^3.4.9",
 		"typescript": "^5.9.2",
 		"vite": "^7.1.7"
