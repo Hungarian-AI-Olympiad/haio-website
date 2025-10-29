@@ -35,12 +35,50 @@ const config = {
 			mode: 'auto',
 			directives: {
 				'default-src': ['self'],
-				'script-src': ['self', 'unsafe-inline', 'https://js.hcaptcha.com', 'https://cdnjs.cloudflare.com', 'https://www.youtube.com'],
-				'style-src': ['self', 'unsafe-inline', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'],
-				'font-src': ['self', 'https://fonts.gstatic.com', 'https://cdnjs.cloudflare.com'],
-				'img-src': ['self', 'data:', 'https:', 'blob:'],
-				'frame-src': ['https://www.youtube.com', 'https://colab.research.google.com', 'https://newrelic.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
-				'connect-src': ['self', 'https://api.web3forms.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
+				'script-src': [
+					'self', 
+					'unsafe-inline', 
+					'https://js.hcaptcha.com', 
+					'https://cdnjs.cloudflare.com', 
+					'https://www.youtube.com',
+					'https://www.googletagmanager.com',
+					'https://*.google-analytics.com',
+					'https://*.googletagmanager.com'
+				],
+				'style-src': [
+					'self', 
+					'unsafe-inline', 
+					'https://fonts.googleapis.com', 
+					'https://cdnjs.cloudflare.com'
+				],
+				'font-src': [
+					'self', 
+					'https://fonts.gstatic.com', 
+					'https://cdnjs.cloudflare.com'
+				],
+				'img-src': [
+					'self', 
+					'data:', 
+					'https:', 
+					'blob:'
+				],
+				'frame-src': [
+					'https://www.youtube.com', 
+					'https://colab.research.google.com', 
+					'https://newrelic.com', 
+					'https://hcaptcha.com', 
+					'https://*.hcaptcha.com'
+				],
+				'connect-src': [
+					'self', 
+					'https://api.web3forms.com', 
+					'https://hcaptcha.com', 
+					'https://*.hcaptcha.com',
+					'https://www.google-analytics.com',
+					'https://*.google-analytics.com',
+					'https://*.analytics.google.com',
+					'https://*.googletagmanager.com'
+				],
 				'object-src': ['none'],
 				'base-uri': ['self']
 			}
