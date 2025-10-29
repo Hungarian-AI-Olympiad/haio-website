@@ -55,13 +55,11 @@
     }
 
     function loadGoogleAnalytics() {
-        // Create and inject Google Analytics script
         const script1 = document.createElement('script');
         script1.async = true;
         script1.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
         document.head.appendChild(script1);
 
-        // Initialize gtag
         window.dataLayer = window.dataLayer || [];
         function gtag(...args) {
             window.dataLayer.push(args);
@@ -70,17 +68,18 @@
         
         gtag('js', new Date());
         gtag('config', GOOGLE_ANALYTICS_ID, {
-            anonymize_ip: true, // Anonymize IPs for better privacy
-            cookie_flags: 'SameSite=None;Secure'
+            anonymize_ip: true,
+            // Remove Secure flag for HTTP
+            cookie_flags: 'SameSite=Lax'  // Changed from 'SameSite=None;Secure'
         });
 
-        // Update consent mode
         gtag('consent', 'update', {
             'analytics_storage': 'granted'
         });
 
         console.log('Google Analytics loaded');
     }
+
 
     function openCookieSettings() {
         showCookieSettings = true;
