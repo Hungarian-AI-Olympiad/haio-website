@@ -8,17 +8,29 @@
 	let tableVisible = false;
 
 function goBack(fallback: string) {
-	// Prefer going back in history when possible, otherwise navigate to fallback
-	try {
-		if (history.length > 1) {
-			history.back();
-		} else {
-			window.location.href = fallback;
-		}
-	} catch (e) {
-		window.location.href = fallback;
-	}
+    // Check if we came from the target page
+    const referrer = document.referrer;
+    const targetPage = `${window.location.origin}${base}/2024`;
+    
+    if (referrer.startsWith(targetPage) && history.length > 1) {
+        // We came from the 2024 page, use history.back()
+        history.back();
+        // After navigation, scroll to the hash position
+        setTimeout(() => {
+            const hash = fallback.split('#')[1];
+            if (hash) {
+                const element = document.getElementById(hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }, 100);
+    } else {
+        // Direct navigation with hash
+        window.location.href = fallback;
+    }
 }
+
 
 	function parseCSV(text: string) {
 		const lines = text.trim().split('\n');
