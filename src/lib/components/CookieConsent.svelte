@@ -76,8 +76,6 @@
         gtag('consent', 'update', {
             'analytics_storage': 'granted'
         });
-
-        console.log('Google Analytics loaded');
     }
 
 

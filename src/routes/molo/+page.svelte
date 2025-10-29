@@ -10,7 +10,7 @@
 		category: string;
 		colabLink: string;
 		preview: string;
-		type: 'colab' | 'youtube';
+		type: 'colab' | 'youtube' | 'drive';
 		difficulty: 'kezdő' | 'középhaladó' | 'haladó';
 	}
 
@@ -56,13 +56,42 @@
 			thumbnailVideoId: 'rmVRLeJRkl4', // CS224N - First video from the playlist
 			difficulty: 'haladó'
 		}
+		
 	];
 
 	const notebooks: Notebook[] = [
 		{
+			title: 'Google Colab Notebook bevezető',
+			category: 'Programozási Háttér',
+			colabLink: 'https://colab.research.google.com/drive/1z7iYIT576djhJgzDssG51WO1TCLovEL2?usp=sharing',
+			preview: 'Google Colab alapok és használat.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		
+
+
+		{
+			title: 'Python Telepítés',
+			category: 'Programozási Háttér',
+			colabLink: 'https://youtu.be/azhw7rTw_e0',
+			preview: 'Python telepítése és környezet beállítása.',
+			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Python Alapok',
+			category: 'Programozási Háttér',
+			colabLink: 'https://youtu.be/plWVZk1uqCs',
+			preview: 'Python alapok és szintaxis.',
+			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+
+		{
 			title: 'Strukturált, strukturálatlan adat',
 			category: 'Adatok és Előkészítés',
-			colabLink: 'https://colab.research.google.com/drive/1kGa6tLT4UfNLeB9htuuTIkgm7B3nhOnp?usp=sharing',
+			colabLink: 'https://colab.research.google.com/drive/1KWFI1CZE2u9Fl8eXPu8_2rbSF6DWQnnJ?usp=sharing',
 			preview: 'Adatok típusai és előkészítési technikák.',
 			type: 'colab',
 			difficulty: 'kezdő'
@@ -70,17 +99,188 @@
 		{
 			title: 'Adatvizualizáció (matplotlib, adatok ábrázolása feature-ök szerint)',
 			category: 'Adatok és Előkészítés',
-			colabLink: 'https://colab.research.google.com/drive/1rNgSj4vExo99wWZKHAUsWm9_Zl5Y8ic-?usp=sharing',
+			colabLink: 'https://colab.research.google.com/drive/1EoZ3O-4OhMDj9nvKNLea4OV9Yk9KL7yK?usp=sharing',
 			preview: 'Adatok vizualizálása matplotlib segítségével.',
 			type: 'colab',
 			difficulty: 'kezdő'
 		},
+
 		{
-			title: 'Adatkezelés és DataLoader',
-			category: 'Adatok és Előkészítés',
-			colabLink: 'https://www.youtube.com/watch?v=PySo_6S4ZAg&list=PLoROMvodv4rOABXSygHTsbvUz4G_YQhOb&index=1',
-			preview: 'Adathalmazok betöltése és preprocessing technikák.',
+			title: 'Neuronok, Hebb-i tanulás és a SOM',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/P5ix22jwuU0',
+			preview: 'Neuronok, Hebb-i tanulás és a SOM.',
 			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Hopfield Hálók',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/3I39Ctb2zs8',
+			preview: 'Hopfield hálók és dinamikai modellek.',
+			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Tanulási Módszerek',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/F0DUeJws5RI',
+			preview: 'Tanulási módszerek és algoritmusok.',
+			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Tanítás',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/f1KdzbnPmE4',
+			preview: 'Tanítási módszerek és technikák.',
+			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Regularizációs Módszerek',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/fGx06CK-a9c',
+			preview: 'Regularizációs módszerek és technikák.',
+			type: 'youtube',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Képfeldolgozás, Konvolúció',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/71wtW6-zNH8',
+			preview: 'Képfeldolgozás és konvolúciós neurális hálók.',
+			type: 'youtube',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Képfeldolgozás, Konvolúció',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/71wtW6-zNH8',
+			preview: 'Képfeldolgozás és konvolúciós neurális hálók.',
+			type: 'youtube',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Szekvencia Feldolgozás',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/LMRNiqtgGyk',
+			preview: 'Szekvenciák feldolgozása rekurrens neurális hálókkal.',
+			type: 'youtube',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Gépi Fordítás',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/MkC8ULKDxN8',
+			preview: 'Gépi fordítás és alkalmazásai.',
+			type: 'youtube',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Transformer Architektúra',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://youtu.be/fWjFqJXyoJU',
+			preview: 'Transformer architektúrák és alkalmazásaik.',
+			type: 'youtube',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Előadás Anyagok - Bevezetés a Mélytanulásba',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://drive.google.com/drive/folders/1hP41xKiltifEp9CvhiKhSRS7j0kTNlQg?usp=sharing',
+			preview: 'Előadás anyagok és források.',
+			type: 'drive',
+			difficulty: 'középhaladó'
+		},
+
+
+		{
+			title: 'Bevezető Fogalmak',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1iadQGV-lrEDyHQ44nVJ1TgVldYi9bI30?usp=sharing',
+			preview: 'Gépi tanulás fogalma és feladatai.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Neuronok',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1b2pzMOueeXi5aMK2XFibyts2qmc1o55J?usp=sharing',
+			preview: 'Neuronok és Hebb-i tanulás.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Hopfield Hálók',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1s0mT6-uCtorasKVJgtNSPWzTiZWHwX2R?usp=sharing',
+			preview: 'Hopfield hálók és dinamikai modellek.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Tanulási Módszerek',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1EQcLlCbp5_uUlkK-K46BrSwcbnpfwM8B?usp=sharing',
+			preview: 'Tanulási módszerek és algoritmusok.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Tanítási Nehézségek',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1yrhjb8a9F0gJ32TPv_aKC1al0hxXvzKU?usp=sharing',
+			preview: 'Tanítási nehézségek és megoldások.',
+			type: 'colab',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Regularizáció',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1QXU37h5-P77qmX2Zk_BkDlh1iT3Zo7B6?usp=sharing',
+			preview: 'Regularizációs technikák és alkalmazásuk.',
+			type: 'colab',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Konvolúciós Neurális Hálók',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1mkcNEcISjCiHNnj4I4cbTVVFFi6dEcvh?usp=sharing',
+			preview: 'Konvolúciós neurális hálók és alkalmazásuk.',
+			type: 'colab',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Szekvenciák Feldolgozása',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1tYFkWr07RaClObEl0pic-a3uVPkkBrFV?usp=sharing',
+			preview: 'Szekvenciák feldolgozása rekurrens neurális hálókkal.',
+			type: 'colab',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Gradiens Eltűnés és Robbanás',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1czZBZpmdxMEOfSTJOK5mU8T9m8NfhhDa?usp=sharing',
+			preview: 'Gradiens eltűnés és robbanás problémák.',
+			type: 'colab',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Neurális Fordítás',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/14VAFiFcPKHV6s7spvouv5KvD0uIp9wQy?usp=sharing',
+			preview: 'Neurális fordítás és alkalmazásai.',
+			type: 'colab',
+			difficulty: 'középhaladó'
+		},
+		{
+			title: 'Transzformerek',
+			category: 'Bevezetés a Mélytanulásba',
+			colabLink: 'https://colab.research.google.com/drive/1M1GKZentcA1K-5zq5GSppEnxasgGvC0D?usp=sharing',
+			preview: 'Transzformerek, pointer hálók és alkalmazásaik.',
+			type: 'colab',
 			difficulty: 'középhaladó'
 		},
 	];
@@ -156,6 +356,10 @@
 			const url = new URL(notebook.colabLink);
 			const videoId = url.searchParams.get('v') || url.pathname.split('/').pop();
 			return `https://www.youtube.com/embed/${videoId}`;
+		} else if (notebook.type === 'drive') {
+			// For Google Drive, embed the folder view
+			const driveId = notebook.colabLink.split('/folders/')[1].split('?')[0];
+			return `https://drive.google.com/embeddedfolderview?id=${driveId}#grid`;
 		} else {
 			// For Colab, open in new tab instead of iframe (Colab blocks iframes)
 			window.open(notebook.colabLink, '_blank');
@@ -456,6 +660,8 @@
 							<div class="absolute top-5 right-5 z-10">
 								{#if notebook.type === 'colab'}
 									<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-7 w-auto drop-shadow-lg" />
+								{:else if notebook.type === 'drive'}
+									<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-7 w-auto drop-shadow-lg" />
 								{:else}
 									<svg class="w-8 h-8 text-red-600 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
 										<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -471,7 +677,7 @@
 							</div>
 
 							<!-- Card Header with colored bar -->
-							<div class="h-2 {notebook.type === 'colab' ? 'bg-[#F9AB00]' : 'bg-red-600'}"></div>
+							<div class="h-2 {notebook.type === 'colab' ? 'bg-[#F9AB00]' : notebook.type === 'drive' ? 'bg-[#0F9D58]' : 'bg-red-600'}"></div>
 							
 							<!-- Card Content -->
 							<div class="p-6 flex-1 flex flex-col pt-12 relative z-10">
@@ -499,7 +705,7 @@
 									href={notebook.colabLink}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="w-full px-4 py-2 {notebook.type === 'colab' ? 'bg-[#F9AB00] hover:bg-[#E69500]' : 'bg-red-600 hover:bg-red-700'} text-white rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm font-semibold flex items-center justify-center gap-2"
+									class="w-full px-4 py-2 {notebook.type === 'colab' ? 'bg-[#F9AB00] hover:bg-[#E69500]' : notebook.type === 'drive' ? 'bg-[#0F9D58] hover:bg-[#0D8A4E]' : 'bg-red-600 hover:bg-red-700'} text-white rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm font-semibold flex items-center justify-center gap-2"
 								>
 									{#if notebook.type === 'colab'}
 										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -509,6 +715,9 @@
 											<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
 										</svg>
 										Megnyitás
+									{:else if notebook.type === 'drive'}
+										<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="w-5 h-5" />
+										<span>Megnyitás</span>
 									{:else}
 										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 											<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -557,10 +766,12 @@
 			tabindex="-1"
 		>
 			<!-- Modal Header -->
-			<div class="bg-gradient-to-r from-warm-blue to-dark-blue text-white p-6 flex items-center justify-between">
+				<div class="bg-gradient-to-r from-warm-blue to-dark-blue text-white p-6 flex items-center justify-between">
 				<div class="flex items-center gap-4">
 					{#if previewNotebook.type === 'colab'}
 						<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-8 w-auto" />
+					{:else if previewNotebook.type === 'drive'}
+						<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-8 w-auto" />
 					{:else}
 						<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
 							<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -592,6 +803,27 @@
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
+				{:else if previewNotebook.type === 'drive'}
+					<!-- Google Drive - show info and open button (avoid embedding which may be blocked) -->
+					<div class="h-[calc(90vh-120px)] bg-gray-100 flex flex-col items-center justify-center p-12 text-center">
+						<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-24 w-auto mb-6 opacity-80" />
+						<h4 class="text-2xl font-bold text-dark-blue mb-4">Google Drive Adathalmaz</h4>
+						<p class="text-gray-600 mb-6 max-w-md">
+							Az adathalmazok a Google Drive-on találhatók. Kattints a gombra alább a mappa megnyitásához.
+						</p>
+						<a
+							href={previewNotebook.colabLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-3 px-8 py-4 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+							style="background-color: #0F9D58;"
+							on:mouseenter={(e) => e.currentTarget.style.backgroundColor = '#0D8A4E'}
+							on:mouseleave={(e) => e.currentTarget.style.backgroundColor = '#0F9D58'}
+						>
+							<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="w-6 h-6" />
+							<span>Megnyitás</span>
+						</a>
+					</div>
 				{:else}
 					<!-- Colab Preview - Info + Open Button -->
 					<div class="h-full flex flex-col items-center justify-center p-12 text-center">
