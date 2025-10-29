@@ -610,7 +610,7 @@
 					style="transition-delay: 400ms;"
 				>
 					<a
-						href="{base}/2025/online-results"
+						href="{base}/archive/2025/online-results"
 						class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-dark-blue to-warm-blue text-white text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300"
 					>
 						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -919,7 +919,7 @@
 					style="transition-delay: 400ms;"
 				>
 					<a
-						href="{base}/2025/results"
+						href="{base}/archive/2025/results"
 						class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-dark-blue to-warm-blue text-white text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300"
 					>
 						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
