@@ -7,6 +7,19 @@
 	let headerVisible = false;
 	let tableVisible = false;
 
+function goBack(fallback: string) {
+	// Prefer going back in history when possible, otherwise navigate to fallback
+	try {
+		if (history.length > 1) {
+			history.back();
+		} else {
+			window.location.href = fallback;
+		}
+	} catch (e) {
+		window.location.href = fallback;
+	}
+}
+
 	function parseCSV(text: string) {
 		const lines = text.trim().split('\n');
 		const headers = lines[0].split(',');
@@ -95,7 +108,7 @@
 	<div class="container mx-auto px-6 relative z-10">
 		<!-- Back Button -->
 		<div class="mb-6">
-			<a href="{base}/2024#results" class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold">
+			<a href="{base}/2024#results" on:click|preventDefault={() => goBack(`${base}/2024#results`)} class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold">
 				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 				</svg>
@@ -365,6 +378,7 @@
 		<div class="mt-12 text-center">
 			<a
 				href="{base}/2024"
+				on:click|preventDefault={() => goBack(`${base}/2024`)}
 				class="inline-flex items-center gap-2 px-6 py-3 bg-white text-dark-blue font-semibold rounded-lg shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300 border-2 border-desert-200"
 			>
 				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
