@@ -363,10 +363,10 @@
         <NeuralNetwork nodeCount={25} position="full" />
     </div>
     
-	<!-- Divider at top -->
-	<Divider showCopyright={true} animated={true} visible={dividerVisible}/>
-	<!-- Anchor for Programok bemutatása scroll target: just below divider -->
-	<div id="programs-desc" tabindex="-1" class="h-0"></div>
+    <!-- Divider at top -->
+    <Divider showCopyright={true} animated={true} visible={dividerVisible}/>
+    <!-- Anchor for Programok bemutatása scroll target: just below divider -->
+    <div id="programs-desc" tabindex="-1" class="h-0"></div>
     
     <!-- Programs content -->
     <div class="container mx-auto px-6 relative z-10 pb-16">
@@ -378,28 +378,29 @@
             class:translate-y-0={programsSectionVisible}
             data-animate="programs-section"
         >
-			<div 
-				class="inline-block mb-6 transition-all duration-700"
-				class:opacity-0={!programsPillVisible}
-				class:scale-90={!programsPillVisible}
-				class:opacity-100={programsPillVisible}
-				class:scale-100={programsPillVisible}
-				data-animate="programs-pill"
-			>
-				<span class="px-4 py-2 bg-gradient-to-r from-dark-blue to-warm-blue text-white text-sm font-semibold rounded-full shadow-lg">
-					Versenyútvonal
-				</span>
-			</div>
-			<!-- Anchor for Programok bemutatása scroll target: just below divider and Versenyútvonal -->
-			<div id="programs-desc" tabindex="-1" class="h-0"></div>
-			<h2 class="text-4xl md:text-6xl font-bold text-dark-blue mb-4">Programjaink</h2>
+            <div 
+                class="inline-block mb-6 transition-all duration-700"
+                class:opacity-0={!programsPillVisible}
+                class:scale-90={!programsPillVisible}
+                class:opacity-100={programsPillVisible}
+                class:scale-100={programsPillVisible}
+                data-animate="programs-pill"
+            >
+                <span class="px-4 py-2 bg-gradient-to-r from-dark-blue to-warm-blue text-white text-sm font-semibold rounded-full shadow-lg">
+                    Versenyútvonal
+                </span>
+            </div>
+            <!-- Anchor for Programok bemutatása scroll target: just below divider and Versenyútvonal -->
+            <div id="programs-desc" tabindex="-1" class="h-0"></div>
+            <h2 class="text-4xl md:text-6xl font-bold text-dark-blue mb-4">Programjaink</h2>
             <p class="text-desert-700 text-lg md:text-xl max-w-2xl mx-auto">
                 Fedezd fel az Mesterséges Intelligencia Diákolimpia útját az első lépésektől a nemzetközi szintig
             </p>
         </div>
 
+
         <!-- PROGRESSION PATH -->
-	<div class="grid lg:grid-cols-3 gap-6 max-w-screen-lg w-full mx-auto px-4 sm:px-6 relative mt-4">
+        <div class="grid lg:grid-cols-3 gap-6 max-w-screen-lg w-full mx-auto px-4 sm:px-6 relative mt-4">
             
             <!-- Animated Roadmap Path (Desktop Only) -->
             <div class="hidden lg:block absolute -top-12 left-0 right-0 pointer-events-none z-0">
@@ -449,7 +450,7 @@
             
             <!-- STAGE 1: MÓLÓ -->
             <div 
-                class="relative z-10 group transition-all duration-700 ease-out"
+                class="relative z-10 transition-all duration-700 ease-out"
                 class:opacity-0={!card1Visible}
                 class:translate-y-12={!card1Visible}
                 class:opacity-100={card1Visible}
@@ -457,29 +458,29 @@
                 data-animate="card-1"
                 style="transition-delay: 100ms;"
             >
-				<div class="bg-off-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-dark-blue transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col">
+                <div class="bg-off-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-dark-blue transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col">
                     <!-- Neural Network Corner -->
                     <div class="absolute top-0 right-0 w-48 h-48 opacity-40 pointer-events-none z-10">
                         <NeuralNetwork nodeCount={6} position="corner" />
                     </div>
                     
-					<div class="absolute inset-0 bg-gradient-to-br from-desert-600/5 to-warm-blue/10 opacity-0 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-desert-600/5 to-warm-blue/10 opacity-0 transition-opacity duration-500"></div>
                     
                     <div class="relative p-6 flex-1 flex flex-col">
                         <div class="mb-4">
                             <div class="flex items-center gap-2 mb-3">
-								<div class="inline-block px-4 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
+                                <div class="inline-block px-4 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
                                     🎯 SZAKKÖR
                                 </div>
                                 <!-- Stage Number Badge -->
-								<div class="relative inline-flex items-center justify-center px-3 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
-									<div class="absolute inset-0 rounded-full bg-dark-blue badge-pulse-1 transition-colors duration-500"></div>
+                                <div class="relative inline-flex items-center justify-center px-3 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
+                                    <div class="absolute inset-0 rounded-full bg-dark-blue badge-pulse-1 transition-colors duration-500"></div>
                                     <span class="relative">1</span>
                                 </div>
                             </div>
                             <h3 class="text-3xl md:text-4xl font-bold text-dark-blue mb-2">MÓLÓ</h3>
                             <p class="text-desert-500 font-semibold mb-2 text-sm">Mesterséges Intelligencia Diákolimpia Felkészítő Szakkör</p>
-							<div class="w-20 h-1.5 bg-gradient-to-r from-dark-blue to-desert-600 rounded-full transition-all duration-500"></div>
+                            <div class="w-20 h-1.5 bg-gradient-to-r from-dark-blue to-desert-600 rounded-full transition-all duration-500"></div>
                         </div>
                         
                         <p class="text-desert-700 text-sm leading-relaxed mb-4">
@@ -495,28 +496,29 @@
                             </div>
                         </div>
 
+
                         <div class="mt-auto flex flex-col gap-3">
-							<a 
+                            <a 
                                 href="{base}/molo" 
                                 class="group relative inline-flex items-center justify-center px-6 py-3 bg-dark-blue text-off-white font-semibold rounded-lg overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-full"
-							>
-								   <span class="absolute inset-0 bg-warm-blue opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-								<span class="relative flex items-center">
-									Tovább a programra
-									<svg class="w-5 h-5 ml-2 hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            >
+                                <span class="absolute inset-0 bg-warm-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                                <span class="relative flex items-center">
+                                    Tovább a programra
+                                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </span>
                             </a>
-							<a 
-								href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=SLszAZD3YEWmTaxGpHL7vIltOKsbGD1HtZWjpnYwaJ5URENSU0lPWVBCRlBWUEdHMVhNWUdNQ1RaTy4u" 
-								target="_blank"
-								rel="noopener noreferrer"
-								class="relative inline-flex items-center justify-center px-6 py-3 bg-dark-blue text-off-white font-semibold rounded-lg overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-full"
-							>
-								   <span class="absolute inset-0 bg-warm-blue opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-								<span class="relative flex items-center">
-									<svg class="w-5 h-5 mr-2 hover:scale-110 hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <a 
+                                href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=SLszAZD3YEWmTaxGpHL7vIltOKsbGD1HtZWjpnYwaJ5URENSU0lPWVBCRlBWUEdHMVhNWUdNQ1RaTy4u" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="group relative inline-flex items-center justify-center px-6 py-3 bg-dark-blue text-off-white font-semibold rounded-lg overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-full"
+                            >
+                                <span class="absolute inset-0 bg-warm-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                                <span class="relative flex items-center">
+                                    <svg class="w-5 h-5 mr-2 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                     </svg>
                                     Csatlakozz
@@ -527,9 +529,10 @@
                 </div>
             </div>
 
+
             <!-- STAGE 2: HAIO -->
             <div 
-                class="relative z-10 group transition-all duration-700 ease-out"
+                class="relative z-10 transition-all duration-700 ease-out"
                 class:opacity-0={!card2Visible}
                 class:translate-y-12={!card2Visible}
                 class:opacity-100={card2Visible}
@@ -537,29 +540,29 @@
                 data-animate="card-2"
                 style="transition-delay: 200ms;"
             >
-				<div class="bg-off-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-dark-blue transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col">
+                <div class="bg-off-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-dark-blue transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col">
                     <!-- Neural Network Corner -->
                     <div class="absolute top-0 right-0 w-48 h-48 opacity-40 pointer-events-none z-10">
                         <NeuralNetwork nodeCount={6} position="corner" />
                     </div>
                     
-					<div class="absolute inset-0 bg-gradient-to-br from-warm-blue/5 to-dark-blue/10 opacity-0 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-warm-blue/5 to-dark-blue/10 opacity-0 transition-opacity duration-500"></div>
                     
                     <div class="relative p-6 flex-1 flex flex-col">
                         <div class="mb-4">
                             <div class="flex items-center gap-2 mb-3">
-								<div class="inline-block px-4 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
+                                <div class="inline-block px-4 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
                                     🏆 VÁLOGATÓVERSENY
                                 </div>
                                 <!-- Stage Number Badge -->
-								<div class="relative inline-flex items-center justify-center px-3 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
-									<div class="absolute inset-0 rounded-full bg-dark-blue badge-pulse-2 transition-colors duration-500"></div>
+                                <div class="relative inline-flex items-center justify-center px-3 py-1.5 bg-dark-blue text-off-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
+                                    <div class="absolute inset-0 rounded-full bg-dark-blue badge-pulse-2 transition-colors duration-500"></div>
                                     <span class="relative">2</span>
                                 </div>
                             </div>
                             <h3 class="text-3xl md:text-4xl font-bold text-dark-blue mb-2">HAIO</h3>
                             <p class="text-desert-500 font-semibold mb-2 text-sm">Hungarian Artificial Intelligence Olympiad</p>
-							<div class="w-20 h-1.5 bg-gradient-to-r from-dark-blue to-desert-600 rounded-full transition-all duration-500"></div>
+                            <div class="w-20 h-1.5 bg-gradient-to-r from-dark-blue to-desert-600 rounded-full transition-all duration-500"></div>
                         </div>
                         
                         <p class="text-desert-700 text-sm leading-relaxed mb-4">
@@ -575,15 +578,16 @@
                             </div>
                         </div>
 
+
                         <div class="mt-auto flex flex-col gap-3">
-							<a 
+                            <a 
                                 href="{base}/haio" 
                                 class="group relative inline-flex items-center justify-center px-6 py-3 bg-dark-blue text-off-white font-semibold rounded-lg overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-full"
-							>
-								<span class="absolute inset-0 bg-warm-blue opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-								<span class="relative flex items-center">
-									Tovább a programra
-									<svg class="w-5 h-5 ml-2 hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            >
+                                <span class="absolute inset-0 bg-warm-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                                <span class="relative flex items-center">
+                                    Tovább a programra
+                                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </span>
@@ -602,9 +606,10 @@
                 </div>
             </div>
 
+
             <!-- STAGE 3: INTERNATIONAL OLYMPIADS -->
             <div 
-                class="relative z-10 group transition-all duration-700 ease-out"
+                class="relative z-10 transition-all duration-700 ease-out"
                 class:opacity-0={!card3Visible}
                 class:translate-y-12={!card3Visible}
                 class:opacity-100={card3Visible}
@@ -612,29 +617,29 @@
                 data-animate="card-3"
                 style="transition-delay: 300ms;"
             >
-				<div class="bg-off-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-dark-blue transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col">
+                <div class="bg-off-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-dark-blue transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col">
                     <!-- Neural Network Corner -->
                     <div class="absolute top-0 right-0 w-48 h-48 opacity-40 pointer-events-none z-10">
                         <NeuralNetwork nodeCount={6} position="corner" />
                     </div>
                     
-					<div class="absolute inset-0 bg-gradient-to-br from-desert-400/5 to-desert-500/10 opacity-0 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-desert-400/5 to-desert-500/10 opacity-0 transition-opacity duration-500"></div>
                     
                     <div class="relative p-6 flex-1 flex flex-col">
                         <div class="mb-4">
                             <div class="flex items-center gap-2 mb-3">
-								<div class="inline-block px-4 py-1.5 bg-dark-blue text-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
+                                <div class="inline-block px-4 py-1.5 bg-dark-blue text-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
                                     🌍 NEMZETKÖZI VERSENYEK
                                 </div>
                                 <!-- Stage Number Badge with Pulse -->
-								<div class="relative inline-flex items-center justify-center px-3 py-1.5 bg-dark-blue text-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
-									<div class="absolute inset-0 rounded-full bg-dark-blue badge-pulse-3 transition-colors duration-500"></div>
+                                <div class="relative inline-flex items-center justify-center px-3 py-1.5 bg-dark-blue text-white text-sm font-bold rounded-full shadow-md transition-colors duration-500">
+                                    <div class="absolute inset-0 rounded-full bg-dark-blue badge-pulse-3 transition-colors duration-500"></div>
                                     <span class="relative">3</span>
                                 </div>
                             </div>
                             <h3 class="text-3xl md:text-4xl font-bold text-dark-blue mb-2">Nemzetközi Olimpiák</h3>
                             <p class="text-desert-500 font-semibold mb-2 text-sm">IOAI & IAIO</p>
-							<div class="w-20 h-1.5 bg-gradient-to-r from-dark-blue to-desert-600 rounded-full transition-all duration-500"></div>
+                            <div class="w-20 h-1.5 bg-gradient-to-r from-dark-blue to-desert-600 rounded-full transition-all duration-500"></div>
                         </div>
                         
                         <p class="text-desert-700 text-sm leading-relaxed mb-4">
@@ -662,6 +667,7 @@
                             </div>
                         </div>
 
+
                         <div class="mt-auto flex flex-col gap-3">
                             <a 
                                 href="#international" 
@@ -682,6 +688,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- DIVIDER BEFORE TIMELINE -->
 <section class="relative bg-desert-100" data-animate="divider-2">

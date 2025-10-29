@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import NeuralNetwork from '$lib/components/NeuralNetwork.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 
@@ -137,12 +138,17 @@
 	}
 
 	function reportBug(notebook: Notebook) {
-		const subject = `Hiba: ${notebook.title}`;
-		const message = `Kedves Szervezők,\n\nEgy hibát találtam a(z) "${notebook.title}" című ${notebook.type === 'colab' ? 'notebook-ban' : 'videóban'}.\n\nA hiba leírása:\n`;
-		const encodedSubject = encodeURIComponent(subject);
-		const encodedMessage = encodeURIComponent(message);
-		window.location.href = `${base}/contact?subject=${encodedSubject}&message=${encodedMessage}`;
-	}
+        const subject = `Hiba: ${notebook.title}`;
+        const message = `Kedves Szervezők,\n\nEgy hibát találtam a(z) "${notebook.title}" című ${notebook.type === 'colab' ? 'notebook-ban' : 'videóban'}.\n\nA hiba leírása:\n`;
+        
+        // Create URLSearchParams for query string
+        const searchParams = new URLSearchParams();
+        searchParams.set('subject', subject);
+        searchParams.set('message', message);
+        
+        // REPLACE window.location.href with goto()
+        goto(`${base}/contact?${searchParams.toString()}`);
+    }
 
 	function getPreviewUrl(notebook: Notebook) {
 		if (notebook.type === 'youtube') {

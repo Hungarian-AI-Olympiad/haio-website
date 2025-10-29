@@ -11,13 +11,13 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined,
+			fallback: 'index.html',
 			precompress: false,
 			strict: true
 		}),
 		
 		paths: {
-			base: process.env.PUBLIC_BASE_PATH || ''
+			base: process.env.PUBLIC_BASE_PATH || '/mi_olimpia'
 		},
 		
 		prerender: {
