@@ -2,35 +2,29 @@
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
 	import NeuralNetwork from '$lib/components/NeuralNetwork.svelte';
+	import { goto } from '$app/navigation';
 
 	let orszagosResults: any[] = [];
 	let headerVisible = false;
 	let tableVisible = false;
 
-function goBack(fallback: string) {
-    // Check if we came from the target page
-    const referrer = document.referrer;
-    const targetPage = `${window.location.origin}${base}/2024`;
-    
-    if (referrer.startsWith(targetPage) && history.length > 1) {
-        // We came from the 2024 page, use history.back()
-        history.back();
-        // After navigation, scroll to the hash position
-        setTimeout(() => {
-            const hash = fallback.split('#')[1];
-            if (hash) {
-                const element = document.getElementById(hash);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }, 100);
-    } else {
-        // Direct navigation with hash
-        window.location.href = fallback;
-    }
-}
-
+	function goBack(fallback: string) {
+		// Check if we came from the target page
+		const referrer = document.referrer;
+		const targetPage = `${window.location.origin}${base}/2025`;
+		
+		if (referrer.startsWith(targetPage) && history.length > 1) {
+			// Extract the hash from fallback
+			const hash = fallback.split('#')[1];
+			const path = hash ? `${base}/2025#${hash}` : `${base}/2025`;
+			
+			// Use SvelteKit's goto with replaceState
+			goto(path, { replaceState: false, noScroll: false });
+		} else {
+			// Direct navigation with hash
+			window.location.href = fallback;
+		}
+	}
 
 	function parseCSV(text: string) {
 		const lines = text.trim().split('\n');

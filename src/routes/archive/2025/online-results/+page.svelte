@@ -2,10 +2,30 @@
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
     import NeuralNetwork from '$lib/components/NeuralNetwork.svelte';
+    import { goto } from '$app/navigation';
 
     let onlineResults: any[] = [];
     let headerVisible = false;
     let tableVisible = false;
+
+    function goBack(fallback: string) {
+        // Check if we came from the target page
+        const referrer = document.referrer;
+        const targetPage = `${window.location.origin}${base}/2025`;
+        
+        if (referrer.startsWith(targetPage) && history.length > 1) {
+            // Extract the hash from fallback
+            const hash = fallback.split('#')[1];
+            const path = hash ? `${base}/2025#${hash}` : `${base}/2025`;
+            
+            // Use SvelteKit's goto with replaceState
+            goto(path, { replaceState: false, noScroll: false });
+        } else {
+            // Direct navigation with hash
+            window.location.href = fallback;
+        }
+    }
+
 
     function parseCSV(text: string) {
         const lines = text.trim().split('\n');
@@ -20,6 +40,7 @@
         });
     }
 
+
     async function loadCSVData() {
         try {
             const onlineResponse = await fetch(`${base}/data/online-results-2025.csv`);
@@ -30,12 +51,15 @@
         }
     }
 
+
     function isTopThree(index: number): boolean {
         return index < 3;
     }
 
+
     onMount(() => {
         loadCSVData();
+
 
         const observerOptions = {
             root: null,
@@ -43,11 +67,13 @@
             threshold: 0.1
         };
 
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     const element = entry.target as HTMLElement;
                     const dataAnimate = element.getAttribute('data-animate');
+
 
                     if (dataAnimate === 'header') {
                         headerVisible = true;
@@ -55,14 +81,17 @@
                         tableVisible = true;
                     }
 
+
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
+
         document.querySelectorAll('[data-animate]').forEach((el) => {
             observer.observe(el);
         });
+
 
         return () => {
             observer.disconnect();
@@ -70,10 +99,12 @@
     });
 </script>
 
+
 <svelte:head>
     <title>2025 Online Eredmények - Hungarian AI Olympiad</title>
     <meta name="description" content="A 2025-es Hungarian AI Olympiad online előválogató teljes eredménylistája." />
 </svelte:head>
+
 
 <!-- RESULTS PAGE -->
 <section class="min-h-screen bg-desert-100 relative overflow-hidden pt-24 pb-12">
@@ -82,12 +113,13 @@
         <NeuralNetwork nodeCount={30} position="full" />
     </div>
 
+
     <div class="container mx-auto px-6 relative z-10">
         <!-- Back Button -->
         <div class="mb-6">
             <a 
                 href="{base}/2025#online-results" 
-                on:click|preventDefault={() => window.location.href = `${base}/2025#online-results`}
+                on:click|preventDefault={() => goBack(`${base}/2025#online-results`)}
                 class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,6 +128,7 @@
                 <span>Vissza a 2025-ös évhez</span>
             </a>
         </div>
+
 
         <!-- Header -->
         <div 
@@ -118,6 +151,7 @@
                 Az online előválogató összes résztvevőjének részletes eredményei
             </p>
         </div>
+
 
         <!-- Results Table -->
         <div
@@ -192,11 +226,12 @@
             </div>
         </div>
 
+
         <!-- Back button -->
         <div class="mt-12 text-center">
             <a
                 href="{base}/2025#online-results"
-                on:click|preventDefault={() => window.location.href = `${base}/2025#online-results`}
+                on:click|preventDefault={() => goBack(`${base}/2025#online-results`)}
                 class="inline-flex items-center gap-2 px-6 py-3 bg-white text-dark-blue font-semibold rounded-lg shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300 border-2 border-desert-200"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
