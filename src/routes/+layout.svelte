@@ -19,7 +19,7 @@ $: isHaioPage = $page.url.pathname === `${base}/haio`;
 $: isHallOfFamePage = $page.url.pathname === `${base}/hall-of-fame`;
 $: alwaysScrolled = !isHomePage;
 
-afterNavigate(() => {
+afterNavigate((navigation) => {
     // Send page_view to Google Analytics on SPA navigation (if gtag is available)
     try {
         if (PUBLIC_GOOGLE_ANALYTICS_ID && typeof window !== 'undefined' && typeof window.gtag === 'function') {
@@ -34,14 +34,24 @@ afterNavigate(() => {
     // Hash scrolling behavior
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
-        setTimeout(() => {
-            const el = document.getElementById(hash.slice(1));
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }, 50);
+        // Prevent SvelteKit's default scroll behavior
+        const targetId = hash.slice(1);
+        
+        // Use requestAnimationFrame to ensure DOM is ready
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    // Element not found, scroll to top as fallback
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }, 100);
+        });
     }
 });
+
 </script>
 
 <!-- REMOVED THE SVELTE:HEAD SECTION ENTIRELY -->
