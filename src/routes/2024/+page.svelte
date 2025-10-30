@@ -61,7 +61,7 @@
 		},
 		{
 			id: 2,
-			title: 'Intelligens János gazda',
+			title: 'Intelligens János Gazda',
 			description: 'Készíts egy programot, amely a megadott állatképekről felismeri az állatfajokat, majd fajonként összesíti és megjeleníti az egyedek számát.',
 			platform: 'Google Colab',
 			tags: ['CV', 'Image Classification'],
@@ -70,7 +70,7 @@
 		},
 		{
 			id: 3,
-			title: 'Transzfer-tanulás',
+			title: 'Transzfer-Tanulás',
 			description: 'Készíts egy modellt, és vizsgáld, hogy a neurális hálók mennyire képesek a korábban elsajátított tudást új, hasonló feladatokra átvinni.',
 			platform: 'Google Colab',
 			tags: ['CV', 'Transfer Learning'],
@@ -79,7 +79,7 @@
 		},
 		{
 			id: 4,
-			title: 'Zene-klasszifikáció',
+			title: 'Zene-Klasszifikáció',
 			description: 'Készíts egy modellt, és vizsgáld, hogyan lehet a zenék spektrogramjai alapján a hangmintákat műfaj szerint osztályozni.',
 			platform: 'Google Colab',
 			tags: ['CV', 'Spectrogram Classification'],
@@ -538,10 +538,10 @@
 					<!-- CV Categories (4 cards) -->
 					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 max-w-6xl mx-auto">
 						{#each [
-							{key: 'CV-1', label: 'Elrejtett kincs'},
-							{key: 'CV-2', label: 'Intelligens János gazda'},
-							{key: 'CV-3', label: 'Transzfer-tanulás'},
-							{key: 'CV-4', label: 'Képgenerálás'}
+							{key: 'CV-1', label: 'Elrejtett Kincs'},
+							{key: 'CV-2', label: 'Intelligens János Gazda'},
+							{key: 'CV-3', label: 'Transzfer-Tanulás'},
+							{key: 'CV-4', label: 'Zene-Klasszifikáció'}
 						] as category}
 							<div class="bg-white rounded-lg p-5 shadow-md border-2 border-dark-blue/20 hover:border-dark-blue hover:shadow-xl transition-all duration-300">
 								<div class="flex items-center gap-3 mb-3">
@@ -567,9 +567,9 @@
 					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 max-w-6xl mx-auto">
 						{#each [
 							{key: 'NLP-1', label: 'Spam SMS-ek'},
-							{key: 'NLP-2', label: 'Gépi Fordítás'},
-							{key: 'NLP-3', label: 'Hatékony keresés'},
-							{key: 'NLP-4', label: 'Szövegírás LLM-mel'}
+							{key: 'NLP-2', label: 'Twitter Hangulatelemzés'},
+							{key: 'NLP-3', label: 'Gépi Fordítás'},
+							{key: 'NLP-4', label: 'Tű a Szénakazalban'}
 						] as category}
 							<div class="bg-white rounded-lg p-5 shadow-md border-2 border-dark-blue/20 hover:border-dark-blue hover:shadow-xl transition-all duration-300">
 								<div class="flex items-center gap-3 mb-3">
