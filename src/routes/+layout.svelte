@@ -4,9 +4,10 @@ import { base } from '$app/paths';
 import Header from '$lib/components/Header.svelte';
 import Footer from '$lib/components/Footer.svelte';
 import CookieConsent from '$lib/components/CookieConsent.svelte';
-import { afterNavigate } from '$app/navigation';
+import { afterNavigate, disableScrollHandling } from '$app/navigation';
 import '../app.css';
 import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
+
 
 $: isHomePage = $page.url.pathname === `${base}/` || $page.url.pathname === base;
 $: isContactPage = $page.url.pathname === `${base}/contact`;
@@ -18,6 +19,7 @@ $: isMoloPage = $page.url.pathname === `${base}/molo`;
 $: isHaioPage = $page.url.pathname === `${base}/haio`;
 $: isHallOfFamePage = $page.url.pathname === `${base}/hall-of-fame`;
 $: alwaysScrolled = !isHomePage;
+
 
 afterNavigate((navigation) => {
     // Send page_view to Google Analytics on SPA navigation (if gtag is available)
@@ -34,27 +36,31 @@ afterNavigate((navigation) => {
     // Hash scrolling behavior
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
-        // Prevent SvelteKit's default scroll behavior
+        // CRITICAL: Disable SvelteKit's scroll handling so we can control it
+        disableScrollHandling();
+        
         const targetId = hash.slice(1);
         
-        // Use requestAnimationFrame to ensure DOM is ready
+        // Multiple layers of timing to handle slow server
         requestAnimationFrame(() => {
             setTimeout(() => {
                 const el = document.getElementById(targetId);
                 if (el) {
                     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
-                    // Element not found, scroll to top as fallback
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // If element not found, try again after a longer delay
+                    setTimeout(() => {
+                        const el2 = document.getElementById(targetId);
+                        if (el2) {
+                            el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 200);
                 }
             }, 100);
         });
     }
 });
-
 </script>
-
-<!-- REMOVED THE SVELTE:HEAD SECTION ENTIRELY -->
 
 <div class="min-h-screen bg-desert-50">
     <Header alwaysScrolled={alwaysScrolled} />
@@ -65,6 +71,5 @@ afterNavigate((navigation) => {
 
     <Footer />
     
-    <!-- Cookie Consent handles loading GA AFTER user consent -->
     <CookieConsent />
 </div>
