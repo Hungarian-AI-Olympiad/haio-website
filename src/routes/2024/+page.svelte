@@ -380,7 +380,7 @@
 			</div>
 
 			<!-- Statistics Section -->
-			<div class="mb-12">
+			<div class="mb-12" id="results-summary">
 				<!-- Top 3 Podium -->
 				<div
 					class="mb-12 transition-all duration-700"

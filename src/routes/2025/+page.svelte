@@ -452,7 +452,7 @@
 			</div>
 
 			<!-- Statistics Section for Online -->
-			<div>
+			<div id="online-results-summary">
 				<!-- Top 3 Podium -->
 				<div
 					class="mb-12 transition-all duration-700"
@@ -706,7 +706,7 @@
 			</div>
 
 			<!-- Statistics Section for Országos -->
-			<div>
+			<div id="results-summary">
 				<!-- Top 3 Podium -->
 				<div
 					class="mb-12 transition-all duration-700"

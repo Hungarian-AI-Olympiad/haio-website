@@ -69,8 +69,8 @@
             teams: false
         },
         {
-            date: '2026. január 23-27.',
-            actualDate: new Date('2026-01-23'),
+            date: '2026. február 23-27.',
+            actualDate: new Date('2026-02-23'),
             project: 'HAIO',
             title: 'IAIO 2026',
             description: 'Nemzetközi versenyen való részvétel.',
@@ -996,7 +996,7 @@
 						</div>
 						<div>
 							<p class="text-white font-bold text-base">Ljubljana, Slovenia</p>
-							<p class="text-white/70 text-sm">2026. január</p>
+							<p class="text-white/70 text-sm">2026. február</p>
 						</div>
 					</div>
 

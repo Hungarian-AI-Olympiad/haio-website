@@ -425,7 +425,37 @@
 
 		<!-- Three Main Components -->
 		<div class="grid md:grid-cols-3 gap-8 mb-0 fade-in-section">
-			<!-- Card 1: Aszinkron Online Roadmap -->
+			<!-- Card 1: Interaktív Feladatsor -->
+			<div class="relative bg-gradient-to-br from-white via-white to-desert-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-2 border-transparent hover:border-warm-blue group overflow-hidden flex flex-col">
+				<!-- Animated background gradient on hover -->
+				<div class="absolute inset-0 bg-gradient-to-br from-dark-blue/5 via-transparent to-warm-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+				
+				<!-- Decorative corner accent -->
+				<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-dark-blue/10 to-transparent rounded-bl-full transform translate-x-12 -translate-y-12 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500"></div>
+				
+				<div class="relative z-10 flex flex-col flex-1">
+					<div class="w-20 h-20 bg-gradient-to-br from-dark-blue to-warm-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+						<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-dark-blue mb-4 group-hover:text-warm-blue transition-colors duration-300">Interaktív Tananyagok</h3>
+					<p class="text-gray-600 leading-relaxed mb-6 flex-1">
+						Gyakorlati tananyagok Google Colab notebookokban és YouTube-videókban, azonnal futtatható kóddal. Valódi problémák megoldásán keresztül sajátíthatod el a gépi tanulás alapjait és haladó módszereit. Minden notebook részletes magyarázatokat és lépésről lépésre követhető megoldási útmutatókat tartalmaz.
+					</p>
+					<a 
+						href="#notebooks"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
+					>
+						<span>Ugrás a részletekhez</span>
+						<svg class="w-4 h-4 transform group-hover/btn:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- Card 2: Aszinkron Online Roadmap -->
 			<div class="relative bg-gradient-to-br from-white via-white to-desert-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-2 border-transparent hover:border-warm-blue group overflow-hidden flex flex-col">
 				<!-- Animated background gradient on hover -->
 				<div class="absolute inset-0 bg-gradient-to-br from-warm-blue/5 via-transparent to-dark-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -445,36 +475,6 @@
 					</p>
 					<a 
 						href="#roadmap"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
-					>
-						<span>Ugrás a részletekhez</span>
-						<svg class="w-4 h-4 transform group-hover/btn:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-						</svg>
-					</a>
-				</div>
-			</div>
-
-			<!-- Card 2: Interaktív Feladatsor -->
-			<div class="relative bg-gradient-to-br from-white via-white to-desert-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-2 border-transparent hover:border-warm-blue group overflow-hidden flex flex-col">
-				<!-- Animated background gradient on hover -->
-				<div class="absolute inset-0 bg-gradient-to-br from-dark-blue/5 via-transparent to-warm-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-				
-				<!-- Decorative corner accent -->
-				<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-dark-blue/10 to-transparent rounded-bl-full transform translate-x-12 -translate-y-12 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500"></div>
-				
-				<div class="relative z-10 flex flex-col flex-1">
-					<div class="w-20 h-20 bg-gradient-to-br from-dark-blue to-warm-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-						<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-						</svg>
-					</div>
-					<h3 class="text-2xl font-bold text-dark-blue mb-4 group-hover:text-warm-blue transition-colors duration-300">Interaktív Feladatsor</h3>
-					<p class="text-gray-600 leading-relaxed mb-6 flex-1">
-						Gyakorlati feladatok Google Colab notebookban, azonnal futtatható kóddal. Valódi problémákon dolgozva sajátítsd el a gépi tanulás alapjait és haladó technikáit. Minden notebook tartalmaz részletes magyarázatokat és megoldási útmutatókat.
-					</p>
-					<a 
-						href="#notebooks"
 						class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
 					>
 						<span>Ugrás a részletekhez</span>
@@ -517,6 +517,231 @@
 		</div>
 	</div>
 </section>
+
+<section class="bg-desert-100 relative">
+	<Divider showCopyright={true} />
+</section>
+
+<!-- Interaktív Gyakorló Feladatsorok Section -->
+<section id="notebooks" class="bg-desert-100 relative overflow-hidden py-16">
+	<!-- Neural Network Background -->
+	<div class="absolute inset-0 opacity-20 pointer-events-none">
+		<NeuralNetwork nodeCount={25} position="full" />
+	</div>
+	
+	<div class="container mx-auto px-6 relative z-10 max-w-7xl">
+		<div class="text-center mb-16 fade-in-section">
+			<h2 class="text-4xl md:text-5xl font-bold text-dark-blue mb-6">Interaktív Gyakorló Tananyagok</h2>
+			<p class="text-xl text-gray-600">Gyakorlati notebook-ok Google Colab-ban</p>
+		</div>
+
+		<!-- Notebook Categories -->
+		{#each Object.entries(groupedNotebooks) as [category, categoryNotebooks], categoryIndex}
+			   <div class="mb-8 fade-in-section">
+				<h3 class="text-3xl font-bold text-dark-blue mb-8 text-center">{category}</h3>
+				
+				<!-- Notebooks Grid - 5 per row -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+					{#each categoryNotebooks as notebook}
+						<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col border-2 border-desert-200 hover:border-warm-blue group overflow-hidden relative">
+							<!-- Mini Neural Network Background -->
+							<div class="absolute inset-0 opacity-5 pointer-events-none">
+								<NeuralNetwork />
+							</div>
+
+							<!-- Type Badge - Top Right Corner -->
+							<div class="absolute top-5 right-5 z-10">
+								{#if notebook.type === 'colab'}
+									<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-7 w-auto drop-shadow-lg" />
+								{:else if notebook.type === 'drive'}
+									<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-7 w-auto drop-shadow-lg" />
+								{:else}
+									<svg class="w-8 h-8 text-red-600 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+									</svg>
+								{/if}
+							</div>
+
+							<!-- Difficulty Badge - Top Left Corner -->
+							<div class="absolute top-5 left-5 z-10">
+								<div class="{getDifficultyColor(notebook.difficulty)} text-white px-3 py-1.5 rounded-full text-xs font-bold drop-shadow-lg shadow-lg">
+									{notebook.difficulty}
+								</div>
+							</div>
+
+							<!-- Card Header with colored bar -->
+							<div class="h-2 {notebook.type === 'colab' ? 'bg-[#F9AB00]' : notebook.type === 'drive' ? 'bg-[#0F9D58]' : 'bg-red-600'}"></div>
+							
+							<!-- Card Content -->
+							<div class="p-6 flex-1 flex flex-col pt-12 relative z-10">
+								<h4 class="text-lg font-bold text-dark-blue mb-3 group-hover:text-warm-blue transition-colors line-clamp-2">
+									{notebook.title}
+								</h4>
+								<p class="text-sm text-gray-600 mb-4 flex-1 line-clamp-3">
+									{notebook.preview}
+								</p>
+								
+								<!-- Interactive Preview Button -->
+								<button 
+									on:click={() => openPreview(notebook)}
+									class="w-full mb-3 px-4 py-2 bg-desert-100 hover:bg-desert-200 text-dark-blue rounded-lg transition-colors duration-200 text-sm font-medium flex items-center justify-center gap-2"
+								>
+									<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+									</svg>
+									Előnézet
+								</button>
+								
+								<!-- Colab/YouTube Link -->
+								<a
+									href={notebook.colabLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="w-full px-4 py-2 {notebook.type === 'colab' ? 'bg-[#F9AB00] hover:bg-[#E69500]' : notebook.type === 'drive' ? 'bg-[#0F9D58] hover:bg-[#0D8A4E]' : 'bg-red-600 hover:bg-red-700'} text-white rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm font-semibold flex items-center justify-center gap-2"
+								>
+									{#if notebook.type === 'colab'}
+										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+											<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+											<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+											<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+											<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+										</svg>
+										Megnyitás
+									{:else if notebook.type === 'drive'}
+										<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="w-5 h-5" />
+										<span>Megnyitás</span>
+									{:else}
+										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+											<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+										</svg>
+										Megnyitás
+									{/if}
+								</a>
+								
+								<!-- Report Bug Button -->
+								<button 
+									on:click={() => reportBug(notebook)}
+									class="w-full mt-2 px-3 py-1.5 text-xs text-gray-500 hover:text-red-600 flex items-center justify-center gap-1 transition-colors"
+								>
+									<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+									</svg>
+									Hibajelentés
+								</button>
+							</div>
+						</div>
+					{/each}
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
+
+<!-- Preview Modal -->
+{#if showPreview && previewNotebook}
+	<div 
+		class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+		on:click={closePreview}
+		on:keydown={(e) => e.key === 'Escape' && closePreview()}
+		role="button"
+		tabindex="0"
+	>
+		<div 
+			class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative"
+			on:click|stopPropagation
+			on:keydown|stopPropagation
+			role="dialog"
+			tabindex="-1"
+		>
+			<!-- Modal Header -->
+				<div class="bg-gradient-to-r from-warm-blue to-dark-blue text-white p-6 flex items-center justify-between">
+				<div class="flex items-center gap-4">
+					{#if previewNotebook.type === 'colab'}
+						<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-8 w-auto" />
+					{:else if previewNotebook.type === 'drive'}
+						<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-8 w-auto" />
+					{:else}
+						<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+						</svg>
+					{/if}
+					<div>
+						<h3 class="text-2xl font-bold">{previewNotebook.title}</h3>
+						<p class="text-white/90 text-sm">{previewNotebook.category}</p>
+					</div>
+				</div>
+				<button 
+					on:click={closePreview}
+					class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+				>
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+			</div>
+
+			<!-- Modal Content -->
+			<div class="h-[calc(90vh-120px)] bg-gray-100">
+				{#if previewNotebook.type === 'youtube'}
+					<!-- YouTube Embed -->
+					<iframe
+						src={getYoutubeEmbedUrl(previewNotebook.colabLink)}
+						class="w-full h-full border-0"
+						title="{previewNotebook.title} előnézet"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					></iframe>
+				{:else if previewNotebook.type === 'drive'}
+					<!-- Google Drive - show info and open button (avoid embedding which may be blocked) -->
+					<div class="h-[calc(90vh-120px)] bg-gray-100 flex flex-col items-center justify-center p-12 text-center">
+						<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-24 w-auto mb-6 opacity-80" />
+						<h4 class="text-2xl font-bold text-dark-blue mb-4">Google Drive Adathalmaz</h4>
+						<p class="text-gray-600 mb-6 max-w-md">
+							Az adathalmazok a Google Drive-on találhatók. Kattints a gombra alább a mappa megnyitásához.
+						</p>
+						<a
+							href={previewNotebook.colabLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-3 px-8 py-4 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+							style="background-color: #0F9D58;"
+							on:mouseenter={(e) => e.currentTarget.style.backgroundColor = '#0D8A4E'}
+							on:mouseleave={(e) => e.currentTarget.style.backgroundColor = '#0F9D58'}
+						>
+							<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="w-6 h-6" />
+							<span>Megnyitás</span>
+						</a>
+					</div>
+				{:else}
+					<!-- Colab Preview - Info + Open Button -->
+					<div class="h-full flex flex-col items-center justify-center p-12 text-center">
+						<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-24 w-auto mb-6 opacity-80" />
+						<h4 class="text-2xl font-bold text-dark-blue mb-4">Google Colab Notebook</h4>
+						<p class="text-gray-600 mb-6 max-w-md">
+							A Google Colab notebookok nem jeleníthetők meg előnézetben biztonsági okokból. 
+							Kattints a gombra alább a notebook megnyitásához új lapon.
+						</p>
+						<a
+							href={previewNotebook.colabLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-3 px-8 py-4 bg-[#F9AB00] hover:bg-[#E69500] text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+						>
+							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+								<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+								<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+								<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+							</svg>
+							Notebook Megnyitása
+						</a>
+					</div>
+				{/if}
+			</div>
+		</div>
+	</div>
+{/if}
 
 <section class="bg-desert-100 relative">
 	<Divider showCopyright={true} />
@@ -628,231 +853,6 @@
 <section class="bg-desert-100 relative">
 	<Divider showCopyright={true} />
 </section>
-
-<!-- Interaktív Gyakorló Feladatsorok Section -->
-<section id="notebooks" class="bg-desert-100 relative overflow-hidden py-16">
-	<!-- Neural Network Background -->
-	<div class="absolute inset-0 opacity-20 pointer-events-none">
-		<NeuralNetwork nodeCount={25} position="full" />
-	</div>
-	
-	<div class="container mx-auto px-6 relative z-10 max-w-7xl">
-		<div class="text-center mb-16 fade-in-section">
-			<h2 class="text-4xl md:text-5xl font-bold text-dark-blue mb-6">Interaktív Gyakorló Feladatsorok</h2>
-			<p class="text-xl text-gray-600">Gyakorlati notebook-ok Google Colab-ban</p>
-		</div>
-
-		<!-- Notebook Categories -->
-		{#each Object.entries(groupedNotebooks) as [category, categoryNotebooks], categoryIndex}
-			   <div class="mb-8 fade-in-section">
-				<h3 class="text-3xl font-bold text-dark-blue mb-8 text-center">{category}</h3>
-				
-				<!-- Notebooks Grid - 5 per row -->
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-					{#each categoryNotebooks as notebook}
-						<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col border-2 border-desert-200 hover:border-warm-blue group overflow-hidden relative">
-							<!-- Mini Neural Network Background -->
-							<div class="absolute inset-0 opacity-5 pointer-events-none">
-								<NeuralNetwork />
-							</div>
-
-							<!-- Type Badge - Top Right Corner -->
-							<div class="absolute top-5 right-5 z-10">
-								{#if notebook.type === 'colab'}
-									<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-7 w-auto drop-shadow-lg" />
-								{:else if notebook.type === 'drive'}
-									<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-7 w-auto drop-shadow-lg" />
-								{:else}
-									<svg class="w-8 h-8 text-red-600 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-										<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-									</svg>
-								{/if}
-							</div>
-
-							<!-- Difficulty Badge - Top Left Corner -->
-							<div class="absolute top-5 left-5 z-10">
-								<div class="{getDifficultyColor(notebook.difficulty)} text-white px-3 py-1.5 rounded-full text-xs font-bold drop-shadow-lg shadow-lg">
-									{notebook.difficulty}
-								</div>
-							</div>
-
-							<!-- Card Header with colored bar -->
-							<div class="h-2 {notebook.type === 'colab' ? 'bg-[#F9AB00]' : notebook.type === 'drive' ? 'bg-[#0F9D58]' : 'bg-red-600'}"></div>
-							
-							<!-- Card Content -->
-							<div class="p-6 flex-1 flex flex-col pt-12 relative z-10">
-								<h4 class="text-lg font-bold text-dark-blue mb-3 group-hover:text-warm-blue transition-colors line-clamp-2">
-									{notebook.title}
-								</h4>
-								<p class="text-sm text-gray-600 mb-4 flex-1 line-clamp-3">
-									{notebook.preview}
-								</p>
-								
-								<!-- Interactive Preview Button -->
-								<button 
-									on:click={() => openPreview(notebook)}
-									class="w-full mb-3 px-4 py-2 bg-desert-100 hover:bg-desert-200 text-dark-blue rounded-lg transition-colors duration-200 text-sm font-medium flex items-center justify-center gap-2"
-								>
-									<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-									</svg>
-									Előnézet
-								</button>
-								
-								<!-- Colab/YouTube Link -->
-								<a
-									href={notebook.colabLink}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="w-full px-4 py-2 {notebook.type === 'colab' ? 'bg-[#F9AB00] hover:bg-[#E69500]' : notebook.type === 'drive' ? 'bg-[#0F9D58] hover:bg-[#0D8A4E]' : 'bg-red-600 hover:bg-red-700'} text-white rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm font-semibold flex items-center justify-center gap-2"
-								>
-									{#if notebook.type === 'colab'}
-										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-											<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-											<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-											<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-											<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-										</svg>
-										Megnyitás
-									{:else if notebook.type === 'drive'}
-										<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="w-5 h-5" />
-										<span>Megnyitás</span>
-									{:else}
-										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-											<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-										</svg>
-										Megnyitás
-									{/if}
-								</a>
-								
-								<!-- Report Bug Button -->
-								<button 
-									on:click={() => reportBug(notebook)}
-									class="w-full mt-2 px-3 py-1.5 text-xs text-gray-500 hover:text-red-600 flex items-center justify-center gap-1 transition-colors"
-								>
-									<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-									</svg>
-									Hibajelentés
-								</button>
-							</div>
-						</div>
-					{/each}
-				</div>
-			</div>
-		{/each}
-	</div>
-</section>
-
-<section class="bg-desert-100 relative">
-	<Divider showCopyright={true} />
-</section>
-
-<!-- Preview Modal -->
-{#if showPreview && previewNotebook}
-	<div 
-		class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
-		on:click={closePreview}
-		on:keydown={(e) => e.key === 'Escape' && closePreview()}
-		role="button"
-		tabindex="0"
-	>
-		<div 
-			class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative"
-			on:click|stopPropagation
-			on:keydown|stopPropagation
-			role="dialog"
-			tabindex="-1"
-		>
-			<!-- Modal Header -->
-				<div class="bg-gradient-to-r from-warm-blue to-dark-blue text-white p-6 flex items-center justify-between">
-				<div class="flex items-center gap-4">
-					{#if previewNotebook.type === 'colab'}
-						<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-8 w-auto" />
-					{:else if previewNotebook.type === 'drive'}
-						<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-8 w-auto" />
-					{:else}
-						<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-							<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-						</svg>
-					{/if}
-					<div>
-						<h3 class="text-2xl font-bold">{previewNotebook.title}</h3>
-						<p class="text-white/90 text-sm">{previewNotebook.category}</p>
-					</div>
-				</div>
-				<button 
-					on:click={closePreview}
-					class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
-				>
-					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-					</svg>
-				</button>
-			</div>
-
-			<!-- Modal Content -->
-			<div class="h-[calc(90vh-120px)] bg-gray-100">
-				{#if previewNotebook.type === 'youtube'}
-					<!-- YouTube Embed -->
-					<iframe
-						src={getYoutubeEmbedUrl(previewNotebook.colabLink)}
-						class="w-full h-full border-0"
-						title="{previewNotebook.title} előnézet"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen
-					></iframe>
-				{:else if previewNotebook.type === 'drive'}
-					<!-- Google Drive - show info and open button (avoid embedding which may be blocked) -->
-					<div class="h-[calc(90vh-120px)] bg-gray-100 flex flex-col items-center justify-center p-12 text-center">
-						<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="h-24 w-auto mb-6 opacity-80" />
-						<h4 class="text-2xl font-bold text-dark-blue mb-4">Google Drive Adathalmaz</h4>
-						<p class="text-gray-600 mb-6 max-w-md">
-							Az adathalmazok a Google Drive-on találhatók. Kattints a gombra alább a mappa megnyitásához.
-						</p>
-						<a
-							href={previewNotebook.colabLink}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex items-center gap-3 px-8 py-4 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-							style="background-color: #0F9D58;"
-							on:mouseenter={(e) => e.currentTarget.style.backgroundColor = '#0D8A4E'}
-							on:mouseleave={(e) => e.currentTarget.style.backgroundColor = '#0F9D58'}
-						>
-							<img src={`${base}/img/webicons/google-drive.png`} alt="Google Drive" class="w-6 h-6" />
-							<span>Megnyitás</span>
-						</a>
-					</div>
-				{:else}
-					<!-- Colab Preview - Info + Open Button -->
-					<div class="h-full flex flex-col items-center justify-center p-12 text-center">
-						<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="h-24 w-auto mb-6 opacity-80" />
-						<h4 class="text-2xl font-bold text-dark-blue mb-4">Google Colab Notebook</h4>
-						<p class="text-gray-600 mb-6 max-w-md">
-							A Google Colab notebookok nem jeleníthetők meg előnézetben biztonsági okokból. 
-							Kattints a gombra alább a notebook megnyitásához új lapon.
-						</p>
-						<a
-							href={previewNotebook.colabLink}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex items-center gap-3 px-8 py-4 bg-[#F9AB00] hover:bg-[#E69500] text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-						>
-							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-								<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-								<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-								<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-							</svg>
-							Notebook Megnyitása
-						</a>
-					</div>
-				{/if}
-			</div>
-		</div>
-	</div>
-{/if}
 
 <!-- Szinkron Felkészítők Section -->
 <section id="szinkron" class="bg-desert-100 relative overflow-hidden py-20">

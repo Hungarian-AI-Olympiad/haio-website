@@ -8,21 +8,21 @@
 	let headerVisible = false;
 	let tableVisible = false;
 
-	function goBack(fallback: string) {
-		// Check if we came from the target page
-		const referrer = document.referrer;
-		const targetPage = `${window.location.origin}${base}/2025`;
+	async function goBack(fallback: string) {
+		// Extract path and hash from fallback URL
+		const [path, hash] = fallback.split('#');
 		
-		if (referrer.startsWith(targetPage) && history.length > 1) {
-			// Extract the hash from fallback
-			const hash = fallback.split('#')[1];
-			const path = hash ? `${base}/2025#${hash}` : `${base}/2025`;
-			
-			// Use SvelteKit's goto with replaceState
-			goto(path, { replaceState: false, noScroll: false });
-		} else {
-			// Direct navigation with hash
-			window.location.href = fallback;
+		// Navigate to the page with noScroll option
+		await goto(path + (hash ? `#${hash}` : ''), { noScroll: true });
+		
+		// If there's a hash, scroll to it after navigation
+		if (hash) {
+			setTimeout(() => {
+				const element = document.getElementById(hash);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			}, 100);
 		}
 	}
 
@@ -114,7 +114,7 @@
 	<div class="container mx-auto px-6 relative z-10">
 		<!-- Back Button -->
 		<div class="mb-6">
-			<a href="{base}/2025#results" on:click|preventDefault={() => goBack(`${base}/2025#results`)} class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold">
+			<a href="{base}/2025#results-summary" on:click|preventDefault={() => goBack(`${base}/2025#results-summary`)} class="inline-flex items-center gap-2 text-warm-blue hover:text-dark-blue transition-colors font-semibold">
 				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 				</svg>
@@ -293,8 +293,8 @@
 		<!-- Back button -->
 		<div class="mt-12 text-center">
 			<a
-				href="{base}/2025"
-				on:click|preventDefault={() => goBack(`${base}/2025`)}
+				href="{base}/2025#results-summary"
+				on:click|preventDefault={() => goBack(`${base}/2025#results-summary`)}
 				class="inline-flex items-center gap-2 px-6 py-3 bg-white text-dark-blue font-semibold rounded-lg shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300 border-2 border-desert-200"
 			>
 				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -9,7 +9,6 @@
     let programDropdownOpen = false;
     let menuOpen = false;
     let yearDropdownOpen = false;
-    let currentLanguage = 'HU';
     let isHovered = false;
     let scrolled = false;
 
@@ -65,12 +64,6 @@
         yearDropdownOpen = !yearDropdownOpen;
     }
 
-
-    function toggleLanguage() {
-        currentLanguage = currentLanguage === 'HU' ? 'EN' : 'HU';
-    }
-
-
     // Close dropdown when clicking outside
     function handleClickOutside(event: MouseEvent) {
         const target = event.target as HTMLElement;
@@ -110,21 +103,43 @@
 >
     <div class="max-w-full mx-auto px-12 py-3">
         <div class="flex justify-between items-center">
-            <!-- Left side: Logo and HAIO text -->
-            <a 
-                href="{base}/" 
-                class="flex items-center space-x-3 group"
-            >
-            <img src={`${base}/img/header/haio_header.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
-            <div class="flex flex-col leading-tight">
-                <span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
-                    HAIO
-                </span>
-                <span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
-                    Hungarian AI Olympiad
-                </span>
+            <!-- Left side: HAIO Logo and text -->
+            <div class="flex items-center space-x-3">
+                <a 
+                    href="{base}/" 
+                    class="flex items-center space-x-3 group"
+                >
+                    <img src={`${base}/img/header/haio_header.png`} alt="HAIO Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
+                            HAIO
+                        </span>
+                        <span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80 text-dark-blue lg:text-dark-blue lg:drop-shadow-none" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
+                            Hungarian AI Olympiad
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Slash Separator (hidden on mobile) -->
+                <div class="hidden lg:block h-12 w-px mx-3 transition-colors duration-300 {effectiveScrolled ? 'bg-desert-300' : 'bg-white/40'}">
+                </div>
+
+                <!-- DOCK Logo and text (hidden on mobile) -->
+                <a 
+                    href="{base}/dock" 
+                    class="hidden lg:flex items-center space-x-3 group"
+                >
+                    <img src={`${base}/img/dock/dockt_2.png`} alt="DOCK Logo" class="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-xl font-bold tracking-wide transition-all duration-300 text-dark-blue" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
+                            DOCK
+                        </span>
+                        <span class="text-[10px] font-light tracking-widest uppercase transition-all duration-300 opacity-80 text-dark-blue" class:lg:text-white={!effectiveScrolled} class:lg:drop-shadow-lg={!effectiveScrolled}>
+                            Digital Online Competence Kernel
+                        </span>
+                    </div>
+                </a>
             </div>
-            </a>
 
 
             <!-- Mobile menu button -->
@@ -273,19 +288,6 @@
                 >
                     <i class="fab fa-linkedin text-lg xl:text-xl"></i>
                 </a>
-
-
-                <!-- Vertical divider -->
-                <div class="h-6 w-0.5 mx-1 xl:mx-2 transition-colors duration-500" class:bg-desert-300={effectiveScrolled} style={!effectiveScrolled ? 'background-color: rgba(255, 255, 255, 0.3);' : ''}></div>
-
-
-                <!-- Language switcher -->
-                <button
-                    on:click={toggleLanguage}
-                    class="px-3 xl:px-4 py-2 text-xs xl:text-sm font-semibold transition-all duration-300 whitespace-nowrap" class:text-dark-blue={effectiveScrolled} class:hover:text-warm-blue={effectiveScrolled} class:text-white={!effectiveScrolled} class:hover:text-desert-100={!effectiveScrolled} class:drop-shadow-lg={!effectiveScrolled}
-                >
-                    {currentLanguage}
-                </button>
             </div>
         </div>
 
@@ -294,19 +296,28 @@
     {#if menuOpen}
         <div class="lg:hidden mt-4 pb-4 animate-fadeIn mobile-menu-container">
             <div class="flex flex-col space-y-2">
+                <!-- DOCK Link with Logo (Mobile) -->
+                <a href="{base}/dock" on:click={() => { menuOpen = false; goto(`${base}/dock`); }} class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-warm-blue/10 to-dark-blue/10 rounded-lg border border-warm-blue/20 hover:border-warm-blue/40 transition-all duration-200">
+                    <img src={`${base}/img/dock/dock_2.png`} alt="DOCK" class="h-10 w-10 object-contain" />
+                    <div class="flex flex-col">
+                        <span class="text-sm font-bold text-dark-blue">DOCK</span>
+                        <span class="text-[9px] text-desert-700 uppercase tracking-wide">Digital Online Competence Kernel</span>
+                    </div>
+                </a>
+
                    <!-- Programok Dropdown (Mobile) -->
                    <div class="px-4 py-2">
                        <div class="text-sm font-medium text-desert-700 mb-2">Programok</div>
                        <div class="pl-4 space-y-1">
-                           <a href="{base}/#programs-desc" on:click={(e) => navigateToHash(e, `${base}/#programs-desc`)} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">Programok Bemutatása</a>
+                           <a href="{base}/#programs-desc" on:click={(e) => { menuOpen = false; navigateToHash(e, `${base}/#programs-desc`); }} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">Programok Bemutatása</a>
                         <a href="{base}/molo" on:click={() => { menuOpen = false; goto(`${base}/molo`); }} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">MÓLÓ</a>
                         <a href="{base}/haio" on:click={() => { menuOpen = false; goto(`${base}/haio`); }} class="block py-1 text-sm text-dark-blue hover:text-warm-blue">HAIO</a>
                        </div>
                    </div>
-                    <a href="{base}/#dates" on:click={(e) => navigateToHash(e, `${base}/#dates`)} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+                    <a href="{base}/#dates" on:click={(e) => { menuOpen = false; navigateToHash(e, `${base}/#dates`); }} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
                         Fontos Időpontok
                     </a>
-                    <a href="{base}/#international" on:click={(e) => navigateToHash(e, `${base}/#international`)} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
+                    <a href="{base}/#international" on:click={(e) => { menuOpen = false; navigateToHash(e, `${base}/#international`); }} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
                         Nemzetközi Versenyek
                     </a>
                     
@@ -323,23 +334,24 @@
 
                 <a href="{base}/gyik" on:click={() => { menuOpen = false; goto(`${base}/gyik`); }} class="px-4 py-2 text-sm font-medium text-dark-blue hover:bg-desert-100 rounded-lg transition-colors duration-200">
                     GY.I.K.
-                </a>                    <div class="border-t border-desert-200 my-2"></div>                 <div class="flex items-center justify-around px-4 py-2">
-                        <a href="{base}/contact" on:click={() => { menuOpen = false; goto(`${base}/contact`); }} class="text-dark-blue hover:text-warm-blue" aria-label="Contact">
-                            <i class="fas fa-envelope text-2xl"></i>
-                        </a>
-                        <a href="https://discord.gg/KKTzNebjGW" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Discord">
-                            <i class="fab fa-discord text-2xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/hungarian-ai-olympiad-haio/" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <button on:click={toggleLanguage} class="text-sm font-semibold text-dark-blue hover:text-warm-blue px-4 py-1 border border-desert-300 rounded-lg">
-                            {currentLanguage}
-                        </button>
-                    </div>
+                </a>
+
+                <div class="border-t border-desert-200 my-2"></div>
+
+                <div class="flex items-center justify-around px-4 py-2">
+                    <a href="{base}/contact" on:click={() => { menuOpen = false; goto(`${base}/contact`); }} class="text-dark-blue hover:text-warm-blue" aria-label="Contact">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://discord.gg/KKTzNebjGW" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="Discord">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/hungarian-ai-olympiad-haio/" target="_blank" rel="noopener noreferrer" on:click={() => menuOpen = false} class="text-dark-blue hover:text-warm-blue" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
                 </div>
             </div>
-        {/if}
+        </div>
+    {/if}
     </div>
 </nav>
 
