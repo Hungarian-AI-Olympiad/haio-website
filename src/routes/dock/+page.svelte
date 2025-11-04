@@ -38,11 +38,10 @@
 		<div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border border-desert-200 max-w-3xl mx-auto">
 			<div class="prose prose-lg max-w-none">
 				<p class="text-lg md:text-xl text-dark-blue leading-relaxed mb-6">
-					A <strong>DOCK</strong> egy versenyplatform, amely a HAIO online előválogató fordulóihoz készült.
+					A <strong>DOCK</strong> egy versenyplatform, amely a HAIO online előválogató és országos fordulóihoz készült.
 				</p>
 				<p class="text-lg md:text-xl text-dark-blue leading-relaxed mb-6">
-					A platform lehetővé teszi a résztvevők számára, hogy különböző mesterséges intelligencia kihívásokban mérjék össze tudásukat, 
-					valós idejű eredménylistákkal és automatikus kiértékeléssel.
+					A platform lehetőséget ad a résztvevőknek, hogy különböző mesterséges intelligencia kihívásokban versenyezzenek, valós idejű ranglistával és automatikus kiértékeléssel.
 				</p>
 				<div class="mt-8 p-6 bg-warm-blue/10 rounded-lg border-l-4 border-warm-blue">
 					<p class="text-base md:text-lg text-desert-800 font-medium m-0">
