@@ -439,9 +439,13 @@
 
 <!-- Hero Section -->
 <section class="bg-desert-100 relative overflow-hidden pt-32 pb-8 py-16">
-	<!-- Neural Network Background -->
-	<div class="absolute inset-0 opacity-20 pointer-events-none">
-		<NeuralNetwork nodeCount={25} position="full" />
+	<!-- Neural Network Background (constrained to avoid stretching) -->
+	<div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+		<!-- Constrain the visual area so the canvas doesn't stretch vertically
+			 and reduce node count/opacity for a subtler background. -->
+		<div class="w-full max-w-7xl h-56 md:h-72 lg:h-80 overflow-hidden">
+			<NeuralNetwork nodeCount={18} position="top" />
+		</div>
 	</div>
 	<div class="container mx-auto px-6 relative z-10 max-w-7xl">
 		<!-- Page Title -->
@@ -966,9 +970,11 @@
 
 <!-- Ütemterv/Roadmap Section -->
 <section id="roadmap" class="bg-desert-100 relative overflow-hidden py-16">
-	<!-- Neural Network Background -->
-	<div class="absolute inset-0 opacity-20 pointer-events-none">
-		<NeuralNetwork nodeCount={25} position="full" />
+	<!-- Neural Network Background (constrained to avoid stretching) -->
+	<div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+		<div class="w-full max-w-7xl h-56 md:h-72 lg:h-80 overflow-hidden">
+			<NeuralNetwork nodeCount={18} position="top" />
+		</div>
 	</div>
 	
 	<div class="container mx-auto px-6 relative z-10 max-w-7xl">
@@ -1073,11 +1079,13 @@
 
 <!-- Szinkron Felkészítők Section -->
 <section id="szinkron" class="bg-desert-100 relative overflow-hidden py-20">
-	<!-- Neural Network Background -->
-	<div class="absolute inset-0 opacity-20 pointer-events-none">
-		<NeuralNetwork nodeCount={25} position="full" />
+	<!-- Neural Network Background (constrained to avoid stretching) -->
+	<div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+		<div class="w-full max-w-7xl h-56 md:h-72 lg:h-80 overflow-hidden">
+			<NeuralNetwork nodeCount={18} position="top" />
+		</div>
 	</div>
-	
+    
 	<div class="container mx-auto px-8 sm:px-10 md:px-6 relative z-10 max-w-7xl">
 		<div class="text-center mb-16 fade-in-section">
 			<h2 class="text-4xl md:text-5xl font-bold text-dark-blue mb-6">Szinkron Felkészítők</h2>
@@ -1114,8 +1122,8 @@
 				</div>
 			</div>
 
-		<!-- Discord Image -->
-		<div class="relative max-w-sm mx-auto px-6 md:px-0">
+		<!-- Discord Image (reduced size to avoid overpowering the section) -->
+		<div class="relative max-w-xs mx-auto px-6 md:px-0">
 			<img src={`${base}/img/webicons/discord.png`} alt="Discord" class="w-full h-auto hover:scale-105 transition-transform duration-300" />
 		</div>
 		</div>
