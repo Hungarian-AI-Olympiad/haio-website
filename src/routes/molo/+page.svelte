@@ -61,6 +61,14 @@
 
 	const notebooks: Notebook[] = [
 		{
+			title: '1. Alkalom: MÓLÓ és HAIO bemutatása',
+			category: 'Online Szakkör Felvételek',
+			colabLink: 'https://youtu.be/gYJDqr03l4E',
+			preview: 'Bevezetés a Mesterséges Intelligencia alapjaiba.',
+			type: 'youtube',
+			difficulty: 'kezdő'
+		},
+		{
 			title: 'Google Colab Notebook bevezető',
 			category: 'Programozási Háttér',
 			colabLink: 'https://colab.research.google.com/drive/1z7iYIT576djhJgzDssG51WO1TCLovEL2?usp=sharing',
@@ -68,9 +76,6 @@
 			type: 'colab',
 			difficulty: 'kezdő'
 		},
-		
-
-
 		{
 			title: 'Python Telepítés',
 			category: 'Programozási Háttér',
