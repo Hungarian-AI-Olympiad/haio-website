@@ -111,7 +111,7 @@
 		},
 
 		{
-			title: 'Neuronok, Hebb-i tanulás és a SOM',
+			title: 'Mesterséges Neuronok',
 			category: 'Bevezetés a Mélytanulásba',
 			colabLink: 'https://youtu.be/P5ix22jwuU0',
 			preview: 'Neuronok, Hebb-i tanulás és a SOM.',
@@ -119,7 +119,7 @@
 			difficulty: 'kezdő'
 		},
 		{
-			title: 'Hopfield Hálók',
+			title: 'Neurodinamikai Rendszerek',
 			category: 'Bevezetés a Mélytanulásba',
 			colabLink: 'https://youtu.be/3I39Ctb2zs8',
 			preview: 'Hopfield hálók és dinamikai modellek.',
@@ -209,7 +209,7 @@
 			difficulty: 'kezdő'
 		},
 		{
-			title: 'Neuronok',
+			title: 'Mesterséges Neuronok',
 			category: 'Bevezetés a Mélytanulásba',
 			colabLink: 'https://colab.research.google.com/drive/1b2pzMOueeXi5aMK2XFibyts2qmc1o55J?usp=sharing',
 			preview: 'Neuronok és Hebb-i tanulás.',
@@ -217,7 +217,7 @@
 			difficulty: 'kezdő'
 		},
 		{
-			title: 'Hopfield Hálók',
+			title: 'Neurodinamikai Rendszerek',
 			category: 'Bevezetés a Mélytanulásba',
 			colabLink: 'https://colab.research.google.com/drive/1s0mT6-uCtorasKVJgtNSPWzTiZWHwX2R?usp=sharing',
 			preview: 'Hopfield hálók és dinamikai modellek.',
@@ -296,15 +296,14 @@
 	let expandedCategories: Set<string> = new Set();
 	let expandedSubCategories: Set<string> = new Set(); // For Videók/Feladatsor
 
-	$: {
-		groupedNotebooks = notebooks.reduce((acc, notebook) => {
-			if (!acc[notebook.category]) {
-				acc[notebook.category] = [];
-			}
-			acc[notebook.category].push(notebook);
-			return acc;
-		}, {} as { [key: string]: Notebook[] });
-	}
+	// Calculate grouped notebooks once on initialization instead of reactively
+	groupedNotebooks = notebooks.reduce((acc, notebook) => {
+		if (!acc[notebook.category]) {
+			acc[notebook.category] = [];
+		}
+		acc[notebook.category].push(notebook);
+		return acc;
+	}, {} as { [key: string]: Notebook[] });
 
 	function toggleCategory(category: string, scrollToTop = false) {
 		const wasExpanded = expandedCategories.has(category);
@@ -338,6 +337,22 @@
 			expandedSubCategories.add(subCategoryKey);
 		}
 		expandedSubCategories = expandedSubCategories;
+	}
+
+	function navigateToHash(event: MouseEvent, href: string) {
+		event.preventDefault();
+		const hash = href.startsWith('#') ? href.substring(1) : href;
+		
+		// Use goto to update URL without full page navigation
+		goto(`${base}/molo#${hash}`, { noScroll: true, replaceState: false }).then(() => {
+			// Then manually scroll to the element
+			setTimeout(() => {
+				const element = document.getElementById(hash);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			}, 100);
+		});
 	}
 
 	function getCategoryStats(category: string) {
@@ -494,21 +509,20 @@
 					</div>
 					<h3 class="text-2xl font-bold text-dark-blue mb-4 group-hover:text-warm-blue transition-colors duration-300">Interaktív Tananyagok</h3>
 					<p class="text-gray-600 leading-relaxed mb-6 flex-1">
-						Gyakorlati tananyagok Google Colab notebookokban és YouTube-videókban, azonnal futtatható kóddal. Valódi problémák megoldásán keresztül sajátíthatod el a gépi tanulás alapjait és haladó módszereit. Minden notebook részletes magyarázatokat és lépésről lépésre követhető megoldási útmutatókat tartalmaz.
-					</p>
-					<a 
-						href="#notebooks"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
-					>
-						<span>Ugrás a részletekhez</span>
-						<svg class="w-4 h-4 transform group-hover/btn:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-						</svg>
-					</a>
-				</div>
+					Gyakorlati tananyagok Google Colab notebookokban és YouTube-videókban, azonnal futtatható kóddal. Valódi problémák megoldásán keresztül sajátíthatod el a gépi tanulás alapjait és haladó módszereit. Minden notebook részletes magyarázatokat és lépésről lépésre követhető megoldási útmutatókat tartalmaz.
+				</p>
+				<a 
+					href="#notebooks"
+					on:click={(e) => navigateToHash(e, '#notebooks')}
+					class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
+				>
+					<span>Ugrás a részletekhez</span>
+					<svg class="w-4 h-4 transform group-hover/btn:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+					</svg>
+				</a>
 			</div>
-
-			<!-- Card 2: Aszinkron Online Roadmap -->
+		</div>			<!-- Card 2: Aszinkron Online Roadmap -->
 			<div class="relative bg-gradient-to-br from-white via-white to-desert-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-2 border-transparent hover:border-warm-blue group overflow-hidden flex flex-col">
 				<!-- Animated background gradient on hover -->
 				<div class="absolute inset-0 bg-gradient-to-br from-warm-blue/5 via-transparent to-dark-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -524,21 +538,20 @@
 					</div>
 					<h3 class="text-2xl font-bold text-dark-blue mb-4 group-hover:text-warm-blue transition-colors duration-300">Aszinkron Online Roadmap (Angol)</h3>
 					<p class="text-gray-600 leading-relaxed mb-6 flex-1">
-						Gondosan összeállított videó tananyagok, amelyek lépésről lépésre vezetnek végig a mesterséges intelligencia világán. Saját tempódban tanulhatsz, bármikor, bárhonnan. A bevezető anyagoktól a haladó NLP technikákig minden megtalálható. A tananyagok elsajátításához angol nyelvtudás szükséges.
-					</p>
-					<a 
-						href="#roadmap"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
-					>
-						<span>Ugrás a részletekhez</span>
-						<svg class="w-4 h-4 transform group-hover/btn:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-						</svg>
-					</a>
-				</div>
+					Gondosan összeállított videó tananyagok, amelyek lépésről lépésre vezetnek végig a mesterséges intelligencia világán. Saját tempódban tanulhatsz, bármikor, bárhonnan. A bevezető anyagoktól a haladó NLP technikákig minden megtalálható. A tananyagok elsajátításához angol nyelvtudás szükséges.
+				</p>
+				<a 
+					href="#roadmap"
+					on:click={(e) => navigateToHash(e, '#roadmap')}
+					class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
+				>
+					<span>Ugrás a részletekhez</span>
+					<svg class="w-4 h-4 transform group-hover/btn:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+					</svg>
+				</a>
 			</div>
-
-			<!-- Card 3: Szinkron Felkészítés -->
+		</div>			<!-- Card 3: Szinkron Felkészítés -->
 			<div class="relative bg-gradient-to-br from-white via-white to-desert-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-2 border-transparent hover:border-warm-blue group overflow-hidden flex flex-col">
 				<!-- Animated background gradient on hover -->
 				<div class="absolute inset-0 bg-gradient-to-br from-warm-blue/5 via-transparent to-dark-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -558,6 +571,7 @@
 					</p>
 					<a 
 						href="#szinkron"
+						on:click={(e) => navigateToHash(e, '#szinkron')}
 						class="inline-flex items-center gap-2 px-6 py-3 bg-dark-blue text-white rounded-full font-semibold text-sm transition-all duration-300 hover:bg-warm-blue hover:shadow-2xl hover:scale-105 group/btn mt-auto"
 					>
 						<span>Ugrás a részletekhez</span>
@@ -590,7 +604,7 @@
 
 		<!-- Accordion Categories -->
 		<div class="space-y-4 fade-in-section">
-			{#each Object.entries(groupedNotebooks) as [category, categoryNotebooks], categoryIndex}
+			{#each Object.entries(groupedNotebooks) as [category, categoryNotebooks], categoryIndex (category)}
 				{@const stats = getCategoryStats(category)}
 				{@const isExpanded = expandedCategories.has(category)}
 				
@@ -693,7 +707,7 @@
 
 									{#if isVideosExpanded}
 										<div class="border-t-2 border-desert-100 p-4 space-y-2 bg-gray-50/50">
-											{#each videos as notebook, index}
+											{#each videos as notebook, index (`${category}-video-${index}-${notebook.title}`)}
 												<div class="bg-white rounded-lg shadow hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-warm-blue group">
 													<div class="p-4 flex items-center gap-3">
 														<div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-warm-blue/20 to-dark-blue/20 text-dark-blue flex items-center justify-center font-bold text-xs">
@@ -761,7 +775,7 @@
 									>
 										<div class="flex items-center gap-2 sm:gap-3">
 											<img src={`${base}/img/webicons/colab.png`} alt="Colab" class="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
-											<span class="text-sm sm:text-base font-bold text-dark-blue group-hover:text-warm-blue transition-colors">Feladatsor</span>
+											<span class="text-sm sm:text-base font-bold text-dark-blue group-hover:text-warm-blue transition-colors">Gyakorlati Tananyagok</span>
 											<span class="text-xs sm:text-sm text-gray-500">({exercises.length})</span>
 										</div>
 										<svg 
@@ -776,7 +790,7 @@
 
 									{#if isExercisesExpanded}
 										<div class="border-t-2 border-desert-100 p-4 space-y-2 bg-gray-50/50">
-											{#each exercises as notebook, index}
+											{#each exercises as notebook, index (`${category}-exercise-${index}-${notebook.title}`)}
 												<div class="bg-white rounded-lg shadow hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-warm-blue group">
 													<div class="p-4 flex items-center gap-3">
 														<div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-warm-blue/20 to-dark-blue/20 text-dark-blue flex items-center justify-center font-bold text-xs">
