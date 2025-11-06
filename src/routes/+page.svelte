@@ -115,11 +115,31 @@
         },
     ];
     
-    // Function to check if event is in the past
-    function isEventPast(eventDate) {
-        const now = new Date();
-        return eventDate < now;
-    }
+	// Function to check if event is in the past
+	// Treat events occurring on the current calendar day as NOT past.
+	// Only mark an event as "past" starting the next local day.
+	function isEventPast(eventDate) {
+		if (!(eventDate instanceof Date) || isNaN(eventDate.getTime())) return false;
+
+		const now = new Date();
+		// midnight at the start of today (local time)
+		const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		// midnight at the start of the event day (local time)
+		const eventDay = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate());
+
+		return eventDay < today;
+	}
+
+	// Function to check if event is today (local calendar day)
+	function isEventToday(eventDate) {
+		if (!(eventDate instanceof Date) || isNaN(eventDate.getTime())) return false;
+
+		const now = new Date();
+		const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		const eventDay = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate());
+
+		return eventDay.getTime() === today.getTime();
+	}
 
     onMount(() => {
         videoLoaded = true;
@@ -357,7 +377,7 @@
 </section>
 
 <!-- PROGRAMS SECTION WITH DIVIDER - SEAMLESS BACKGROUND -->
-<section id="programs" class="bg-desert-100 relative overflow-hidden py-16 md:py-24" data-animate="divider">
+<section id="programs" class="bg-desert-100 relative overflow-hidden py-6 md:py-4" data-animate="divider">
     <!-- Neural Network Background -->
     <div class="absolute inset-0 opacity-20">
         <NeuralNetwork nodeCount={25} position="full" />
@@ -698,7 +718,7 @@
 </section>
 
 <!-- FONTOS IDŐPONTOK (TIMELINE) SECTION - PROFESSIONAL VERSION -->
-<section class="bg-desert-100 relative overflow-hidden py-16 md:py-24">
+<section class="bg-desert-100 relative overflow-hidden py-6 md:py-4">
 	<!-- Neural Network Background -->
 	<div class="absolute inset-0 opacity-20">
 		<NeuralNetwork nodeCount={25} position="full" />
@@ -741,6 +761,7 @@
 		<div class="space-y-6">
 			{#each timelineEvents as event, index}
 				{@const isPast = isEventPast(event.actualDate)}
+				{@const isToday = isEventToday(event.actualDate)}
 				{@const nextEvent = timelineEvents[index + 1]}
 				{@const nextIsPast = nextEvent ? isEventPast(nextEvent.actualDate) : false}
 				
@@ -794,12 +815,17 @@
 										{event.project}
 									</div>
 								</div>									<!-- Right: Status Label -->
-									{#if !isPast}
-										<div class="flex items-center gap-2 text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full text-xs font-semibold">
-											<div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-											Közelgő
-										</div>
-									{:else}
+										{#if isToday}
+											<div class="flex items-center gap-2 text-amber-700 bg-amber-50 px-4 py-1.5 rounded-full text-xs font-semibold">
+												<div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+												Ma
+											</div>
+										{:else if !isPast}
+											<div class="flex items-center gap-2 text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full text-xs font-semibold">
+												<div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+												Közelgő
+											</div>
+										{:else}
 										<div class="flex items-center gap-2 text-slate-500 bg-slate-50 px-4 py-1.5 rounded-full text-xs font-semibold">
 											<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
