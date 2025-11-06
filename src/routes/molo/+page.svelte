@@ -678,91 +678,6 @@
 						
 						<div class="border-t-2 border-desert-200 bg-gradient-to-b from-white to-desert-50/30 p-4 space-y-3">
 							
-							<!-- Videók Sub-Category -->
-							{#if videos.length > 0}
-								{@const videosKey = `${category}-videos`}
-								{@const isVideosExpanded = expandedSubCategories.has(videosKey)}
-								
-								<div class="bg-white rounded-xl border-2 border-desert-100 overflow-hidden">
-									<button
-										on:click={() => toggleSubCategory(videosKey)}
-										class="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-desert-50 transition-colors duration-200 group"
-									>
-										<div class="flex items-center gap-2 sm:gap-3">
-											<svg class="w-4 h-4 sm:w-5 sm:h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-												<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-											</svg>
-											<span class="text-sm sm:text-base font-bold text-dark-blue group-hover:text-warm-blue transition-colors">Videók</span>
-											<span class="text-xs sm:text-sm text-gray-500">({videos.length})</span>
-										</div>
-										<svg 
-											class="w-5 h-5 text-dark-blue transform transition-transform duration-300 {isVideosExpanded ? 'rotate-180' : ''}"
-											fill="none" 
-											stroke="currentColor" 
-											viewBox="0 0 24 24"
-										>
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-										</svg>
-									</button>
-
-									{#if isVideosExpanded}
-										<div class="border-t-2 border-desert-100 p-4 space-y-2 bg-gray-50/50">
-											{#each videos as notebook, index (`${category}-video-${index}-${notebook.title}`)}
-												<div class="bg-white rounded-lg shadow hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-warm-blue group">
-													<div class="p-4 flex items-center gap-3">
-														<div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-warm-blue/20 to-dark-blue/20 text-dark-blue flex items-center justify-center font-bold text-xs">
-															{index + 1}
-														</div>
-														<div class="flex-shrink-0 w-6 h-6">
-															<svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-																<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-															</svg>
-														</div>
-														<div class="flex-1 min-w-0">
-															<h4 class="font-semibold text-dark-blue group-hover:text-warm-blue transition-colors text-sm sm:text-base">
-																{notebook.title}
-															</h4>
-															<p class="text-xs sm:text-sm text-gray-600 mt-0.5 line-clamp-2">
-																{notebook.preview}
-															</p>
-														</div>
-														<div class="flex-shrink-0 flex sm:flex-row flex-col items-center gap-2">
-															<span class="{getDifficultyColor(notebook.difficulty)} text-white px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
-																<span class="sm:hidden">{notebook.difficulty === 'kezdő' ? '1' : notebook.difficulty === 'közép' || notebook.difficulty === 'középhaladó' ? '2' : '3'}</span>
-																<span class="hidden sm:inline">{notebook.difficulty}</span>
-															</span>
-															<div class="flex items-center gap-1.5">
-																<button
-																	on:click={() => openPreview(notebook)}
-																	class="hidden sm:flex p-2 rounded-lg bg-desert-100 hover:bg-warm-blue text-dark-blue hover:text-white transition-all duration-200"
-																	title="Előnézet"
-																>
-																	<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-																	</svg>
-																</button>
-																<a
-																	href={notebook.colabLink}
-																	target="_blank"
-																	rel="noopener noreferrer"
-																	class="p-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all duration-200 flex items-center justify-center"
-																	title="Megnyitás"
-																>
-																	<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-																	</svg>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											{/each}
-										</div>
-									{/if}
-								</div>
-							{/if}
-
 							<!-- Feladatsor Sub-Category -->
 							{#if exercises.length > 0}
 								{@const exercisesKey = `${category}-exercises`}
@@ -832,6 +747,91 @@
 																	target="_blank"
 																	rel="noopener noreferrer"
 																	class="p-2 {notebook.type === 'colab' ? 'bg-[#F9AB00] hover:bg-[#E69500]' : 'bg-[#0F9D58] hover:bg-[#0D8A4E]'} text-white rounded-lg transition-all duration-200 flex items-center justify-center"
+																	title="Megnyitás"
+																>
+																	<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+																	</svg>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											{/each}
+										</div>
+									{/if}
+								</div>
+							{/if}
+
+							<!-- Videók Sub-Category -->
+							{#if videos.length > 0}
+								{@const videosKey = `${category}-videos`}
+								{@const isVideosExpanded = expandedSubCategories.has(videosKey)}
+								
+								<div class="bg-white rounded-xl border-2 border-desert-100 overflow-hidden">
+									<button
+										on:click={() => toggleSubCategory(videosKey)}
+										class="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-desert-50 transition-colors duration-200 group"
+									>
+										<div class="flex items-center gap-2 sm:gap-3">
+											<svg class="w-4 h-4 sm:w-5 sm:h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+												<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+											</svg>
+											<span class="text-sm sm:text-base font-bold text-dark-blue group-hover:text-warm-blue transition-colors">Videók</span>
+											<span class="text-xs sm:text-sm text-gray-500">({videos.length})</span>
+										</div>
+										<svg 
+											class="w-5 h-5 text-dark-blue transform transition-transform duration-300 {isVideosExpanded ? 'rotate-180' : ''}"
+											fill="none" 
+											stroke="currentColor" 
+											viewBox="0 0 24 24"
+										>
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+										</svg>
+									</button>
+
+									{#if isVideosExpanded}
+										<div class="border-t-2 border-desert-100 p-4 space-y-2 bg-gray-50/50">
+											{#each videos as notebook, index (`${category}-video-${index}-${notebook.title}`)}
+												<div class="bg-white rounded-lg shadow hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-warm-blue group">
+													<div class="p-4 flex items-center gap-3">
+														<div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-warm-blue/20 to-dark-blue/20 text-dark-blue flex items-center justify-center font-bold text-xs">
+															{index + 1}
+														</div>
+														<div class="flex-shrink-0 w-6 h-6">
+															<svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+																<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+															</svg>
+														</div>
+														<div class="flex-1 min-w-0">
+															<h4 class="font-semibold text-dark-blue group-hover:text-warm-blue transition-colors text-sm sm:text-base">
+																{notebook.title}
+															</h4>
+															<p class="text-xs sm:text-sm text-gray-600 mt-0.5 line-clamp-2">
+																{notebook.preview}
+															</p>
+														</div>
+														<div class="flex-shrink-0 flex sm:flex-row flex-col items-center gap-2">
+															<span class="{getDifficultyColor(notebook.difficulty)} text-white px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
+																<span class="sm:hidden">{notebook.difficulty === 'kezdő' ? '1' : notebook.difficulty === 'közép' || notebook.difficulty === 'középhaladó' ? '2' : '3'}</span>
+																<span class="hidden sm:inline">{notebook.difficulty}</span>
+															</span>
+															<div class="flex items-center gap-1.5">
+																<button
+																	on:click={() => openPreview(notebook)}
+																	class="hidden sm:flex p-2 rounded-lg bg-desert-100 hover:bg-warm-blue text-dark-blue hover:text-white transition-all duration-200"
+																	title="Előnézet"
+																>
+																	<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+																	</svg>
+																</button>
+																<a
+																	href={notebook.colabLink}
+																	target="_blank"
+																	rel="noopener noreferrer"
+																	class="p-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all duration-200 flex items-center justify-center"
 																	title="Megnyitás"
 																>
 																	<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
