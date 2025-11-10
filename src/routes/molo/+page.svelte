@@ -61,9 +61,9 @@
 
 	const notebooks: Notebook[] = [
 		{
-			title: '1. Alkalom: MÓLÓ és HAIO bemutatása',
+			title: 'MÓLÓ (Online Szakkör) - 1. Alkalom',
 			category: 'Online Szakkör Felvételek',
-			colabLink: 'https://youtu.be/gYJDqr03l4E',
+			colabLink: 'https://youtu.be/w-WGot0vkuI',
 			preview: 'Bevezetés a Mesterséges Intelligencia alapjaiba.',
 			type: 'youtube',
 			difficulty: 'kezdő'
