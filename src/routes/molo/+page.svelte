@@ -220,9 +220,9 @@
 			title: 'Neurodinamikai Rendszerek',
 			category: 'Bevezetés a Mélytanulásba',
 			colabLink: 'https://colab.research.google.com/drive/1s0mT6-uCtorasKVJgtNSPWzTiZWHwX2R?usp=sharing',
-			preview: 'Hopfield hálók és dinamikai modellek.',
+			preview: 'Hoppfield hálók és dinamikai modellek.',
 			type: 'colab',
-			difficulty: 'kezdő'
+			difficulty: 'haladó'
 		},
 		{
 			title: 'Tanulási Módszerek',
