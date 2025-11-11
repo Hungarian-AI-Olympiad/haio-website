@@ -124,7 +124,7 @@
 			colabLink: 'https://youtu.be/3I39Ctb2zs8',
 			preview: 'Hopfield hálók és dinamikai modellek.',
 			type: 'youtube',
-			difficulty: 'kezdő'
+			difficulty: 'haladó'
 		},
 		{
 			title: 'Tanulási Módszerek',
