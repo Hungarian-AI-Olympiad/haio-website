@@ -102,12 +102,55 @@
 			difficulty: 'kezdő'
 		},
 		{
+			title: 'Leíró statisztikák',
+			category: 'Adatok és Előkészítés',
+			colabLink: 'https://colab.research.google.com/drive/1154ONK573UAiyg6Pxsr50W5aANdoCxEE?usp=sharing',
+			preview: 'Rövid áttekintés a leíró statisztikáról.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'Adatelemzés (pandas)',
+			category: 'Adatok és Előkészítés',
+			colabLink: 'https://colab.research.google.com/drive/1nfNmVR0_G6Rvuu3znm2XwAmuRYuOtI7f?usp=sharing',
+			preview: 'Bevezetés az adatelemzésbe pandas könyvtár segítségével.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
 			title: 'Adatvizualizáció (matplotlib, adatok ábrázolása feature-ök szerint)',
 			category: 'Adatok és Előkészítés',
 			colabLink: 'https://colab.research.google.com/drive/1EoZ3O-4OhMDj9nvKNLea4OV9Yk9KL7yK?usp=sharing',
 			preview: 'Adatok vizualizálása matplotlib segítségével.',
 			type: 'colab',
 			difficulty: 'kezdő'
+		},
+
+
+
+		{
+			title: 'GPU Integráció PyTorch-ban',
+			category: 'Programok Futtatása GPU-n',
+			colabLink: 'https://colab.research.google.com/drive/1bHfDzxgqWKIz9DUC_JmhRkx36HO53dmZ?usp=sharing',
+			preview: 'Műveletek végrehajtása GPU-n PyTorch-ban tenzorokkal.',
+			type: 'colab',
+			difficulty:'kezdő'
+		},
+		{
+			title: 'NumPy Bevezetés',
+			category: 'Programok Futtatása GPU-n',
+			colabLink: 'https://colab.research.google.com/drive/1DeMbL5M_HJoDmgTypnsZOkmhIqTHczuV?usp=sharing',
+			preview: 'NumPy tömbök és indexelési technikák.',
+			type: 'colab',
+			difficulty: 'kezdő'
+		},
+		{
+			title: 'NumPy Alapok',
+			category: 'Programok Futtatása GPU-n',
+			colabLink: 'https://colab.research.google.com/drive/1HmXSayhEHZ66wo2EAaV4-d78gTV3iij6?usp=sharing',
+			preview: 'NumPy műveletek, haladó indexelés, mátrix és vektor műveletek.',
+			type: 'colab',
+			difficulty: 'középhaladó'
 		},
 
 		{
